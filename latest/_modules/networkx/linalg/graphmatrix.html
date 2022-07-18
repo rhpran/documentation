@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.linalg.graphmatrix &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.linalg.graphmatrix &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/linalg/graphmatrix.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -226,7 +226,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;incidence_matrix&quot;</span><span class="p">,</span> <span class="s2">&quot;adj_matrix&quot;</span><span class="p">,</span> <span class="s2">&quot;adjacency_matrix&quot;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;incidence_matrix&quot;</span><span class="p">,</span> <span class="s2">&quot;adjacency_matrix&quot;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="incidence_matrix"><a class="viewcode-back" href="../../../reference/generated/networkx.linalg.graphmatrix.incidence_matrix.html#networkx.linalg.graphmatrix.incidence_matrix">[docs]</a><span class="k">def</span> <span class="nf">incidence_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">oriented</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -385,32 +385,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    to_dict_of_dicts</span>
 <span class="sd">    adjacency_spectrum</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="s2">&quot;adjacency_matrix will return a scipy.sparse array instead of a matrix in Networkx 3.0.&quot;</span><span class="p">,</span>
-        <span class="ne">FutureWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="c1"># TODO: Change to `to_scipy_sparse_array` for networkx 3.0</span>
-    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_scipy_sparse_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span></div>
-
-
-<span class="k">def</span> <span class="nf">_adj_matrix_warning</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;adj_matrix is deprecated and will be removed in version 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;Use `adjacency_matrix` instead</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">adjacency_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
-
-
-<span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">_adj_matrix_warning</span>
+    <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_scipy_sparse_array</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span></div>
 </pre></div>
 
               </article>

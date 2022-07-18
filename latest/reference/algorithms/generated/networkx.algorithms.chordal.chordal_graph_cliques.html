@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>chordal_graph_cliques &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>chordal_graph_cliques &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.chordal.chordal_graph_cliques.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -668,7 +668,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <dl class="py function">
 <dt class="sig sig-object py" id="networkx.algorithms.chordal.chordal_graph_cliques">
 <span class="sig-name descname"><span class="pre">chordal_graph_cliques</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/chordal.html#chordal_graph_cliques"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.algorithms.chordal.chordal_graph_cliques" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the set of maximal cliques of a chordal graph.</p>
+<dd><p>Returns all maximal cliques of a chordal graph.</p>
 <p>The algorithm breaks the graph in connected components and performs a
 maximum cardinality search in each component to get the cliques.</p>
 <dl class="field-list simple">
@@ -678,9 +678,11 @@ maximum cardinality search in each component to get the cliques.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>cliques</strong><span class="classifier">A set containing the maximal cliques in G.</span></dt><dd></dd>
+<dt>frozenset of nodes</dt><dd><p>Maximal cliques, each of which is a frozenset of
+nodes in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>. The order of cliques is arbitrary.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
@@ -708,7 +710,9 @@ graph is found to be non-chordal, a <code class="xref py py-exc docutils literal
 <span class="gp">... </span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">setlist</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">chordal_graph_cliques</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cliques</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chordal_graph_cliques</span><span class="p">(</span><span class="n">G</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cliques</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">frozenset({1, 2, 3})</span>
 </pre></div>
 </div>
 </dd></dl>

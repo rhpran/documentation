@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.link_analysis.pagerank_alg &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.link_analysis.pagerank_alg &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/link_analysis/pagerank_alg.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -226,7 +226,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pagerank&quot;</span><span class="p">,</span> <span class="s2">&quot;pagerank_numpy&quot;</span><span class="p">,</span> <span class="s2">&quot;pagerank_scipy&quot;</span><span class="p">,</span> <span class="s2">&quot;google_matrix&quot;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pagerank&quot;</span><span class="p">,</span> <span class="s2">&quot;google_matrix&quot;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="pagerank"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.pagerank_alg.pagerank.html#networkx.algorithms.link_analysis.pagerank_alg.pagerank">[docs]</a><span class="k">def</span> <span class="nf">pagerank</span><span class="p">(</span>
@@ -309,7 +309,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    pagerank_numpy, pagerank_scipy, google_matrix</span>
+<span class="sd">    google_matrix</span>
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
@@ -328,7 +328,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">       http://dbpubs.stanford.edu:8090/pub/showDoc.Fulltext?lang=en&amp;doc=1999-66&amp;format=pdf</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">pagerank_scipy</span><span class="p">(</span>
+    <span class="k">return</span> <span class="n">_pagerank_scipy</span><span class="p">(</span>
         <span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">personalization</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">,</span> <span class="n">tol</span><span class="p">,</span> <span class="n">nstart</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">dangling</span>
     <span class="p">)</span></div>
 
@@ -432,12 +432,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    A : NumPy matrix</span>
+<span class="sd">    A : 2D NumPy ndarray</span>
 <span class="sd">       Google matrix of the graph</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
-<span class="sd">    The matrix returned represents the transition matrix that describes the</span>
+<span class="sd">    The array returned represents the transition matrix that describes the</span>
 <span class="sd">    Markov chain used in PageRank. For PageRank to converge to a unique</span>
 <span class="sd">    solution (i.e., a unique stationary distribution in a Markov chain), the</span>
 <span class="sd">    transition matrix must be irreducible. In other words, it must be that</span>
@@ -450,19 +450,9 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    pagerank, pagerank_numpy, pagerank_scipy</span>
+<span class="sd">    pagerank</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Remove this warning in version 3.0</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="s2">&quot;google_matrix will return an np.ndarray instead of a np.matrix in</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;NetworkX version 3.0.&quot;</span><span class="p">,</span>
-        <span class="ne">FutureWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">nodelist</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">nodelist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -470,8 +460,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
     <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">N</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="c1"># TODO: Remove np.asmatrix wrapper in version 3.0</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">A</span>
 
     <span class="c1"># Personalization vector</span>
     <span class="k">if</span> <span class="n">personalization</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -496,11 +485,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
     <span class="n">A</span> <span class="o">/=</span> <span class="n">A</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>  <span class="c1"># Normalize rows to sum to 1</span>
 
-    <span class="c1"># TODO: Remove np.asmatrix wrapper in version 3.0</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">A</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">A</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">p</span></div>
 
 
-<div class="viewcode-block" id="pagerank_numpy"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.pagerank_alg.pagerank_numpy.html#networkx.algorithms.link_analysis.pagerank_alg.pagerank_numpy">[docs]</a><span class="k">def</span> <span class="nf">pagerank_numpy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">personalization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">dangling</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_pagerank_numpy</span><span class="p">(</span>
+    <span class="n">G</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">personalization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">dangling</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns the PageRank of the nodes in the graph.</span>
 
 <span class="sd">    PageRank computes a ranking of the nodes in the graph G based on</span>
@@ -542,8 +532,9 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from networkx.algorithms.link_analysis.pagerank_alg import _pagerank_numpy</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.DiGraph(nx.path_graph(4))</span>
-<span class="sd">    &gt;&gt;&gt; pr = nx.pagerank_numpy(G, alpha=0.9)</span>
+<span class="sd">    &gt;&gt;&gt; pr = _pagerank_numpy(G, alpha=0.9)</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -557,7 +548,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    pagerank, pagerank_scipy, google_matrix</span>
+<span class="sd">    pagerank, google_matrix</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>
@@ -568,8 +559,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">       The PageRank citation ranking: Bringing order to the Web. 1999</span>
 <span class="sd">       http://dbpubs.stanford.edu:8090/pub/showDoc.Fulltext?lang=en&amp;doc=1999-66&amp;format=pdf</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;networkx.pagerank_numpy is deprecated and will be removed in NetworkX 3.0, use networkx.pagerank instead.&quot;</span>
-    <span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -583,10 +572,10 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="c1"># eigenvector of largest eigenvalue is at ind, normalized</span>
     <span class="n">largest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">eigenvectors</span><span class="p">[:,</span> <span class="n">ind</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span><span class="o">.</span><span class="n">real</span>
     <span class="n">norm</span> <span class="o">=</span> <span class="n">largest</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">largest</span> <span class="o">/</span> <span class="n">norm</span><span class="p">)))</span></div>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">largest</span> <span class="o">/</span> <span class="n">norm</span><span class="p">)))</span>
 
 
-<div class="viewcode-block" id="pagerank_scipy"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy.html#networkx.algorithms.link_analysis.pagerank_alg.pagerank_scipy">[docs]</a><span class="k">def</span> <span class="nf">pagerank_scipy</span><span class="p">(</span>
+<span class="k">def</span> <span class="nf">_pagerank_scipy</span><span class="p">(</span>
     <span class="n">G</span><span class="p">,</span>
     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span>
     <span class="n">personalization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -646,8 +635,9 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from networkx.algorithms.link_analysis.pagerank_alg import _pagerank_scipy</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.DiGraph(nx.path_graph(4))</span>
-<span class="sd">    &gt;&gt;&gt; pr = nx.pagerank_scipy(G, alpha=0.9)</span>
+<span class="sd">    &gt;&gt;&gt; pr = _pagerank_scipy(G, alpha=0.9)</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -660,7 +650,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
-<span class="sd">    pagerank, pagerank_numpy, google_matrix</span>
+<span class="sd">    pagerank</span>
 
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
@@ -678,8 +668,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">       The PageRank citation ranking: Bringing order to the Web. 1999</span>
 <span class="sd">       http://dbpubs.stanford.edu:8090/pub/showDoc.Fulltext?lang=en&amp;doc=1999-66&amp;format=pdf</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;networkx.pagerank_scipy is deprecated and will be removed in NetworkX 3.0, use networkx.pagerank instead.&quot;</span>
-    <span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
     <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
     <span class="kn">import</span> <span class="nn">scipy.sparse</span>  <span class="c1"># call as sp.sparse</span>
@@ -728,7 +716,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xlast</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">err</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="o">*</span> <span class="n">tol</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodelist</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">x</span><span class="p">)))</span>
-    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">PowerIterationFailedConvergence</span><span class="p">(</span><span class="n">max_iter</span><span class="p">)</span></div>
+    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">PowerIterationFailedConvergence</span><span class="p">(</span><span class="n">max_iter</span><span class="p">)</span>
 </pre></div>
 
               </article>

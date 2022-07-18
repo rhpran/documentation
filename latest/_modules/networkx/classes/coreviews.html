@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.classes.coreviews &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.classes.coreviews &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/classes/coreviews.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -509,25 +509,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span>
 
-    <span class="c1"># FIXME should this just be removed? we don&#39;t use it, but someone might</span>
-<div class="viewcode-block" id="FilterAtlas.copy"><a class="viewcode-back" href="../../../reference/classes/generated/generated/networkx.classes.coreviews.FilterAtlas.copy.html#networkx.classes.coreviews.FilterAtlas.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-            <span class="p">(</span>
-                <span class="s2">&quot;FilterAtlas.copy is deprecated.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;It will be removed in NetworkX 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;Please open an Issue on https://github.com/networkx/networkx/issues</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;if you use this feature. We think that no one does use it.&quot;</span>
-            <span class="p">),</span>
-            <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>  <span class="c1"># check that NODE_OK has attr &#39;nodes&#39;</span>
-            <span class="n">node_ok_shorter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="n">node_ok_shorter</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">if</span> <span class="n">node_ok_shorter</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">{</span><span class="n">u</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="o">.</span><span class="n">nodes</span> <span class="k">if</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">}</span>
-        <span class="k">return</span> <span class="p">{</span><span class="n">u</span><span class="p">:</span> <span class="n">d</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="p">(</span><span class="n">u</span><span class="p">)}</span></div>
-
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">({</span><span class="n">nbr</span><span class="p">:</span> <span class="bp">self</span><span class="p">[</span><span class="n">nbr</span><span class="p">]</span> <span class="k">for</span> <span class="n">nbr</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">})</span>
 
@@ -561,38 +542,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
             <span class="k">return</span> <span class="n">FilterAtlas</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">new_node_ok</span><span class="p">)</span>
         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span>
-
-    <span class="c1"># FIXME should this just be removed? we don&#39;t use it, but someone might</span>
-<div class="viewcode-block" id="FilterAdjacency.copy"><a class="viewcode-back" href="../../../reference/classes/generated/generated/networkx.classes.coreviews.FilterAdjacency.copy.html#networkx.classes.coreviews.FilterAdjacency.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-            <span class="p">(</span>
-                <span class="s2">&quot;FilterAdjacency.copy is deprecated.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;It will be removed in NetworkX 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;Please open an Issue on https://github.com/networkx/networkx/issues</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;if you use this feature. We think that no one does use it.&quot;</span>
-            <span class="p">),</span>
-            <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>  <span class="c1"># check that NODE_OK has attr &#39;nodes&#39;</span>
-            <span class="n">node_ok_shorter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="n">node_ok_shorter</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">if</span> <span class="n">node_ok_shorter</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="n">u</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="n">v</span><span class="p">:</span> <span class="n">d</span>
-                    <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">EDGE_OK</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-                <span class="p">}</span>
-                <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="o">.</span><span class="n">nodes</span>
-                <span class="k">if</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span>
-            <span class="p">}</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="n">u</span><span class="p">:</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">d</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">EDGE_OK</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)}</span>
-            <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-        <span class="p">}</span></div>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">({</span><span class="n">nbr</span><span class="p">:</span> <span class="bp">self</span><span class="p">[</span><span class="n">nbr</span><span class="p">]</span> <span class="k">for</span> <span class="n">nbr</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">})</span>
@@ -628,34 +577,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">EDGE_OK</span><span class="p">(</span><span class="n">nbr</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="n">FilterAtlas</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">nbr</span><span class="p">],</span> <span class="n">new_node_ok</span><span class="p">)</span>
-        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">nbr</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span>
-
-    <span class="c1"># FIXME should this just be removed? we don&#39;t use it, but someone might</span>
-<div class="viewcode-block" id="FilterMultiInner.copy"><a class="viewcode-back" href="../../../reference/classes/generated/generated/networkx.classes.coreviews.FilterMultiInner.copy.html#networkx.classes.coreviews.FilterMultiInner.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-            <span class="p">(</span>
-                <span class="s2">&quot;FilterMultiInner.copy is deprecated.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;It will be removed in NetworkX 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;Please open an Issue on https://github.com/networkx/networkx/issues</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;if you use this feature. We think that no one does use it.&quot;</span>
-            <span class="p">),</span>
-            <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>  <span class="c1"># check that NODE_OK has attr &#39;nodes&#39;</span>
-            <span class="n">node_ok_shorter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="n">node_ok_shorter</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">if</span> <span class="n">node_ok_shorter</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="n">v</span><span class="p">:</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">d</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">EDGE_OK</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)}</span>
-                <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="o">.</span><span class="n">nodes</span>
-                <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span>
-            <span class="p">}</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="n">v</span><span class="p">:</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">d</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">EDGE_OK</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)}</span>
-            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-        <span class="p">}</span></div></div>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">nbr</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="FilterMultiAdjacency"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.classes.coreviews.FilterMultiAdjacency.html#networkx.classes.coreviews.FilterMultiAdjacency">[docs]</a><span class="k">class</span> <span class="nc">FilterMultiAdjacency</span><span class="p">(</span><span class="n">FilterAdjacency</span><span class="p">):</span>  <span class="c1"># multiedgedict</span>
@@ -666,43 +588,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="p">(</span><span class="n">nbr</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">EDGE_OK</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">nbr</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="n">FilterMultiInner</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="p">,</span> <span class="n">edge_ok</span><span class="p">)</span>
-        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span>
-
-    <span class="c1"># FIXME should this just be removed? we don&#39;t use it, but someone might</span>
-<div class="viewcode-block" id="FilterMultiAdjacency.copy"><a class="viewcode-back" href="../../../reference/classes/generated/generated/networkx.classes.coreviews.FilterMultiAdjacency.copy.html#networkx.classes.coreviews.FilterMultiAdjacency.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-            <span class="p">(</span>
-                <span class="s2">&quot;FilterMultiAdjacency.copy is deprecated.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;It will be removed in NetworkX 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;Please open an Issue on https://github.com/networkx/networkx/issues</span><span class="se">\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;if you use this feature. We think that no one does use it.&quot;</span>
-            <span class="p">),</span>
-            <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>  <span class="c1"># check that NODE_OK has attr &#39;nodes&#39;</span>
-            <span class="n">node_ok_shorter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-            <span class="n">node_ok_shorter</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">if</span> <span class="n">node_ok_shorter</span><span class="p">:</span>
-            <span class="n">my_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="o">.</span><span class="n">nodes</span>
-            <span class="k">return</span> <span class="p">{</span>
-                <span class="n">u</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="n">v</span><span class="p">:</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">d</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">kd</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">EDGE_OK</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)}</span>
-                    <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">kd</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-                    <span class="k">if</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">my_nodes</span>
-                <span class="p">}</span>
-                <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">my_nodes</span>
-                <span class="k">if</span> <span class="n">u</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span>
-            <span class="p">}</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="n">u</span><span class="p">:</span> <span class="p">{</span>
-                <span class="n">v</span><span class="p">:</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">d</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">kd</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">EDGE_OK</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)}</span>
-                <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">kd</span> <span class="ow">in</span> <span class="n">nbrs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-            <span class="p">}</span>
-            <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">nbrs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_atlas</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">NODE_OK</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-        <span class="p">}</span></div></div>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span></div>
 </pre></div>
 
               </article>

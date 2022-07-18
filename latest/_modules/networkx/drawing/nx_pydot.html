@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.drawing.nx_pydot &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.drawing.nx_pydot &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/drawing/nx_pydot.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -270,7 +270,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="s2">&quot;nx.nx_agraph.write_dot instead.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;See https://github.com/networkx/networkx/issues/5723&quot;</span>
     <span class="p">)</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">PendingDeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">P</span> <span class="o">=</span> <span class="n">to_pydot</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">path</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
     <span class="k">return</span></div>
@@ -307,7 +307,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="s2">&quot;nx.nx_agraph.read_dot instead.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;See https://github.com/networkx/networkx/issues/5723&quot;</span>
     <span class="p">)</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">PendingDeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="n">data</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
@@ -346,7 +346,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="s2">&quot;known issues and is not actively maintained.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;See https://github.com/networkx/networkx/issues/5723&quot;</span>
     <span class="p">)</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">PendingDeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">P</span><span class="o">.</span><span class="n">get_strict</span><span class="p">(</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pydot bug: get_strict() shouldn&#39;t take argument</span>
         <span class="n">multiedges</span> <span class="o">=</span> <span class="kc">False</span>
@@ -446,7 +446,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="s2">&quot;known issues and is not actively maintained.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;See https://github.com/networkx/networkx/issues/5723&quot;</span>
     <span class="p">)</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">PendingDeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="c1"># set Graphviz graph type</span>
     <span class="k">if</span> <span class="n">N</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
@@ -575,7 +575,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="s2">&quot;nx.nx_agraph.graphviz_layout instead.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;See https://github.com/networkx/networkx/issues/5723&quot;</span>
     <span class="p">)</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">PendingDeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">pydot_layout</span><span class="p">(</span><span class="n">G</span><span class="o">=</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="n">prog</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">)</span></div>
 
@@ -625,7 +625,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="s2">&quot;known issues and is not actively maintained.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;See https://github.com/networkx/networkx/issues/5723&quot;</span>
     <span class="p">)</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">PendingDeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">P</span> <span class="o">=</span> <span class="n">to_pydot</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">P</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>

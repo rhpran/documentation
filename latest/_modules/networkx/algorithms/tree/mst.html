@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.tree.mst &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.tree.mst &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/tree/mst.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -945,7 +945,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">return</span> <span class="n">T</span></div>
 
 
-<span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class="viewcode-block" id="random_spanning_tree"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.tree.mst.random_spanning_tree.html#networkx.algorithms.tree.mst.random_spanning_tree">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">random_spanning_tree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">multiplicative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Sample a random spanning tree using the edges weights of `G`.</span>
@@ -1164,7 +1164,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
             <span class="n">spanning_tree</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
             <span class="n">spanning_tree</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">spanning_tree</span>
-    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Something went wrong! Only </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="si">}</span><span class="s2"> edges in the spanning tree!&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Something went wrong! Only </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">U</span><span class="p">)</span><span class="si">}</span><span class="s2"> edges in the spanning tree!&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SpanningTreeIterator"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.tree.mst.SpanningTreeIterator.html#networkx.algorithms.tree.mst.SpanningTreeIterator">[docs]</a><span class="k">class</span> <span class="nc">SpanningTreeIterator</span><span class="p">:</span>

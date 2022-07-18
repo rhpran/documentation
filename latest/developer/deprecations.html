@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Deprecations &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>Deprecations &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/developer/deprecations.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -377,58 +377,30 @@ or it involves moving or deleting an entire function for example).</p>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">utils/misc.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">default_opener</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">utils/misc.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">empty_generator</span></code>.</p></li>
 <li><p>Remove <code class="docutils literal notranslate"><span class="pre">utils/contextmanagers.py</span></code> and related tests.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">drawing/nx_agraph.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">display_pygraphviz</span></code> and related tests.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/chordal.py</span></code> replace <code class="docutils literal notranslate"><span class="pre">chordal_graph_cliques</span></code> with <code class="docutils literal notranslate"><span class="pre">_chordal_graph_cliques</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/centrality/betweenness_centrality_subset.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">betweenness_centrality_source</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/centrality/betweenness.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">edge_betweeness</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/community_modularity_max.py</span></code> remove old name <code class="docutils literal notranslate"><span class="pre">_naive_greedy_modularity_communities</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">linalg/algebraicconnectivity.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">_CholeskySolver</span></code> and related code.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">convert_matrix.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">to_numpy_matrix</span></code> and <code class="docutils literal notranslate"><span class="pre">from_numpy_matrix</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">readwrite/json_graph/cytoscape.py</span></code>, change function signature for
 <code class="docutils literal notranslate"><span class="pre">cytoscape_graph</span></code> and <code class="docutils literal notranslate"><span class="pre">cytoscape_data</span></code> to replace the <code class="docutils literal notranslate"><span class="pre">attrs</span></code> keyword.
 argument with explicit <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">ident</span></code> keyword args.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">readwrite/json_graph/tree.py</span></code>, remove <code class="docutils literal notranslate"><span class="pre">attrs</span></code> kwarg from <code class="docutils literal notranslate"><span class="pre">tree_graph</span></code>
 and <code class="docutils literal notranslate"><span class="pre">tree_data</span></code>.</p></li>
-<li><p>Undo changes related to the removal of <code class="docutils literal notranslate"><span class="pre">pyyaml</span></code>. Remove the
-<code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> definitions from <code class="docutils literal notranslate"><span class="pre">networkx/__init__.py</span></code>,
-<code class="docutils literal notranslate"><span class="pre">networkx/readwrite/__init__.py</span></code> and <code class="docutils literal notranslate"><span class="pre">networkx/readwrite/nx_yaml.py</span></code> and
-remove <code class="docutils literal notranslate"><span class="pre">networkx/readwrite/tests/test_getattr_nxyaml_removal.py</span></code></p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">readwrite/gpickle.py</span></code> and related tests.</p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">readwrite/nx_shp.py</span></code> and related tests (add info in alternatives).</p></li>
 <li><p>Remove <code class="docutils literal notranslate"><span class="pre">copy</span></code> method in the coreview Filtered-related classes and related tests.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/link_analysis/pagerank_alg.py</span></code> replace <code class="docutils literal notranslate"><span class="pre">pagerank</span></code> with <code class="docutils literal notranslate"><span class="pre">pagerank_scipy</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/link_analysis/pagerank_alg.py</span></code> rename <code class="docutils literal notranslate"><span class="pre">pagerank_numpy</span></code> as <code class="docutils literal notranslate"><span class="pre">_pagerank_numpy</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">convert_matrix.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">order</span></code> kwarg from <code class="docutils literal notranslate"><span class="pre">to_pandas_edgelist</span></code> and docstring</p></li>
-<li><p>Remove <code class="docutils literal notranslate"><span class="pre">readwrite/json_graph/jit.py</span></code> and related tests.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">utils/misc.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">generate_unique_node</span></code> and related tests.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/link_analysis/hits_alg.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">hub_matrix</span></code> and <code class="docutils literal notranslate"><span class="pre">authority_matrix</span></code></p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/link_analysis/hits_alg.py</span></code>, remove <code class="docutils literal notranslate"><span class="pre">hits_numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">hist_scipy</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">classes</span></code> remove the <code class="docutils literal notranslate"><span class="pre">ordered</span></code> module and the four <code class="docutils literal notranslate"><span class="pre">Ordered</span></code>
-classes defined therein.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">utils/decorators.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">preserve_random_state</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/community/quality.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">coverage</span></code> and <code class="docutils literal notranslate"><span class="pre">performance</span></code>.</p></li>
 <li><p>Remove <code class="docutils literal notranslate"><span class="pre">testing</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">linalg/graphmatrix.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">adj_matrix</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/similarity.py</span></code> replace <code class="docutils literal notranslate"><span class="pre">simrank_similarity</span></code> with <code class="docutils literal notranslate"><span class="pre">simrank_similarity_numpy</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/assortativity/mixing.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">numeric_mixing_matrix</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/assortativity/connectivity.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">k_nearest_neighbors</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">utils/decorators.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">random_state</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/operators/binary.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">name</span></code> kwarg from <code class="docutils literal notranslate"><span class="pre">union</span></code> and docstring.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">generators/geometric.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">euclidean</span></code> and tests.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/node_classification/</span></code> remove <code class="docutils literal notranslate"><span class="pre">hmn.py</span></code>, <code class="docutils literal notranslate"><span class="pre">lgc.py</span></code>,
-and <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> after moving the functions defined therein into the newly created
-<code class="docutils literal notranslate"><span class="pre">node_classification.py</span></code> module, which will replace the current package.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/link_analysis/pagerank_alg.py</span></code>, remove the
 <code class="docutils literal notranslate"><span class="pre">np.asmatrix</span></code> wrappers on the return values of <code class="docutils literal notranslate"><span class="pre">google_matrix</span></code> and remove
 the associated FutureWarning.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">convert_matrix.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">from_scipy_sparse_matrix</span></code> and
-<code class="docutils literal notranslate"><span class="pre">to_scipy_sparse_matrix</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">linalg/attrmatrix.py</span></code> remove the FutureWarning, update the
 return type by removing <code class="docutils literal notranslate"><span class="pre">np.asmatrix</span></code>, and update the docstring to
 reflect that the function returns a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> instance.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">generators/small.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">make_small_graph</span></code> and
 <code class="docutils literal notranslate"><span class="pre">make_small_undirected_graph</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">convert_matrix.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">to_numpy_recarray</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">classes/function.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">info</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/community/modularity_max.py</span></code>, remove the deprecated
 <code class="docutils literal notranslate"><span class="pre">n_communities</span></code> parameter from the <code class="docutils literal notranslate"><span class="pre">greedy_modularity_communities</span></code>
@@ -437,7 +409,6 @@ function.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">utils/misc.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">dict_to_numpy_array1</span></code> and <code class="docutils literal notranslate"><span class="pre">dict_to_numpy_array2</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">utils/misc.py</span></code> remove <code class="docutils literal notranslate"><span class="pre">to_tuple</span></code>.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">algorithms/matching.py</span></code>, remove parameter <code class="docutils literal notranslate"><span class="pre">maxcardinality</span></code> from <code class="docutils literal notranslate"><span class="pre">min_weight_matching</span></code>.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">drawing/nx_pydot.py</span></code>, change PendingDeprecationWarning to DeprecationWarning.</p></li>
 </ul>
 </section>
 <section id="version-3-2">
@@ -445,6 +416,7 @@ function.</p></li>
 <ul class="simple">
 <li><p>In <code class="docutils literal notranslate"><span class="pre">generators/directed.py</span></code> remove the <code class="docutils literal notranslate"><span class="pre">create_using</span></code> keyword argument
 for the <code class="docutils literal notranslate"><span class="pre">scale_free_graph</span></code> function.</p></li>
+<li><p>Remove pydot functionality <code class="docutils literal notranslate"><span class="pre">drawing/nx_pydot.py</span></code>, if pydot is still not being maintained. See #5723</p></li>
 </ul>
 </section>
 </section>

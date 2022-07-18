@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.components.strongly_connected &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.components.strongly_connected &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/components/strongly_connected.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -608,6 +608,29 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    ------</span>
 <span class="sd">    NetworkXNotImplemented</span>
 <span class="sd">        If G is undirected.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Contracting two sets of strongly connected nodes into two distinct SCC</span>
+<span class="sd">    using the barbell graph.</span>
+
+<span class="sd">    &gt;&gt;&gt; G = nx.barbell_graph(4, 0)</span>
+<span class="sd">    &gt;&gt;&gt; G.remove_edge(3, 4)</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.DiGraph(G)</span>
+<span class="sd">    &gt;&gt;&gt; H = nx.condensation(G)</span>
+<span class="sd">    &gt;&gt;&gt; H.nodes.data()</span>
+<span class="sd">    NodeDataView({0: {&#39;members&#39;: {0, 1, 2, 3}}, 1: {&#39;members&#39;: {4, 5, 6, 7}}})</span>
+<span class="sd">    &gt;&gt;&gt; H.graph[&#39;mapping&#39;]</span>
+<span class="sd">    {0: 0, 1: 0, 2: 0, 3: 0, 4: 1, 5: 1, 6: 1, 7: 1}</span>
+
+<span class="sd">    Contracting a complete graph into one single SCC.</span>
+
+<span class="sd">    &gt;&gt;&gt; G = nx.complete_graph(7, create_using=nx.DiGraph)</span>
+<span class="sd">    &gt;&gt;&gt; H = nx.condensation(G)</span>
+<span class="sd">    &gt;&gt;&gt; H.nodes</span>
+<span class="sd">    NodeView((0,))</span>
+<span class="sd">    &gt;&gt;&gt; H.nodes.data()</span>
+<span class="sd">    NodeDataView({0: {&#39;members&#39;: {0, 1, 2, 3, 4, 5, 6}}})</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>

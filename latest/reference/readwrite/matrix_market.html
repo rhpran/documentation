@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Matrix Market &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>Matrix Market &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,12 +42,12 @@
     <script src="../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/readwrite/matrix_market.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Drawing" href="../drawing.html" />
-    <link rel="prev" title="write_shp" href="generated/networkx.readwrite.nx_shp.write_shp.html" />
+    <link rel="prev" title="generate_pajek" href="generated/networkx.readwrite.pajek.generate_pajek.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
   </head>
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -277,11 +277,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gpickle.html">
-     Pickle
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="graphml.html">
      GraphML
     </a>
@@ -304,11 +299,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
    <li class="toctree-l2">
     <a class="reference internal" href="pajek.html">
      Pajek
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nx_shp.html">
-     GIS Shapefile
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -488,7 +478,7 @@ sparse matrices:</p>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Read from file</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fh</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_scipy_sparse_matrix</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">mmread</span><span class="p">(</span><span class="n">fh</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_scipy_sparse_array</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">mmread</span><span class="p">(</span><span class="n">fh</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="o">==</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
 <span class="go">True</span>
 </pre></div>

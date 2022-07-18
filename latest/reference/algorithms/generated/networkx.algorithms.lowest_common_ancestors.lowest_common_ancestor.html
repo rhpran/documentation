@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>lowest_common_ancestor &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>lowest_common_ancestor &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,11 +42,11 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.lowest_common_ancestors.lowest_common_ancestor.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Matching" href="../matching.html" />
+    <link rel="next" title="naive_all_pairs_lowest_common_ancestor" href="networkx.algorithms.lowest_common_ancestors.naive_all_pairs_lowest_common_ancestor.html" />
     <link rel="prev" title="tree_all_pairs_lowest_common_ancestor" href="networkx.algorithms.lowest_common_ancestors.tree_all_pairs_lowest_common_ancestor.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -697,6 +697,19 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 Takes n log(n) time in the size of the graph.
 See <a class="reference internal" href="networkx.algorithms.lowest_common_ancestors.all_pairs_lowest_common_ancestor.html#networkx.algorithms.lowest_common_ancestors.all_pairs_lowest_common_ancestor" title="networkx.algorithms.lowest_common_ancestors.all_pairs_lowest_common_ancestor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_pairs_lowest_common_ancestor</span></code></a> when you have
 more than one pair of nodes of interest.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">lowest_common_ancestor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>We can also set <code class="xref py py-obj docutils literal notranslate"><span class="pre">default</span></code> argument as below. The value of default is returned
+if there are no common ancestors of given two nodes.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">([(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">lowest_common_ancestor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;No common ancestors!&quot;</span><span class="p">)</span>
+<span class="go">&#39;No common ancestors!&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

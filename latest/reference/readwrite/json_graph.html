@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>JSON &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>JSON &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/readwrite/json_graph.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -277,11 +277,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gpickle.html">
-     Pickle
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="graphml.html">
      GraphML
     </a>
@@ -304,11 +299,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
    <li class="toctree-l2">
     <a class="reference internal" href="pajek.html">
      Pajek
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nx_shp.html">
-     GIS Shapefile
     </a>
    </li>
    <li class="toctree-l2">
@@ -414,23 +404,17 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.adjacency_graph.html#networkx.readwrite.json_graph.adjacency_graph" title="networkx.readwrite.json_graph.adjacency_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency_graph</span></code></a>(data[, directed, ...])</p></td>
 <td><p>Returns graph from adjacency data format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.cytoscape_data.html#networkx.readwrite.json_graph.cytoscape_data" title="networkx.readwrite.json_graph.cytoscape_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cytoscape_data</span></code></a>(G[, attrs, name, ident])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.cytoscape_data.html#networkx.readwrite.json_graph.cytoscape_data" title="networkx.readwrite.json_graph.cytoscape_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cytoscape_data</span></code></a>(G[, name, ident])</p></td>
 <td><p>Returns data in Cytoscape JSON format (cyjs).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.cytoscape_graph.html#networkx.readwrite.json_graph.cytoscape_graph" title="networkx.readwrite.json_graph.cytoscape_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cytoscape_graph</span></code></a>(data[, attrs, name, ident])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.cytoscape_graph.html#networkx.readwrite.json_graph.cytoscape_graph" title="networkx.readwrite.json_graph.cytoscape_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cytoscape_graph</span></code></a>(data[, name, ident])</p></td>
 <td><p>Create a NetworkX graph from a dictionary in cytoscape JSON format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.tree_data.html#networkx.readwrite.json_graph.tree_data" title="networkx.readwrite.json_graph.tree_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tree_data</span></code></a>(G, root[, attrs, ident, children])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.tree_data.html#networkx.readwrite.json_graph.tree_data" title="networkx.readwrite.json_graph.tree_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tree_data</span></code></a>(G, root[, ident, children])</p></td>
 <td><p>Returns data in tree format that is suitable for JSON serialization and use in Javascript documents.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.tree_graph.html#networkx.readwrite.json_graph.tree_graph" title="networkx.readwrite.json_graph.tree_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tree_graph</span></code></a>(data[, attrs, ident, children])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.tree_graph.html#networkx.readwrite.json_graph.tree_graph" title="networkx.readwrite.json_graph.tree_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tree_graph</span></code></a>(data[, ident, children])</p></td>
 <td><p>Returns graph from tree data format.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.jit_data.html#networkx.readwrite.json_graph.jit_data" title="networkx.readwrite.json_graph.jit_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jit_data</span></code></a>(G[, indent, default])</p></td>
-<td><p>Returns data in JIT JSON format.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.readwrite.json_graph.jit_graph.html#networkx.readwrite.json_graph.jit_graph" title="networkx.readwrite.json_graph.jit_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jit_graph</span></code></a>(data[, create_using])</p></td>
-<td><p>Read a graph from JIT JSON.</p></td>
 </tr>
 </tbody>
 </table>

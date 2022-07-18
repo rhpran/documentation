@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.community.quality &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.community.quality &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/community/quality.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -234,7 +234,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="kn">import</span> <span class="n">not_implemented_for</span>
 <span class="kn">from</span> <span class="nn">networkx.utils.decorators</span> <span class="kn">import</span> <span class="n">argmap</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;coverage&quot;</span><span class="p">,</span> <span class="s2">&quot;modularity&quot;</span><span class="p">,</span> <span class="s2">&quot;performance&quot;</span><span class="p">,</span> <span class="s2">&quot;partition_quality&quot;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;modularity&quot;</span><span class="p">,</span> <span class="s2">&quot;partition_quality&quot;</span><span class="p">]</span>
 
 
 <span class="k">class</span> <span class="nc">NotAPartition</span><span class="p">(</span><span class="n">NetworkXError</span><span class="p">):</span>
@@ -360,109 +360,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="c1">#     return sum(1 for u, v in nx.non_edges(G) if aff[u] != aff[v])</span>
     <span class="c1">#</span>
     <span class="k">return</span> <span class="n">inter_community_edges</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">complement</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">partition</span><span class="p">)</span>
-
-
-<div class="viewcode-block" id="performance"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.community.quality.performance.html#networkx.algorithms.community.quality.performance">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s2">&quot;multigraph&quot;</span><span class="p">)</span>
-<span class="nd">@require_partition</span>
-<span class="k">def</span> <span class="nf">performance</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the performance of a partition.</span>
-
-<span class="sd">    .. deprecated:: 2.6</span>
-<span class="sd">       Use `partition_quality` instead.</span>
-
-<span class="sd">    The *performance* of a partition is the number of</span>
-<span class="sd">    intra-community edges plus inter-community non-edges divided by the total</span>
-<span class="sd">    number of potential edges.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    G : NetworkX graph</span>
-<span class="sd">        A simple graph (directed or undirected).</span>
-
-<span class="sd">    partition : sequence</span>
-<span class="sd">        Partition of the nodes of `G`, represented as a sequence of</span>
-<span class="sd">        sets of nodes. Each block of the partition represents a</span>
-<span class="sd">        community.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    float</span>
-<span class="sd">        The performance of the partition, as defined above.</span>
-
-<span class="sd">    Raises</span>
-<span class="sd">    ------</span>
-<span class="sd">    NetworkXError</span>
-<span class="sd">        If `partition` is not a valid partition of the nodes of `G`.</span>
-
-<span class="sd">    References</span>
-<span class="sd">    ----------</span>
-<span class="sd">    .. [1] Santo Fortunato.</span>
-<span class="sd">           &quot;Community Detection in Graphs&quot;.</span>
-<span class="sd">           *Physical Reports*, Volume 486, Issue 3--5 pp. 75--174</span>
-<span class="sd">           &lt;https://arxiv.org/abs/0906.0612&gt;</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Compute the number of intra-community edges and inter-community</span>
-    <span class="c1"># edges.</span>
-    <span class="n">intra_edges</span> <span class="o">=</span> <span class="n">intra_community_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">)</span>
-    <span class="n">inter_edges</span> <span class="o">=</span> <span class="n">inter_community_non_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">)</span>
-    <span class="c1"># Compute the number of edges in the complete graph (directed or</span>
-    <span class="c1"># undirected, as it depends on `G`) on `n` nodes.</span>
-    <span class="c1">#</span>
-    <span class="c1"># (If `G` is an undirected graph, we divide by two since we have</span>
-    <span class="c1"># double-counted each potential edge. We use integer division since</span>
-    <span class="c1"># `total_pairs` is guaranteed to be even.)</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="n">total_pairs</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="n">total_pairs</span> <span class="o">//=</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">intra_edges</span> <span class="o">+</span> <span class="n">inter_edges</span><span class="p">)</span> <span class="o">/</span> <span class="n">total_pairs</span></div>
-
-
-<div class="viewcode-block" id="coverage"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.community.quality.coverage.html#networkx.algorithms.community.quality.coverage">[docs]</a><span class="nd">@require_partition</span>
-<span class="k">def</span> <span class="nf">coverage</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the coverage of a partition.</span>
-
-<span class="sd">    .. deprecated:: 2.6</span>
-<span class="sd">       Use `partition_quality` instead.</span>
-
-<span class="sd">    The *coverage* of a partition is the ratio of the number of</span>
-<span class="sd">    intra-community edges to the total number of edges in the graph.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    G : NetworkX graph</span>
-
-<span class="sd">    partition : sequence</span>
-<span class="sd">        Partition of the nodes of `G`, represented as a sequence of</span>
-<span class="sd">        sets of nodes. Each block of the partition represents a</span>
-<span class="sd">        community.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    float</span>
-<span class="sd">        The coverage of the partition, as defined above.</span>
-
-<span class="sd">    Raises</span>
-<span class="sd">    ------</span>
-<span class="sd">    NetworkXError</span>
-<span class="sd">        If `partition` is not a valid partition of the nodes of `G`.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    If `G` is a multigraph, the multiplicity of edges is counted.</span>
-
-<span class="sd">    References</span>
-<span class="sd">    ----------</span>
-<span class="sd">    .. [1] Santo Fortunato.</span>
-<span class="sd">           &quot;Community Detection in Graphs&quot;.</span>
-<span class="sd">           *Physical Reports*, Volume 486, Issue 3--5 pp. 75--174</span>
-<span class="sd">           &lt;https://arxiv.org/abs/0906.0612&gt;</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">intra_edges</span> <span class="o">=</span> <span class="n">intra_community_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">partition</span><span class="p">)</span>
-    <span class="n">total_edges</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">intra_edges</span> <span class="o">/</span> <span class="n">total_edges</span></div>
 
 
 <div class="viewcode-block" id="modularity"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.community.quality.modularity.html#networkx.algorithms.community.quality.modularity">[docs]</a><span class="k">def</span> <span class="nf">modularity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">communities</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>

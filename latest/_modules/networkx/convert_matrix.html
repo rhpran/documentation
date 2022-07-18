@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.convert_matrix &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.convert_matrix &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/convert_matrix.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -256,17 +256,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="kn">import</span> <span class="n">not_implemented_for</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;from_numpy_matrix&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;to_numpy_matrix&quot;</span><span class="p">,</span>
     <span class="s2">&quot;from_pandas_adjacency&quot;</span><span class="p">,</span>
     <span class="s2">&quot;to_pandas_adjacency&quot;</span><span class="p">,</span>
     <span class="s2">&quot;from_pandas_edgelist&quot;</span><span class="p">,</span>
     <span class="s2">&quot;to_pandas_edgelist&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;to_numpy_recarray&quot;</span><span class="p">,</span>
     <span class="s2">&quot;from_scipy_sparse_array&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;from_scipy_sparse_matrix&quot;</span><span class="p">,</span>
     <span class="s2">&quot;to_scipy_sparse_array&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;to_scipy_sparse_matrix&quot;</span><span class="p">,</span>
     <span class="s2">&quot;from_numpy_array&quot;</span><span class="p">,</span>
     <span class="s2">&quot;to_numpy_array&quot;</span><span class="p">,</span>
 <span class="p">]</span>
@@ -420,7 +415,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    1  2  1</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.from_pandas_adjacency(df)</span>
 <span class="sd">    &gt;&gt;&gt; G.name = &quot;Graph from pandas adjacency matrix&quot;</span>
-<span class="sd">    &gt;&gt;&gt; print(nx.info(G))</span>
+<span class="sd">    &gt;&gt;&gt; print(G)</span>
 <span class="sd">    Graph named &#39;Graph from pandas adjacency matrix&#39; with 2 nodes and 3 edges</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -444,7 +439,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="n">target</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span>
     <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">edge_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns the graph edge list as a Pandas DataFrame.</span>
@@ -468,12 +462,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    dtype : dtype, default None</span>
 <span class="sd">        Use to create the DataFrame. Data type to force.</span>
 <span class="sd">        Only a single dtype is allowed. If None, infer.</span>
-
-<span class="sd">    order : None</span>
-<span class="sd">        An unused parameter mistakenly included in the function.</span>
-
-<span class="sd">        .. deprecated:: 2.6</span>
-<span class="sd">            This is deprecated and will be removed in NetworkX v3.0.</span>
 
 <span class="sd">    edge_key : str or int or None, optional (default=None)</span>
 <span class="sd">        A valid column name (string or integer) for the edge keys (for the</span>
@@ -699,323 +687,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">return</span> <span class="n">g</span></div>
 
 
-<div class="viewcode-block" id="to_numpy_matrix"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_numpy_matrix.html#networkx.convert_matrix.to_numpy_matrix">[docs]</a><span class="k">def</span> <span class="nf">to_numpy_matrix</span><span class="p">(</span>
-    <span class="n">G</span><span class="p">,</span>
-    <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">multigraph_weight</span><span class="o">=</span><span class="nb">sum</span><span class="p">,</span>
-    <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span>
-    <span class="n">nonedge</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-<span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the graph adjacency matrix as a NumPy matrix.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    G : graph</span>
-<span class="sd">        The NetworkX graph used to construct the NumPy matrix.</span>
-
-<span class="sd">    nodelist : list, optional</span>
-<span class="sd">        The rows and columns are ordered according to the nodes in `nodelist`.</span>
-<span class="sd">        If `nodelist` is None, then the ordering is produced by G.nodes().</span>
-
-<span class="sd">    dtype : NumPy data type, optional</span>
-<span class="sd">        A valid single NumPy data type used to initialize the array.</span>
-<span class="sd">        This must be a simple type such as int or numpy.float64 and</span>
-<span class="sd">        not a compound data type (see to_numpy_recarray)</span>
-<span class="sd">        If None, then the NumPy default is used.</span>
-
-<span class="sd">    order : {&#39;C&#39;, &#39;F&#39;}, optional</span>
-<span class="sd">        Whether to store multidimensional data in C- or Fortran-contiguous</span>
-<span class="sd">        (row- or column-wise) order in memory. If None, then the NumPy default</span>
-<span class="sd">        is used.</span>
-
-<span class="sd">    multigraph_weight : {sum, min, max}, optional</span>
-<span class="sd">        An operator that determines how weights in multigraphs are handled.</span>
-<span class="sd">        The default is to sum the weights of the multiple edges.</span>
-
-<span class="sd">    weight : string or None optional (default = &#39;weight&#39;)</span>
-<span class="sd">        The edge attribute that holds the numerical value used for</span>
-<span class="sd">        the edge weight. If an edge does not have that attribute, then the</span>
-<span class="sd">        value 1 is used instead.</span>
-
-<span class="sd">    nonedge : float (default = 0.0)</span>
-<span class="sd">        The matrix values corresponding to nonedges are typically set to zero.</span>
-<span class="sd">        However, this could be undesirable if there are matrix values</span>
-<span class="sd">        corresponding to actual edges that also have the value zero. If so,</span>
-<span class="sd">        one might prefer nonedges to have some other value, such as nan.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    M : NumPy matrix</span>
-<span class="sd">        Graph adjacency matrix</span>
-
-<span class="sd">    See Also</span>
-<span class="sd">    --------</span>
-<span class="sd">    to_numpy_recarray</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    For directed graphs, entry i,j corresponds to an edge from i to j.</span>
-
-<span class="sd">    The matrix entries are assigned to the weight edge attribute. When</span>
-<span class="sd">    an edge does not have a weight attribute, the value of the entry is set to</span>
-<span class="sd">    the number 1.  For multiple (parallel) edges, the values of the entries</span>
-<span class="sd">    are determined by the `multigraph_weight` parameter.  The default is to</span>
-<span class="sd">    sum the weight attributes for each of the parallel edges.</span>
-
-<span class="sd">    When `nodelist` does not contain every node in `G`, the matrix is built</span>
-<span class="sd">    from the subgraph of `G` that is induced by the nodes in `nodelist`.</span>
-
-<span class="sd">    The convention used for self-loop edges in graphs is to assign the</span>
-<span class="sd">    diagonal matrix entry value to the weight attribute of the edge</span>
-<span class="sd">    (or the number 1 if the edge has no weight attribute).  If the</span>
-<span class="sd">    alternate convention of doubling the edge weight is desired the</span>
-<span class="sd">    resulting Numpy matrix can be modified as follows:</span>
-
-<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.Graph([(1, 1)])</span>
-<span class="sd">    &gt;&gt;&gt; A = nx.to_numpy_matrix(G)</span>
-<span class="sd">    &gt;&gt;&gt; A</span>
-<span class="sd">    matrix([[1.]])</span>
-<span class="sd">    &gt;&gt;&gt; A[np.diag_indices_from(A)] *= 2</span>
-<span class="sd">    &gt;&gt;&gt; A</span>
-<span class="sd">    matrix([[2.]])</span>
-
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.MultiDiGraph()</span>
-<span class="sd">    &gt;&gt;&gt; G.add_edge(0, 1, weight=2)</span>
-<span class="sd">    0</span>
-<span class="sd">    &gt;&gt;&gt; G.add_edge(1, 0)</span>
-<span class="sd">    0</span>
-<span class="sd">    &gt;&gt;&gt; G.add_edge(2, 2, weight=3)</span>
-<span class="sd">    0</span>
-<span class="sd">    &gt;&gt;&gt; G.add_edge(2, 2)</span>
-<span class="sd">    1</span>
-<span class="sd">    &gt;&gt;&gt; nx.to_numpy_matrix(G, nodelist=[0, 1, 2])</span>
-<span class="sd">    matrix([[0., 2., 0.],</span>
-<span class="sd">            [1., 0., 0.],</span>
-<span class="sd">            [0., 0., 4.]])</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;to_numpy_matrix is deprecated and will be removed in NetworkX 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;Use to_numpy_array instead, e.g. np.asmatrix(to_numpy_array(G, **kwargs))&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-    <span class="n">A</span> <span class="o">=</span> <span class="n">to_numpy_array</span><span class="p">(</span>
-        <span class="n">G</span><span class="p">,</span>
-        <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">,</span>
-        <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
-        <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
-        <span class="n">multigraph_weight</span><span class="o">=</span><span class="n">multigraph_weight</span><span class="p">,</span>
-        <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span>
-        <span class="n">nonedge</span><span class="o">=</span><span class="n">nonedge</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asmatrix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">M</span></div>
-
-
-<div class="viewcode-block" id="from_numpy_matrix"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.from_numpy_matrix.html#networkx.convert_matrix.from_numpy_matrix">[docs]</a><span class="k">def</span> <span class="nf">from_numpy_matrix</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">parallel_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns a graph from numpy matrix.</span>
-
-<span class="sd">    The numpy matrix is interpreted as an adjacency matrix for the graph.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    A : numpy matrix</span>
-<span class="sd">        An adjacency matrix representation of a graph</span>
-
-<span class="sd">    parallel_edges : Boolean</span>
-<span class="sd">        If True, `create_using` is a multigraph, and `A` is an</span>
-<span class="sd">        integer matrix, then entry *(i, j)* in the matrix is interpreted as the</span>
-<span class="sd">        number of parallel edges joining vertices *i* and *j* in the graph.</span>
-<span class="sd">        If False, then the entries in the adjacency matrix are interpreted as</span>
-<span class="sd">        the weight of a single edge joining the vertices.</span>
-
-<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
-<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    For directed graphs, explicitly mention create_using=nx.DiGraph,</span>
-<span class="sd">    and entry i,j of A corresponds to an edge from i to j.</span>
-
-<span class="sd">    If `create_using` is :class:`networkx.MultiGraph` or</span>
-<span class="sd">    :class:`networkx.MultiDiGraph`, `parallel_edges` is True, and the</span>
-<span class="sd">    entries of `A` are of type :class:`int`, then this function returns a</span>
-<span class="sd">    multigraph (constructed from `create_using`) with parallel edges.</span>
-
-<span class="sd">    If `create_using` indicates an undirected multigraph, then only the edges</span>
-<span class="sd">    indicated by the upper triangle of the matrix `A` will be added to the</span>
-<span class="sd">    graph.</span>
-
-<span class="sd">    If the numpy matrix has a single data type for each matrix entry it</span>
-<span class="sd">    will be converted to an appropriate Python data type.</span>
-
-<span class="sd">    If the numpy matrix has a user-specified compound data type the names</span>
-<span class="sd">    of the data fields will be used as attribute keys in the resulting</span>
-<span class="sd">    NetworkX graph.</span>
-
-<span class="sd">    See Also</span>
-<span class="sd">    --------</span>
-<span class="sd">    to_numpy_recarray</span>
-
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    Simple integer weights on edges:</span>
-
-<span class="sd">    &gt;&gt;&gt; import numpy as np</span>
-<span class="sd">    &gt;&gt;&gt; A = np.array([[1, 1], [2, 1]])</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.from_numpy_matrix(A)</span>
-
-<span class="sd">    If `create_using` indicates a multigraph and the matrix has only integer</span>
-<span class="sd">    entries and `parallel_edges` is False, then the entries will be treated</span>
-<span class="sd">    as weights for edges joining the nodes (without creating parallel edges):</span>
-
-<span class="sd">    &gt;&gt;&gt; A = np.array([[1, 1], [1, 2]])</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.from_numpy_matrix(A, create_using=nx.MultiGraph)</span>
-<span class="sd">    &gt;&gt;&gt; G[1][1]</span>
-<span class="sd">    AtlasView({0: {&#39;weight&#39;: 2}})</span>
-
-<span class="sd">    If `create_using` indicates a multigraph and the matrix has only integer</span>
-<span class="sd">    entries and `parallel_edges` is True, then the entries will be treated</span>
-<span class="sd">    as the number of parallel edges joining those two vertices:</span>
-
-<span class="sd">    &gt;&gt;&gt; A = np.array([[1, 1], [1, 2]])</span>
-<span class="sd">    &gt;&gt;&gt; temp = nx.MultiGraph()</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.from_numpy_matrix(A, parallel_edges=True, create_using=temp)</span>
-<span class="sd">    &gt;&gt;&gt; G[1][1]</span>
-<span class="sd">    AtlasView({0: {&#39;weight&#39;: 1}, 1: {&#39;weight&#39;: 1}})</span>
-
-<span class="sd">    User defined compound data type on edges:</span>
-
-<span class="sd">    &gt;&gt;&gt; dt = [(&quot;weight&quot;, float), (&quot;cost&quot;, int)]</span>
-<span class="sd">    &gt;&gt;&gt; A = np.array([[(1.0, 2)]], dtype=dt)</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.from_numpy_matrix(A)</span>
-<span class="sd">    &gt;&gt;&gt; list(G.edges())</span>
-<span class="sd">    [(0, 0)]</span>
-<span class="sd">    &gt;&gt;&gt; G[0][0][&quot;cost&quot;]</span>
-<span class="sd">    2</span>
-<span class="sd">    &gt;&gt;&gt; G[0][0][&quot;weight&quot;]</span>
-<span class="sd">    1.0</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;from_numpy_matrix is deprecated and will be removed in NetworkX 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;Use from_numpy_array instead, e.g. from_numpy_array(A, **kwargs)&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">from_numpy_array</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">parallel_edges</span><span class="o">=</span><span class="n">parallel_edges</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">create_using</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="to_numpy_recarray"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_numpy_recarray.html#networkx.convert_matrix.to_numpy_recarray">[docs]</a><span class="nd">@not_implemented_for</span><span class="p">(</span><span class="s2">&quot;multigraph&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">to_numpy_recarray</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the graph adjacency matrix as a NumPy recarray.</span>
-
-<span class="sd">    .. deprecated:: 2.7</span>
-
-<span class="sd">       ``to_numpy_recarray`` is deprecated and will be removed in NetworkX 3.0.</span>
-<span class="sd">       Use ``nx.to_numpy_array(G, dtype=dtype, weight=None).view(np.recarray)``</span>
-<span class="sd">       instead.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    G : graph</span>
-<span class="sd">        The NetworkX graph used to construct the NumPy recarray.</span>
-
-<span class="sd">    nodelist : list, optional</span>
-<span class="sd">       The rows and columns are ordered according to the nodes in `nodelist`.</span>
-<span class="sd">       If `nodelist` is None, then the ordering is produced by G.nodes().</span>
-
-<span class="sd">    dtype : NumPy data-type, optional</span>
-<span class="sd">        A valid NumPy named dtype used to initialize the NumPy recarray.</span>
-<span class="sd">        The data type names are assumed to be keys in the graph edge attribute</span>
-<span class="sd">        dictionary. The default is ``dtype([(&quot;weight&quot;, float)])``.</span>
-
-<span class="sd">    order : {&#39;C&#39;, &#39;F&#39;}, optional</span>
-<span class="sd">        Whether to store multidimensional data in C- or Fortran-contiguous</span>
-<span class="sd">        (row- or column-wise) order in memory. If None, then the NumPy default</span>
-<span class="sd">        is used.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    M : NumPy recarray</span>
-<span class="sd">       The graph with specified edge data as a Numpy recarray</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    When `nodelist` does not contain every node in `G`, the adjacency</span>
-<span class="sd">    matrix is built from the subgraph of `G` that is induced by the nodes in</span>
-<span class="sd">    `nodelist`.</span>
-
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.Graph()</span>
-<span class="sd">    &gt;&gt;&gt; G.add_edge(1, 2, weight=7.0, cost=5)</span>
-<span class="sd">    &gt;&gt;&gt; A = nx.to_numpy_recarray(G, dtype=[(&quot;weight&quot;, float), (&quot;cost&quot;, int)])</span>
-<span class="sd">    &gt;&gt;&gt; print(A.weight)</span>
-<span class="sd">    [[0. 7.]</span>
-<span class="sd">     [7. 0.]]</span>
-<span class="sd">    &gt;&gt;&gt; print(A.cost)</span>
-<span class="sd">    [[0 5]</span>
-<span class="sd">     [5 0]]</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;to_numpy_recarray is deprecated and will be removed in version 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;Use to_numpy_array instead::</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;    nx.to_numpy_array(G, dtype=dtype, weight=None).view(np.recarray)&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">dtype</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)]</span>
-
-    <span class="k">if</span> <span class="n">nodelist</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">nodelist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-        <span class="n">nodeset</span> <span class="o">=</span> <span class="n">G</span>
-        <span class="n">nlen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">nlen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodelist</span><span class="p">)</span>
-        <span class="n">nodeset</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nbunch_iter</span><span class="p">(</span><span class="n">nodelist</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">nlen</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodeset</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nodelist</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
-                    <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> in nodelist is not in G&quot;</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;nodelist contains duplicates.&quot;</span><span class="p">)</span>
-
-    <span class="n">undirected</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">nodelist</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">nlen</span><span class="p">)))</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nlen</span><span class="p">,</span> <span class="n">nlen</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">)</span>
-
-    <span class="n">names</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">names</span>
-    <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">attrs</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">u</span> <span class="ow">in</span> <span class="n">nodeset</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v</span> <span class="ow">in</span> <span class="n">nodeset</span><span class="p">):</span>
-            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">index</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
-            <span class="n">values</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">)</span>
-            <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
-            <span class="k">if</span> <span class="n">undirected</span><span class="p">:</span>
-                <span class="n">M</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="n">M</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">recarray</span><span class="p">)</span></div>
-
-
 <div class="viewcode-block" id="to_scipy_sparse_array"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_scipy_sparse_array.html#networkx.convert_matrix.to_scipy_sparse_array">[docs]</a><span class="k">def</span> <span class="nf">to_scipy_sparse_array</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;csr&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns the graph adjacency matrix as a SciPy sparse array.</span>
 
@@ -1148,187 +819,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="k">return</span> <span class="n">A</span><span class="o">.</span><span class="n">asformat</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown sparse matrix format: </span><span class="si">{</span><span class="nb">format</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span></div>
-
-
-<div class="viewcode-block" id="to_scipy_sparse_matrix"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.to_scipy_sparse_matrix.html#networkx.convert_matrix.to_scipy_sparse_matrix">[docs]</a><span class="k">def</span> <span class="nf">to_scipy_sparse_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;csr&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the graph adjacency matrix as a SciPy sparse matrix.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    G : graph</span>
-<span class="sd">        The NetworkX graph used to construct the sparse matrix.</span>
-
-<span class="sd">    nodelist : list, optional</span>
-<span class="sd">       The rows and columns are ordered according to the nodes in `nodelist`.</span>
-<span class="sd">       If `nodelist` is None, then the ordering is produced by G.nodes().</span>
-
-<span class="sd">    dtype : NumPy data-type, optional</span>
-<span class="sd">        A valid NumPy dtype used to initialize the array. If None, then the</span>
-<span class="sd">        NumPy default is used.</span>
-
-<span class="sd">    weight : string or None   optional (default=&#39;weight&#39;)</span>
-<span class="sd">        The edge attribute that holds the numerical value used for</span>
-<span class="sd">        the edge weight.  If None then all edge weights are 1.</span>
-
-<span class="sd">    format : str in {&#39;bsr&#39;, &#39;csr&#39;, &#39;csc&#39;, &#39;coo&#39;, &#39;lil&#39;, &#39;dia&#39;, &#39;dok&#39;}</span>
-<span class="sd">        The type of the matrix to be returned (default &#39;csr&#39;).  For</span>
-<span class="sd">        some algorithms different implementations of sparse matrices</span>
-<span class="sd">        can perform better.  See [1]_ for details.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    A : SciPy sparse matrix</span>
-<span class="sd">       Graph adjacency matrix.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    For directed graphs, matrix entry i,j corresponds to an edge from i to j.</span>
-
-<span class="sd">    The matrix entries are populated using the edge attribute held in</span>
-<span class="sd">    parameter weight. When an edge does not have that attribute, the</span>
-<span class="sd">    value of the entry is 1.</span>
-
-<span class="sd">    For multiple edges the matrix values are the sums of the edge weights.</span>
-
-<span class="sd">    When `nodelist` does not contain every node in `G`, the adjacency matrix</span>
-<span class="sd">    is built from the subgraph of `G` that is induced by the nodes in</span>
-<span class="sd">    `nodelist`.</span>
-
-<span class="sd">    The convention used for self-loop edges in graphs is to assign the</span>
-<span class="sd">    diagonal matrix entry value to the weight attribute of the edge</span>
-<span class="sd">    (or the number 1 if the edge has no weight attribute).  If the</span>
-<span class="sd">    alternate convention of doubling the edge weight is desired the</span>
-<span class="sd">    resulting Scipy sparse matrix can be modified as follows:</span>
-
-<span class="sd">    &gt;&gt;&gt; G = nx.Graph([(1, 1)])</span>
-<span class="sd">    &gt;&gt;&gt; A = nx.to_scipy_sparse_matrix(G)</span>
-<span class="sd">    &gt;&gt;&gt; print(A.todense())</span>
-<span class="sd">    [[1]]</span>
-<span class="sd">    &gt;&gt;&gt; A.setdiag(A.diagonal() * 2)</span>
-<span class="sd">    &gt;&gt;&gt; print(A.todense())</span>
-<span class="sd">    [[2]]</span>
-
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.MultiDiGraph()</span>
-<span class="sd">    &gt;&gt;&gt; G.add_edge(0, 1, weight=2)</span>
-<span class="sd">    0</span>
-<span class="sd">    &gt;&gt;&gt; G.add_edge(1, 0)</span>
-<span class="sd">    0</span>
-<span class="sd">    &gt;&gt;&gt; G.add_edge(2, 2, weight=3)</span>
-<span class="sd">    0</span>
-<span class="sd">    &gt;&gt;&gt; G.add_edge(2, 2)</span>
-<span class="sd">    1</span>
-<span class="sd">    &gt;&gt;&gt; S = nx.to_scipy_sparse_matrix(G, nodelist=[0, 1, 2])</span>
-<span class="sd">    &gt;&gt;&gt; print(S.todense())</span>
-<span class="sd">    [[0 2 0]</span>
-<span class="sd">     [1 0 0]</span>
-<span class="sd">     [0 0 4]]</span>
-
-<span class="sd">    References</span>
-<span class="sd">    ----------</span>
-<span class="sd">    .. [1] Scipy Dev. References, &quot;Sparse Matrices&quot;,</span>
-<span class="sd">       https://docs.scipy.org/doc/scipy/reference/sparse.html</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
-    <span class="kn">import</span> <span class="nn">scipy.sparse</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">The scipy.sparse array containers will be used instead of matrices</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;in Networkx 3.0. Use `to_scipy_sparse_array` instead.&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">A</span> <span class="o">=</span> <span class="n">to_scipy_sparse_array</span><span class="p">(</span>
-        <span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">asformat</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="from_scipy_sparse_matrix"><a class="viewcode-back" href="../../reference/generated/networkx.convert_matrix.from_scipy_sparse_matrix.html#networkx.convert_matrix.from_scipy_sparse_matrix">[docs]</a><span class="k">def</span> <span class="nf">from_scipy_sparse_matrix</span><span class="p">(</span>
-    <span class="n">A</span><span class="p">,</span> <span class="n">parallel_edges</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">edge_attribute</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span>
-<span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Creates a new graph from an adjacency matrix given as a SciPy sparse</span>
-<span class="sd">    matrix.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    A: scipy sparse matrix</span>
-<span class="sd">      An adjacency matrix representation of a graph</span>
-
-<span class="sd">    parallel_edges : Boolean</span>
-<span class="sd">      If this is True, `create_using` is a multigraph, and `A` is an</span>
-<span class="sd">      integer matrix, then entry *(i, j)* in the matrix is interpreted as the</span>
-<span class="sd">      number of parallel edges joining vertices *i* and *j* in the graph.</span>
-<span class="sd">      If it is False, then the entries in the matrix are interpreted as</span>
-<span class="sd">      the weight of a single edge joining the vertices.</span>
-
-<span class="sd">    create_using : NetworkX graph constructor, optional (default=nx.Graph)</span>
-<span class="sd">       Graph type to create. If graph instance, then cleared before populated.</span>
-
-<span class="sd">    edge_attribute: string</span>
-<span class="sd">       Name of edge attribute to store matrix numeric value. The data will</span>
-<span class="sd">       have the same type as the matrix entry (int, float, (real,imag)).</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    For directed graphs, explicitly mention create_using=nx.DiGraph,</span>
-<span class="sd">    and entry i,j of A corresponds to an edge from i to j.</span>
-
-<span class="sd">    If `create_using` is :class:`networkx.MultiGraph` or</span>
-<span class="sd">    :class:`networkx.MultiDiGraph`, `parallel_edges` is True, and the</span>
-<span class="sd">    entries of `A` are of type :class:`int`, then this function returns a</span>
-<span class="sd">    multigraph (constructed from `create_using`) with parallel edges.</span>
-<span class="sd">    In this case, `edge_attribute` will be ignored.</span>
-
-<span class="sd">    If `create_using` indicates an undirected multigraph, then only the edges</span>
-<span class="sd">    indicated by the upper triangle of the matrix `A` will be added to the</span>
-<span class="sd">    graph.</span>
-
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; import scipy as sp</span>
-<span class="sd">    &gt;&gt;&gt; import scipy.sparse  # call as sp.sparse</span>
-<span class="sd">    &gt;&gt;&gt; A = sp.sparse.eye(2, 2, 1)</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.from_scipy_sparse_matrix(A)</span>
-
-<span class="sd">    If `create_using` indicates a multigraph and the matrix has only integer</span>
-<span class="sd">    entries and `parallel_edges` is False, then the entries will be treated</span>
-<span class="sd">    as weights for edges joining the nodes (without creating parallel edges):</span>
-
-<span class="sd">    &gt;&gt;&gt; A = sp.sparse.csr_matrix([[1, 1], [1, 2]])</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.from_scipy_sparse_matrix(A, create_using=nx.MultiGraph)</span>
-<span class="sd">    &gt;&gt;&gt; G[1][1]</span>
-<span class="sd">    AtlasView({0: {&#39;weight&#39;: 2}})</span>
-
-<span class="sd">    If `create_using` indicates a multigraph and the matrix has only integer</span>
-<span class="sd">    entries and `parallel_edges` is True, then the entries will be treated</span>
-<span class="sd">    as the number of parallel edges joining those two vertices:</span>
-
-<span class="sd">    &gt;&gt;&gt; A = sp.sparse.csr_matrix([[1, 1], [1, 2]])</span>
-<span class="sd">    &gt;&gt;&gt; G = nx.from_scipy_sparse_matrix(</span>
-<span class="sd">    ...     A, parallel_edges=True, create_using=nx.MultiGraph</span>
-<span class="sd">    ... )</span>
-<span class="sd">    &gt;&gt;&gt; G[1][1]</span>
-<span class="sd">    AtlasView({0: {&#39;weight&#39;: 1}, 1: {&#39;weight&#39;: 1}})</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">The scipy.sparse array containers will be used instead of matrices</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;in Networkx 3.0. Use `from_scipy_sparse_array` instead.&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">from_scipy_sparse_array</span><span class="p">(</span>
-        <span class="n">A</span><span class="p">,</span>
-        <span class="n">parallel_edges</span><span class="o">=</span><span class="n">parallel_edges</span><span class="p">,</span>
-        <span class="n">create_using</span><span class="o">=</span><span class="n">create_using</span><span class="p">,</span>
-        <span class="n">edge_attribute</span><span class="o">=</span><span class="n">edge_attribute</span><span class="p">,</span>
-    <span class="p">)</span></div>
 
 
 <span class="k">def</span> <span class="nf">_csr_gen_triples</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>

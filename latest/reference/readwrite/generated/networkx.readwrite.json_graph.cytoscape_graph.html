@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>cytoscape_graph &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>cytoscape_graph &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/readwrite/generated/networkx.readwrite.json_graph.cytoscape_graph.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -277,11 +277,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../gpickle.html">
-     Pickle
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../graphml.html">
      GraphML
     </a>
@@ -304,11 +299,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
    <li class="toctree-l2">
     <a class="reference internal" href="../pajek.html">
      Pajek
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../nx_shp.html">
-     GIS Shapefile
     </a>
    </li>
    <li class="toctree-l2">
@@ -392,21 +382,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <h1>cytoscape_graph<a class="headerlink" href="#cytoscape-graph" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="networkx.readwrite.json_graph.cytoscape_graph">
-<span class="sig-name descname"><span class="pre">cytoscape_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'name'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ident</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'id'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/json_graph/cytoscape.html#cytoscape_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.readwrite.json_graph.cytoscape_graph" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">cytoscape_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'name'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ident</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'id'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/json_graph/cytoscape.html#cytoscape_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.readwrite.json_graph.cytoscape_graph" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a NetworkX graph from a dictionary in cytoscape JSON format.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>A dictionary of data conforming to cytoscape JSON format.</p>
-</dd>
-<dt><strong>attrs</strong><span class="classifier">dict or None (default=None)</span></dt><dd><p>A dictionary containing the keys ‘name’ and ‘ident’ which are mapped to
-the ‘name’ and ‘id’ node elements in cyjs format. All other keys are
-ignored. Default is <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> which results in the default mapping
-<code class="docutils literal notranslate"><span class="pre">dict(name=&quot;name&quot;,</span> <span class="pre">ident=&quot;id&quot;)</span></code>.</p>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 2.6: </span>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">attrs</span></code> keyword argument will be replaced with <code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code> and
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">ident</span></code> in networkx 3.0</p>
-</div>
 </dd>
 <dt><strong>name</strong><span class="classifier">string</span></dt><dd><p>A string which is mapped to the ‘name’ node element in cyjs format.
 Must not have the same value as <code class="xref py py-obj docutils literal notranslate"><span class="pre">ident</span></code>.</p>

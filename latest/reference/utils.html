@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Utilities &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>Utilities &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/utils.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -277,18 +277,8 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.utils.misc.is_string_like.html">
-     is_string_like
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="generated/networkx.utils.misc.flatten.html">
      flatten
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.utils.misc.iterable.html">
-     iterable
     </a>
    </li>
    <li class="toctree-l2">
@@ -297,18 +287,8 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.utils.misc.make_str.html">
-     make_str
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.utils.misc.generate_unique_node.html">
-     generate_unique_node
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.utils.misc.default_opener.html">
-     default_opener
+    <a class="reference internal" href="generated/networkx.utils.misc.dict_to_numpy_array.html">
+     dict_to_numpy_array
     </a>
    </li>
    <li class="toctree-l2">
@@ -324,6 +304,11 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
    <li class="toctree-l2">
     <a class="reference internal" href="generated/networkx.utils.misc.create_random_state.html">
      create_random_state
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="generated/networkx.utils.misc.create_py_random_state.html">
+     create_py_random_state
     </a>
    </li>
    <li class="toctree-l2">
@@ -515,28 +500,16 @@ can be accessed, for example, as</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.arbitrary_element.html#networkx.utils.misc.arbitrary_element" title="networkx.utils.misc.arbitrary_element"><code class="xref py py-obj docutils literal notranslate"><span class="pre">arbitrary_element</span></code></a>(iterable)</p></td>
-<td><p>Returns an arbitrary element of <a class="reference internal" href="generated/networkx.utils.misc.iterable.html#networkx.utils.misc.iterable" title="networkx.utils.misc.iterable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code></a> without removing it.</p></td>
+<td><p>Returns an arbitrary element of <code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code> without removing it.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.is_string_like.html#networkx.utils.misc.is_string_like" title="networkx.utils.misc.is_string_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_string_like</span></code></a>(obj)</p></td>
-<td><p>Check if obj is string.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.flatten.html#networkx.utils.misc.flatten" title="networkx.utils.misc.flatten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flatten</span></code></a>(obj[, result])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.flatten.html#networkx.utils.misc.flatten" title="networkx.utils.misc.flatten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flatten</span></code></a>(obj[, result])</p></td>
 <td><p>Return flattened version of (possibly nested) iterable object.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.iterable.html#networkx.utils.misc.iterable" title="networkx.utils.misc.iterable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code></a>(obj)</p></td>
-<td><p>Return True if obj is iterable with a well-defined len().</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.make_list_of_ints.html#networkx.utils.misc.make_list_of_ints" title="networkx.utils.misc.make_list_of_ints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_list_of_ints</span></code></a>(sequence)</p></td>
 <td><p>Return list of ints from sequence of integral numbers.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.make_str.html#networkx.utils.misc.make_str" title="networkx.utils.misc.make_str"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_str</span></code></a>(x)</p></td>
-<td><p>Returns the string representation of t.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.generate_unique_node.html#networkx.utils.misc.generate_unique_node" title="networkx.utils.misc.generate_unique_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_unique_node</span></code></a>()</p></td>
-<td><p>Generate a unique node label.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.default_opener.html#networkx.utils.misc.default_opener" title="networkx.utils.misc.default_opener"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_opener</span></code></a>(filename)</p></td>
-<td><p>Opens <code class="xref py py-obj docutils literal notranslate"><span class="pre">filename</span></code> using system's default program.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.dict_to_numpy_array.html#networkx.utils.misc.dict_to_numpy_array" title="networkx.utils.misc.dict_to_numpy_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict_to_numpy_array</span></code></a>(d[, mapping])</p></td>
+<td><p>Convert a dictionary of dictionaries to a numpy array with optional mapping.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.pairwise.html#networkx.utils.misc.pairwise" title="networkx.utils.misc.pairwise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pairwise</span></code></a>(iterable[, cyclic])</p></td>
 <td><p>s -&gt; (s0, s1), (s1, s2), (s2, s3), ...</p></td>
@@ -547,13 +520,16 @@ can be accessed, for example, as</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.create_random_state.html#networkx.utils.misc.create_random_state" title="networkx.utils.misc.create_random_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_random_state</span></code></a>([random_state])</p></td>
 <td><p>Returns a numpy.random.RandomState or numpy.random.Generator instance depending on input.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.nodes_equal.html#networkx.utils.misc.nodes_equal" title="networkx.utils.misc.nodes_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes_equal</span></code></a>(nodes1, nodes2)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.create_py_random_state.html#networkx.utils.misc.create_py_random_state" title="networkx.utils.misc.create_py_random_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_py_random_state</span></code></a>([random_state])</p></td>
+<td><p>Returns a random.Random instance depending on input.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.nodes_equal.html#networkx.utils.misc.nodes_equal" title="networkx.utils.misc.nodes_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodes_equal</span></code></a>(nodes1, nodes2)</p></td>
 <td><p>Check if nodes are equal.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.edges_equal.html#networkx.utils.misc.edges_equal" title="networkx.utils.misc.edges_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edges_equal</span></code></a>(edges1, edges2)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.edges_equal.html#networkx.utils.misc.edges_equal" title="networkx.utils.misc.edges_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edges_equal</span></code></a>(edges1, edges2)</p></td>
 <td><p>Check if edges are equal.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.utils.misc.graphs_equal.html#networkx.utils.misc.graphs_equal" title="networkx.utils.misc.graphs_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graphs_equal</span></code></a>(graph1, graph2)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.utils.misc.graphs_equal.html#networkx.utils.misc.graphs_equal" title="networkx.utils.misc.graphs_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">graphs_equal</span></code></a>(graph1, graph2)</p></td>
 <td><p>Check if graphs are equal.</p></td>
 </tr>
 </tbody>

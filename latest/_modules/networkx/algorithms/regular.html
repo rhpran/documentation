@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.regular &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.regular &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/regular.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -244,6 +244,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    bool</span>
 <span class="sd">        Whether the given graph or digraph is regular.</span>
 
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.DiGraph([(1, 2), (2, 3), (3, 4), (4, 1)])</span>
+<span class="sd">    &gt;&gt;&gt; nx.is_regular(G)</span>
+<span class="sd">    True</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">n1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">arbitrary_element</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
@@ -271,6 +277,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    -------</span>
 <span class="sd">    bool</span>
 <span class="sd">        Whether the given graph is k-regular.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.Graph([(1, 2), (2, 3), (3, 4), (4, 1)])</span>
+<span class="sd">    &gt;&gt;&gt; nx.is_k_regular(G, k=3)</span>
+<span class="sd">    False</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">k</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span></div>
@@ -300,6 +312,13 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    -------</span>
 <span class="sd">    G2 : NetworkX graph</span>
 <span class="sd">        A k-factor of G</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; G = nx.Graph([(1, 2), (2, 3), (3, 4), (4, 1)])</span>
+<span class="sd">    &gt;&gt;&gt; G2 = nx.k_factor(G, k=1)</span>
+<span class="sd">    &gt;&gt;&gt; G2.edges()</span>
+<span class="sd">    EdgeView([(1, 2), (3, 4)])</span>
 
 <span class="sd">    References</span>
 <span class="sd">    ----------</span>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.centrality.betweenness_subset &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.centrality.betweenness_subset &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/centrality/betweenness_subset.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -234,7 +234,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;betweenness_centrality_subset&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;betweenness_centrality_source&quot;</span><span class="p">,</span>
     <span class="s2">&quot;edge_betweenness_centrality_subset&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
@@ -420,16 +419,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_multigraph</span><span class="p">():</span>
         <span class="n">b</span> <span class="o">=</span> <span class="n">_add_edge_keys</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">b</span></div>
-
-
-<span class="c1"># obsolete name</span>
-<div class="viewcode-block" id="betweenness_centrality_source"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.centrality.betweenness_centrality_source.html#networkx.algorithms.centrality.betweenness_centrality_source">[docs]</a><span class="k">def</span> <span class="nf">betweenness_centrality_source</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;betweenness_centrality_source --&gt; betweenness_centrality_subset&quot;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">sources</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">sources</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span>
-    <span class="n">targets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">betweenness_centrality_subset</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">sources</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">normalized</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span></div>
 
 
 <span class="k">def</span> <span class="nf">_accumulate_subset</span><span class="p">(</span><span class="n">betweenness</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>

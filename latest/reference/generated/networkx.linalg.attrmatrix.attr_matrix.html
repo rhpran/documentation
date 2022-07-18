@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>attr_matrix &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>attr_matrix &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/generated/networkx.linalg.attrmatrix.attr_matrix.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -423,7 +423,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <dl class="py function">
 <dt class="sig sig-object py" id="networkx.linalg.attrmatrix.attr_matrix">
 <span class="sig-name descname"><span class="pre">attr_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rc_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/linalg/attrmatrix.html#attr_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.linalg.attrmatrix.attr_matrix" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns a NumPy matrix using attributes from G.</p>
+<dd><p>Returns the attribute matrix using attributes from <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> as a numpy array.</p>
 <p>If only <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is passed in, then the adjacency matrix is constructed.</p>
 <p>Let A be a discrete set of values for the node attribute <code class="xref py py-obj docutils literal notranslate"><span class="pre">node_attr</span></code>. Then
 the elements of A represent the rows and columns of the constructed matrix.
@@ -434,11 +434,11 @@ the edge attribute is added to the matrix element at (ua, va).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>G</strong><span class="classifier">graph</span></dt><dd><p>The NetworkX graph used to construct the NumPy matrix.</p>
+<dt><strong>G</strong><span class="classifier">graph</span></dt><dd><p>The NetworkX graph used to construct the attribute matrix.</p>
 </dd>
 <dt><strong>edge_attr</strong><span class="classifier">str, optional</span></dt><dd><p>Each element of the matrix represents a running total of the
 specified edge attribute for edges whose node attributes correspond
-to the rows/cols of the matirx. The attribute must be present for
+to the rows/cols of the matrix. The attribute must be present for
 all edges in the graph. If no attribute is specified, then we
 just count the number of edges whose node attributes correspond
 to the matrix element.</p>
@@ -459,9 +459,9 @@ the ordering will be random (and also, a return value).</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>M</strong><span class="classifier">NumPy matrix</span></dt><dd><p>The attribute matrix.</p>
+<dt><strong>M</strong><span class="classifier">2D NumPy ndarray</span></dt><dd><p>The attribute matrix.</p>
 </dd>
-<dt><strong>ordering</strong><span class="classifier">list</span></dt><dd><p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">rc_order</span></code> was specified, then only the matrix is returned.
+<dt><strong>ordering</strong><span class="classifier">list</span></dt><dd><p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">rc_order</span></code> was specified, then only the attribute matrix is returned.
 However, if <code class="xref py py-obj docutils literal notranslate"><span class="pre">rc_order</span></code> was None, then the ordering used to construct
 the matrix is returned as well.</p>
 </dd>
@@ -488,16 +488,16 @@ numpy.zeros(). If unspecified, the NumPy default is used.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">attr_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">rc_order</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="go">matrix([[0., 1., 1.],</span>
-<span class="go">        [1., 0., 1.],</span>
-<span class="go">        [1., 1., 0.]])</span>
+<span class="go">array([[0., 1., 1.],</span>
+<span class="go">       [1., 0., 1.],</span>
+<span class="go">       [1., 1., 0.]])</span>
 </pre></div>
 </div>
 <p>Alternatively, we can obtain the matrix describing edge thickness.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">attr_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edge_attr</span><span class="o">=</span><span class="s2">&quot;thickness&quot;</span><span class="p">,</span> <span class="n">rc_order</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="go">matrix([[0., 1., 2.],</span>
-<span class="go">        [1., 0., 3.],</span>
-<span class="go">        [2., 3., 0.]])</span>
+<span class="go">array([[0., 1., 2.],</span>
+<span class="go">       [1., 0., 3.],</span>
+<span class="go">       [2., 3., 0.]])</span>
 </pre></div>
 </div>
 <p>We can also color the nodes and ask for the probability distribution over
@@ -510,8 +510,8 @@ all edges (u,v) describing:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rc</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">attr_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_attr</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rc_order</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
-<span class="go">matrix([[0.33333333, 0.66666667],</span>
-<span class="go">        [1.        , 0.        ]])</span>
+<span class="go">array([[0.33333333, 0.66666667],</span>
+<span class="go">       [1.        , 0.        ]])</span>
 </pre></div>
 </div>
 <p>For example, the above tells us that for all edges (u,v):</p>
@@ -523,8 +523,8 @@ Pr( v is blue | u is blue) = 0</p>
 </div></blockquote>
 <p>Finally, we can obtain the total weights listed by the node colors.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">attr_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">edge_attr</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">node_attr</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">rc_order</span><span class="o">=</span><span class="n">rc</span><span class="p">)</span>
-<span class="go">matrix([[3., 2.],</span>
-<span class="go">        [2., 0.]])</span>
+<span class="go">array([[3., 2.],</span>
+<span class="go">       [2., 0.]])</span>
 </pre></div>
 </div>
 <p>Thus, the total weight over all edges (u,v) with u and v having colors:</p>

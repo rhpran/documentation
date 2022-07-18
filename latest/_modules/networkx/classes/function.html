@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.classes.function &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.classes.function &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/classes/function.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -241,7 +241,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="s2">&quot;number_of_edges&quot;</span><span class="p">,</span>
     <span class="s2">&quot;density&quot;</span><span class="p">,</span>
     <span class="s2">&quot;is_directed&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;info&quot;</span><span class="p">,</span>
     <span class="s2">&quot;freeze&quot;</span><span class="p">,</span>
     <span class="s2">&quot;is_frozen&quot;</span><span class="p">,</span>
     <span class="s2">&quot;subgraph&quot;</span><span class="p">,</span>
@@ -773,51 +772,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">if</span> <span class="n">with_data</span><span class="p">:</span>
         <span class="n">H</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">graph</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">H</span></div>
-
-
-<div class="viewcode-block" id="info"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.info.html#networkx.classes.function.info">[docs]</a><span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return a summary of information for the graph G or a single node n.</span>
-
-<span class="sd">    The summary includes the number of nodes and edges, or neighbours for a single</span>
-<span class="sd">    node.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    G : Networkx graph</span>
-<span class="sd">       A graph</span>
-<span class="sd">    n : node (any hashable)</span>
-<span class="sd">       A node in the graph G</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    info : str</span>
-<span class="sd">        A string containing the short summary</span>
-
-<span class="sd">    Raises</span>
-<span class="sd">    ------</span>
-<span class="sd">    NetworkXError</span>
-<span class="sd">        If n is not in the graph G</span>
-
-<span class="sd">    .. deprecated:: 2.7</span>
-<span class="sd">       ``info`` is deprecated and will be removed in NetworkX 3.0.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span><span class="s2">&quot;info is deprecated and will be removed in version 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;node </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> not in graph&quot;</span><span class="p">)</span>
-    <span class="n">info</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># append this all to a string</span>
-    <span class="n">info</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> has the following properties:</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="n">info</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Degree: </span><span class="si">{</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="n">info</span> <span class="o">+=</span> <span class="s2">&quot;Neighbors: &quot;</span>
-    <span class="n">info</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nbr</span><span class="p">)</span> <span class="k">for</span> <span class="n">nbr</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">info</span></div>
 
 
 <div class="viewcode-block" id="set_node_attributes"><a class="viewcode-back" href="../../../reference/generated/networkx.classes.function.set_node_attributes.html#networkx.classes.function.set_node_attributes">[docs]</a><span class="k">def</span> <span class="nf">set_node_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>

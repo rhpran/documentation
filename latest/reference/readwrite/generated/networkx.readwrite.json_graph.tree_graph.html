@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>tree_graph &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>tree_graph &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,11 +42,11 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/readwrite/generated/networkx.readwrite.json_graph.tree_graph.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="jit_data" href="networkx.readwrite.json_graph.jit_data.html" />
+    <link rel="next" title="LEDA" href="../leda.html" />
     <link rel="prev" title="tree_data" href="networkx.readwrite.json_graph.tree_data.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -277,11 +277,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../gpickle.html">
-     Pickle
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../graphml.html">
      GraphML
     </a>
@@ -304,11 +299,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
    <li class="toctree-l2">
     <a class="reference internal" href="../pajek.html">
      Pajek
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../nx_shp.html">
-     GIS Shapefile
     </a>
    </li>
    <li class="toctree-l2">
@@ -392,21 +382,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <h1>tree_graph<a class="headerlink" href="#tree-graph" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="networkx.readwrite.json_graph.tree_graph">
-<span class="sig-name descname"><span class="pre">tree_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ident</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'id'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'children'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/json_graph/tree.html#tree_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.readwrite.json_graph.tree_graph" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">tree_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ident</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'id'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'children'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/readwrite/json_graph/tree.html#tree_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.readwrite.json_graph.tree_graph" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns graph from tree data format.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>Tree formatted graph data</p>
-</dd>
-<dt><strong>attrs</strong><span class="classifier">dict</span></dt><dd><p>A dictionary that contains two keys ‘id’ and ‘children’. The
-corresponding values provide the attribute names for storing
-NetworkX-internal graph data. The values should be unique. Default
-value: <code class="samp docutils literal notranslate"><span class="pre">dict(id='id',</span> <span class="pre">children='children')</span></code>.</p>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 2.6: </span>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">attrs</span></code> keyword argument is replaced by <code class="xref py py-obj docutils literal notranslate"><span class="pre">ident</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code>
-and will be removed in networkx 3.0</p>
-</div>
 </dd>
 <dt><strong>ident</strong><span class="classifier">string</span></dt><dd><p>Attribute name for storing NetworkX-internal graph data. <code class="xref py py-obj docutils literal notranslate"><span class="pre">ident</span></code> must
 have a different value than <code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code>. The default is ‘id’.</p>

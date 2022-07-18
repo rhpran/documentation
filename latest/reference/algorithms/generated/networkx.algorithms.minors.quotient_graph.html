@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>quotient_graph &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>quotient_graph &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.minors.quotient_graph.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -839,13 +839,13 @@ quotient graph.</p>
 </pre></div>
 </div>
 <p>Partitions can be represented in various ways:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">a</span> <span class="nb">list</span><span class="o">/</span><span class="nb">tuple</span><span class="o">/</span><span class="nb">set</span> <span class="n">of</span> <span class="n">block</span> <span class="n">lists</span><span class="o">/</span><span class="n">tuples</span><span class="o">/</span><span class="n">sets</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">a</span> <span class="nb">dict</span> <span class="k">with</span> <span class="n">block</span> <span class="n">labels</span> <span class="k">as</span> <span class="n">keys</span> <span class="ow">and</span> <span class="n">blocks</span> <span class="n">lists</span><span class="o">/</span><span class="n">tuples</span><span class="o">/</span><span class="n">sets</span> <span class="k">as</span> <span class="n">values</span>
-<span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">a</span> <span class="nb">dict</span> <span class="k">with</span> <span class="n">block</span> <span class="n">lists</span><span class="o">/</span><span class="n">tuples</span><span class="o">/</span><span class="n">sets</span> <span class="k">as</span> <span class="n">keys</span> <span class="ow">and</span> <span class="n">block</span> <span class="n">labels</span> <span class="k">as</span> <span class="n">values</span>
-<span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="n">a</span> <span class="n">function</span> <span class="kn">from</span> <span class="nn">nodes</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">original</span> <span class="n">iterable</span> <span class="n">to</span> <span class="n">block</span> <span class="n">labels</span>
-<span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="n">an</span> <span class="n">equivalence</span> <span class="n">relation</span> <span class="n">function</span> <span class="n">on</span> <span class="n">the</span> <span class="n">target</span> <span class="n">iterable</span>
-</pre></div>
-</div>
+<ol class="arabic simple" start="0">
+<li><p>a list/tuple/set of block lists/tuples/sets</p></li>
+<li><p>a dict with block labels as keys and blocks lists/tuples/sets as values</p></li>
+<li><p>a dict with block lists/tuples/sets as keys and block labels as values</p></li>
+<li><p>a function from nodes in the original iterable to block labels</p></li>
+<li><p>an equivalence relation function on the target iterable</p></li>
+</ol>
 <p>As <a class="reference internal" href="#networkx.algorithms.minors.quotient_graph" title="networkx.algorithms.minors.quotient_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quotient_graph</span></code></a> is designed to accept partitions represented as (0), (1) or
 (4) only, the <a class="reference internal" href="networkx.algorithms.minors.equivalence_classes.html#networkx.algorithms.minors.equivalence_classes" title="networkx.algorithms.minors.equivalence_classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equivalence_classes</span></code></a> function can be used to get the partitions
 in the right form, in order to call <a class="reference internal" href="#networkx.algorithms.minors.quotient_graph" title="networkx.algorithms.minors.quotient_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quotient_graph</span></code></a>.</p>

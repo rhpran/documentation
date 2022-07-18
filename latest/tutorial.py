@@ -347,7 +347,7 @@ red = nx.random_lobster(100, 0.9, 0.9)
 # # 5. Reading a graph stored in a file using common graph formats
 #
 # NetworkX supports many popular formats, such as edge lists, adjacency lists,
-# GML, GraphML, pickle, LEDA and others.
+# GML, GraphML, LEDA and others.
 
 nx.write_gml(red, "path.to.file")
 mygraph = nx.read_gml("path.to.file")

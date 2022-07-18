@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.assortativity.mixing &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.assortativity.mixing &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/assortativity/mixing.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -232,7 +232,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="s2">&quot;attribute_mixing_dict&quot;</span><span class="p">,</span>
     <span class="s2">&quot;degree_mixing_matrix&quot;</span><span class="p">,</span>
     <span class="s2">&quot;degree_mixing_dict&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;numeric_mixing_matrix&quot;</span><span class="p">,</span>
     <span class="s2">&quot;mixing_dict&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
@@ -430,58 +429,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">if</span> <span class="n">normalized</span><span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">a</span></div>
-
-
-<div class="viewcode-block" id="numeric_mixing_matrix"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.assortativity.numeric_mixing_matrix.html#networkx.algorithms.assortativity.numeric_mixing_matrix">[docs]</a><span class="k">def</span> <span class="nf">numeric_mixing_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns numeric mixing matrix for attribute.</span>
-
-<span class="sd">    .. deprecated:: 2.6</span>
-
-<span class="sd">       numeric_mixing_matrix is deprecated and will be removed in 3.0.</span>
-<span class="sd">       Use `attribute_mixing_matrix` instead.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    G : graph</span>
-<span class="sd">       NetworkX graph object.</span>
-
-<span class="sd">    attribute : string</span>
-<span class="sd">       Node attribute key.</span>
-
-<span class="sd">    nodes: list or iterable (optional)</span>
-<span class="sd">        Build the matrix only with nodes in container. The default is all nodes.</span>
-
-<span class="sd">    normalized : bool (default=True)</span>
-<span class="sd">       Return counts if False or probabilities if True.</span>
-
-<span class="sd">    mapping : dictionary, optional</span>
-<span class="sd">       Mapping from node attribute to integer index in matrix.</span>
-<span class="sd">       If not specified, an arbitrary ordering will be used.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    If each node has a unique attribute value, the unnormalized mixing matrix</span>
-<span class="sd">    will be equal to the adjacency matrix. To get a denser mixing matrix,</span>
-<span class="sd">    the rounding can be performed to form groups of nodes with equal values.</span>
-<span class="sd">    For example, the exact height of persons in cm (180.79155222, 163.9080892,</span>
-<span class="sd">    163.30095355, 167.99016217, 168.21590163, ...) can be rounded to (180, 163,</span>
-<span class="sd">    163, 168, 168, ...).</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    m: numpy array</span>
-<span class="sd">       Counts, or joint, probability of occurrence of node attribute pairs.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s2">&quot;numeric_mixing_matrix is deprecated and will be removed in v3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;Use `attribute_mixing_matrix` instead.&quot;</span>
-    <span class="p">)</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">attribute_mixing_matrix</span><span class="p">(</span>
-        <span class="n">G</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="n">normalized</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span>
-    <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="mixing_dict"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.assortativity.mixing_dict.html#networkx.algorithms.assortativity.mixing_dict">[docs]</a><span class="k">def</span> <span class="nf">mixing_dict</span><span class="p">(</span><span class="n">xy</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>

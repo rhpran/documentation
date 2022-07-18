@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.swap &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.swap &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/swap.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -229,7 +229,125 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="kn">import</span> <span class="n">py_random_state</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;double_edge_swap&quot;</span><span class="p">,</span> <span class="s2">&quot;connected_double_edge_swap&quot;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;double_edge_swap&quot;</span><span class="p">,</span> <span class="s2">&quot;connected_double_edge_swap&quot;</span><span class="p">,</span> <span class="s2">&quot;directed_edge_swap&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="directed_edge_swap"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.swap.directed_edge_swap.html#networkx.algorithms.swap.directed_edge_swap">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nd">@nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">not_implemented_for</span><span class="p">(</span><span class="s2">&quot;undirected&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">directed_edge_swap</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">nswap</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_tries</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Swap three edges in a directed graph while keeping the node degrees fixed.</span>
+
+<span class="sd">    A directed edge swap swaps three edges such that a -&gt; b -&gt; c -&gt; d becomes</span>
+<span class="sd">    a -&gt; c -&gt; b -&gt; d. This pattern of swapping allows all possible states with the</span>
+<span class="sd">    same in- and out-degree distribution in a directed graph to be reached.</span>
+
+<span class="sd">    If the swap would create parallel edges (e.g. if a -&gt; c already existed in the</span>
+<span class="sd">    previous example), another attempt is made to find a suitable trio of edges.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    G : DiGraph</span>
+<span class="sd">       A directed graph</span>
+
+<span class="sd">    nswap : integer (optional, default=1)</span>
+<span class="sd">       Number of three-edge (directed) swaps to perform</span>
+
+<span class="sd">    max_tries : integer (optional, default=100)</span>
+<span class="sd">       Maximum number of attempts to swap edges</span>
+
+<span class="sd">    seed : integer, random_state, or None (default)</span>
+<span class="sd">        Indicator of random number generation state.</span>
+<span class="sd">        See :ref:`Randomness&lt;randomness&gt;`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    G : DiGraph</span>
+<span class="sd">       The graph after the edges are swapped.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NetworkXError</span>
+<span class="sd">        If `G` is not directed, or</span>
+<span class="sd">        If nswap &gt; max_tries, or</span>
+<span class="sd">        If there are fewer than 4 nodes in `G`</span>
+<span class="sd">    NetworkXAlgorithmError</span>
+<span class="sd">        If the number of swap attempts exceeds `max_tries` before `nswap` swaps are made</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Does not enforce any connectivity constraints.</span>
+
+<span class="sd">    The graph G is modified in place.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] Erdős, Péter L., et al. “A Simple Havel-Hakimi Type Algorithm to Realize</span>
+<span class="sd">           Graphical Degree Sequences of Directed Graphs.” ArXiv:0905.4913 [Math],</span>
+<span class="sd">           Jan. 2010. https://doi.org/10.48550/arXiv.0905.4913.</span>
+<span class="sd">           Published  2010 in Elec. J. Combinatorics (17(1)). R66.</span>
+<span class="sd">           http://www.combinatorics.org/Volume_17/PDF/v17i1r66.pdf</span>
+<span class="sd">    .. [2] “Combinatorics - Reaching All Possible Simple Directed Graphs with a given</span>
+<span class="sd">           Degree Sequence with 2-Edge Swaps.” Mathematics Stack Exchange,</span>
+<span class="sd">           https://math.stackexchange.com/questions/22272/. Accessed 30 May 2022.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">nswap</span> <span class="o">&gt;</span> <span class="n">max_tries</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Number of swaps &gt; number of tries allowed.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Graph has less than four nodes.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Instead of choosing uniformly at random from a generated edge list,</span>
+    <span class="c1"># this algorithm chooses nonuniformly from the set of nodes with</span>
+    <span class="c1"># probability weighted by degree.</span>
+    <span class="n">tries</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">swapcount</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">keys</span><span class="p">,</span> <span class="n">degrees</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span>  <span class="c1"># keys, degree</span>
+    <span class="n">cdf</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">cumulative_distribution</span><span class="p">(</span><span class="n">degrees</span><span class="p">)</span>  <span class="c1"># cdf of degree</span>
+    <span class="n">discrete_sequence</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">discrete_sequence</span>
+
+    <span class="k">while</span> <span class="n">swapcount</span> <span class="o">&lt;</span> <span class="n">nswap</span><span class="p">:</span>
+        <span class="c1"># choose source node index from discrete distribution</span>
+        <span class="n">start_index</span> <span class="o">=</span> <span class="n">discrete_sequence</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cdistribution</span><span class="o">=</span><span class="n">cdf</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">keys</span><span class="p">[</span><span class="n">start_index</span><span class="p">]</span>
+        <span class="n">tries</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">tries</span> <span class="o">&gt;</span> <span class="n">max_tries</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Maximum number of swap attempts (</span><span class="si">{</span><span class="n">tries</span><span class="si">}</span><span class="s2">) exceeded before desired swaps achieved (</span><span class="si">{</span><span class="n">nswap</span><span class="si">}</span><span class="s2">).&quot;</span>
+            <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXAlgorithmError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># If the given node doesn&#39;t have any out edges, then there isn&#39;t anything to swap</span>
+        <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">second</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">succ</span><span class="p">[</span><span class="n">start</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="n">second</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">(</span><span class="n">second</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">third</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">succ</span><span class="p">[</span><span class="n">second</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="n">second</span> <span class="o">==</span> <span class="n">third</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">(</span><span class="n">third</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">fourth</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">succ</span><span class="p">[</span><span class="n">third</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="n">third</span> <span class="o">==</span> <span class="n">fourth</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">third</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">succ</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+            <span class="ow">and</span> <span class="n">fourth</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">succ</span><span class="p">[</span><span class="n">second</span><span class="p">]</span>
+            <span class="ow">and</span> <span class="n">second</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">succ</span><span class="p">[</span><span class="n">third</span><span class="p">]</span>
+        <span class="p">):</span>
+            <span class="c1"># Swap nodes</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">third</span><span class="p">)</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">third</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">second</span><span class="p">,</span> <span class="n">fourth</span><span class="p">)</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">second</span><span class="p">,</span> <span class="n">third</span><span class="p">)</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">third</span><span class="p">,</span> <span class="n">fourth</span><span class="p">)</span>
+            <span class="n">swapcount</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">G</span></div>
 
 
 <div class="viewcode-block" id="double_edge_swap"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.swap.double_edge_swap.html#networkx.algorithms.swap.double_edge_swap">[docs]</a><span class="nd">@py_random_state</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -273,7 +391,9 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    The graph G is modified in place.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;double_edge_swap() not defined for directed graphs.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span>
+            <span class="s2">&quot;double_edge_swap() not defined for directed graphs. Use directed_edge_swap instead.&quot;</span>
+        <span class="p">)</span>
     <span class="k">if</span> <span class="n">nswap</span> <span class="o">&gt;</span> <span class="n">max_tries</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Number of swaps &gt; number of tries allowed.&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>

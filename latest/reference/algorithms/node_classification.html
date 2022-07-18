@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Node Classification &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>Node Classification &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,11 +42,11 @@
     <script src="../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/algorithms/node_classification.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="harmonic_function" href="generated/networkx.algorithms.node_classification.hmn.harmonic_function.html" />
+    <link rel="next" title="harmonic_function" href="generated/networkx.algorithms.node_classification.harmonic_function.html" />
     <link rel="prev" title="moral_graph" href="generated/networkx.algorithms.moral.moral_graph.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -650,28 +650,9 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-networkx.algorithms.node_classification.hmn">
-   Harmonic Function
+  <a class="reference internal nav-link" href="#references">
+   References
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-networkx.algorithms.node_classification.lgc">
-   Local and Global Consistency
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     References
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -711,40 +692,22 @@ For example:</p>
 <span class="go">[&#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;B&#39;]</span>
 </pre></div>
 </div>
-<section id="module-networkx.algorithms.node_classification.hmn">
-<span id="harmonic-function"></span><h2>Harmonic Function<a class="headerlink" href="#module-networkx.algorithms.node_classification.hmn" title="Permalink to this heading">#</a></h2>
-<p>Function for computing Harmonic function algorithm by Zhu et al.</p>
 <section id="references">
-<h3>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h3>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <p>Zhu, X., Ghahramani, Z., &amp; Lafferty, J. (2003, August).
 Semi-supervised learning using gaussian fields and harmonic functions.
 In ICML (Vol. 3, pp. 912-919).</p>
 </section>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.node_classification.hmn.harmonic_function.html#networkx.algorithms.node_classification.hmn.harmonic_function" title="networkx.algorithms.node_classification.hmn.harmonic_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">harmonic_function</span></code></a>(G[, max_iter, label_name])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.node_classification.harmonic_function.html#networkx.algorithms.node_classification.harmonic_function" title="networkx.algorithms.node_classification.harmonic_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">harmonic_function</span></code></a>(G[, max_iter, label_name])</p></td>
 <td><p>Node classification by Harmonic function</p></td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="module-networkx.algorithms.node_classification.lgc">
-<span id="local-and-global-consistency"></span><h2>Local and Global Consistency<a class="headerlink" href="#module-networkx.algorithms.node_classification.lgc" title="Permalink to this heading">#</a></h2>
-<p>Function for computing Local and global consistency algorithm by Zhou et al.</p>
-<section id="id1">
-<h3>References<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>Zhou, D., Bousquet, O., Lal, T. N., Weston, J., &amp; Schölkopf, B. (2004).
-Learning with local and global consistency.
-Advances in neural information processing systems, 16(16), 321-328.</p>
-</section>
-<table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.algorithms.node_classification.lgc.local_and_global_consistency.html#networkx.algorithms.node_classification.lgc.local_and_global_consistency" title="networkx.algorithms.node_classification.lgc.local_and_global_consistency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_and_global_consistency</span></code></a>(G[, alpha, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.algorithms.node_classification.local_and_global_consistency.html#networkx.algorithms.node_classification.local_and_global_consistency" title="networkx.algorithms.node_classification.local_and_global_consistency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_and_global_consistency</span></code></a>(G[, alpha, ...])</p></td>
 <td><p>Node classification by Local and Global Consistency</p></td>
 </tr>
 </tbody>
 </table>
-</section>
 </section>
 
 

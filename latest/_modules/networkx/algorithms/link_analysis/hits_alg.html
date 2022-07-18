@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.link_analysis.hits_alg &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.link_analysis.hits_alg &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/link_analysis/hits_alg.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -225,7 +225,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hits&quot;</span><span class="p">,</span> <span class="s2">&quot;hits_numpy&quot;</span><span class="p">,</span> <span class="s2">&quot;hits_scipy&quot;</span><span class="p">,</span> <span class="s2">&quot;authority_matrix&quot;</span><span class="p">,</span> <span class="s2">&quot;hub_matrix&quot;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hits&quot;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="hits"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.hits_alg.hits.html#networkx.algorithms.link_analysis.hits_alg.hits">[docs]</a><span class="k">def</span> <span class="nf">hits</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.0e-8</span><span class="p">,</span> <span class="n">nstart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -367,50 +367,8 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">return</span> <span class="n">h</span><span class="p">,</span> <span class="n">a</span>
 
 
-<div class="viewcode-block" id="authority_matrix"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.hits_alg.authority_matrix.html#networkx.algorithms.link_analysis.hits_alg.authority_matrix">[docs]</a><span class="k">def</span> <span class="nf">authority_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the HITS authority matrix.</span>
-
-<span class="sd">    .. deprecated:: 2.6</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">authority_matrix is deprecated as of version 2.6 and will be removed &quot;</span>
-        <span class="s2">&quot;in version 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;The authority matrix can be computed by::</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    &gt;&gt;&gt; M = nx.to_numpy_array(G, nodelist=nodelist)</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    &gt;&gt;&gt; M.T @ M&quot;</span>
-    <span class="p">)</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">M</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">M</span></div>
-
-
-<div class="viewcode-block" id="hub_matrix"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.hits_alg.hub_matrix.html#networkx.algorithms.link_analysis.hits_alg.hub_matrix">[docs]</a><span class="k">def</span> <span class="nf">hub_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the HITS hub matrix.</span>
-
-<span class="sd">    .. deprecated:: 2.6</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">hub_matrix is deprecated as of version 2.6 and will be removed &quot;</span>
-        <span class="s2">&quot;in version 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;The hub matrix can be computed by::</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    &gt;&gt;&gt; M = nx.to_numpy_array(G, nodelist=nodelist)</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="s2">&quot;    &gt;&gt;&gt; M @ M.T&quot;</span>
-    <span class="p">)</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">nodelist</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">M</span> <span class="o">@</span> <span class="n">M</span><span class="o">.</span><span class="n">T</span></div>
-
-
-<div class="viewcode-block" id="hits_numpy"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.hits_alg.hits_numpy.html#networkx.algorithms.link_analysis.hits_alg.hits_numpy">[docs]</a><span class="k">def</span> <span class="nf">hits_numpy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_hits_numpy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns HITS hubs and authorities values for nodes.</span>
-
-<span class="sd">    .. deprecated:: 2.6</span>
-
-<span class="sd">       hits_numpy is deprecated and will be removed in networkx 3.0.</span>
 
 <span class="sd">    The HITS algorithm computes two numbers for a node.</span>
 <span class="sd">    Authorities estimates the node value based on the incoming links.</span>
@@ -444,10 +402,11 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    &gt;&gt;&gt; hubs_matrix = adj_ary @ adj_ary.T</span>
 <span class="sd">    &gt;&gt;&gt; authority_matrix = adj_ary.T @ adj_ary</span>
 
-<span class="sd">    `hits_numpy` maps the eigenvector corresponding to the maximum eigenvalue</span>
+<span class="sd">    `_hits_numpy` maps the eigenvector corresponding to the maximum eigenvalue</span>
 <span class="sd">    of the respective matrices to the nodes in `G`:</span>
 
-<span class="sd">    &gt;&gt;&gt; hubs, authority = nx.hits_numpy(G)</span>
+<span class="sd">    &gt;&gt;&gt; from networkx.algorithms.link_analysis.hits_alg import _hits_numpy</span>
+<span class="sd">    &gt;&gt;&gt; hubs, authority = _hits_numpy(G)</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -468,18 +427,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">       doi:10.1145/324133.324140.</span>
 <span class="sd">       http://www.cs.cornell.edu/home/kleinber/auth.pdf.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;networkx.hits_numpy is deprecated and will be removed&quot;</span>
-            <span class="s2">&quot;in NetworkX 3.0, use networkx.hits instead.&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">{},</span> <span class="p">{}</span>
@@ -500,15 +448,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="n">a</span> <span class="o">/=</span> <span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
     <span class="n">hubs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">h</span><span class="p">)))</span>
     <span class="n">authorities</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">a</span><span class="p">)))</span>
-    <span class="k">return</span> <span class="n">hubs</span><span class="p">,</span> <span class="n">authorities</span></div>
+    <span class="k">return</span> <span class="n">hubs</span><span class="p">,</span> <span class="n">authorities</span>
 
 
-<div class="viewcode-block" id="hits_scipy"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.link_analysis.hits_alg.hits_scipy.html#networkx.algorithms.link_analysis.hits_alg.hits_scipy">[docs]</a><span class="k">def</span> <span class="nf">hits_scipy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.0e-6</span><span class="p">,</span> <span class="n">nstart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_hits_scipy</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1.0e-6</span><span class="p">,</span> <span class="n">nstart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns HITS hubs and authorities values for nodes.</span>
 
-<span class="sd">    .. deprecated:: 2.6</span>
-
-<span class="sd">       hits_scipy is deprecated and will be removed in networkx 3.0</span>
 
 <span class="sd">    The HITS algorithm computes two numbers for a node.</span>
 <span class="sd">    Authorities estimates the node value based on the incoming links.</span>
@@ -539,8 +484,9 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from networkx.algorithms.link_analysis.hits_alg import _hits_scipy</span>
 <span class="sd">    &gt;&gt;&gt; G = nx.path_graph(4)</span>
-<span class="sd">    &gt;&gt;&gt; h, a = nx.hits(G)</span>
+<span class="sd">    &gt;&gt;&gt; h, a = _hits_scipy(G)</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -573,18 +519,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">       doi:10.1145/324133.324140.</span>
 <span class="sd">       http://www.cs.cornell.edu/home/kleinber/auth.pdf.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;networkx.hits_scipy is deprecated and will be removed&quot;</span>
-            <span class="s2">&quot;in NetworkX 3.0, use networkx.hits instead.&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">{},</span> <span class="p">{}</span>
@@ -619,7 +554,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="n">a</span> <span class="o">/=</span> <span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
     <span class="n">hubs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">h</span><span class="p">)))</span>
     <span class="n">authorities</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">a</span><span class="p">)))</span>
-    <span class="k">return</span> <span class="n">hubs</span><span class="p">,</span> <span class="n">authorities</span></div>
+    <span class="k">return</span> <span class="n">hubs</span><span class="p">,</span> <span class="n">authorities</span>
 </pre></div>
 
               </article>

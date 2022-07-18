@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>greedy_modularity_communities &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>greedy_modularity_communities &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -43,7 +43,7 @@
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.modularity_max.greedy_modularity_communities.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -176,7 +176,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -668,7 +668,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <h1>greedy_modularity_communities<a class="headerlink" href="#greedy-modularity-communities" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="networkx.algorithms.community.modularity_max.greedy_modularity_communities">
-<span class="sig-name descname"><span class="pre">greedy_modularity_communities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_communities</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/community/modularity_max.html#greedy_modularity_communities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.algorithms.community.modularity_max.greedy_modularity_communities" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">greedy_modularity_communities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/community/modularity_max.html#greedy_modularity_communities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.algorithms.community.modularity_max.greedy_modularity_communities" title="Permalink to this definition">#</a></dt>
 <dd><p>Find communities in G using greedy modularity maximization.</p>
 <p>This function uses Clauset-Newman-Moore greedy modularity maximization <a class="reference internal" href="#rce363827c0a4-2" id="id1">[2]</a>
 to find the community partition with the largest modularity.</p>
@@ -686,7 +686,7 @@ is the resolution parameter, often expressed as <span class="math notranslate no
 See <a class="reference internal" href="networkx.algorithms.community.quality.modularity.html#networkx.algorithms.community.quality.modularity" title="networkx.algorithms.community.quality.modularity"><code class="xref py py-func docutils literal notranslate"><span class="pre">modularity()</span></code></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>G</strong><span class="classifier">NetworkX graph</span></dt><dd></dd>
 <dt><strong>weight</strong><span class="classifier">string or None, optional (default=None)</span></dt><dd><p>The name of an edge attribute that holds the numerical value used
 as a weight.  If None, then each edge has weight 1.
@@ -705,15 +705,6 @@ not stop. This forces community merging to continue after modularity
 starts to decrease until <code class="xref py py-obj docutils literal notranslate"><span class="pre">best_n</span></code> communities remain.
 If <code class="docutils literal notranslate"><span class="pre">None</span></code>, don’t force it to continue beyond a maximum.</p>
 </dd>
-<dt><strong>n_communities</strong><span class="classifier">int or None, optional (default=None)</span></dt><dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 3.0: </span>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">n_communities</span></code> parameter is deprecated - use <code class="xref py py-obj docutils literal notranslate"><span class="pre">cutoff</span></code> and/or
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">best_n</span></code> to set bounds on the desired number of communities instead.</p>
-</div>
-<p>A minimum number of communities below which the merging process stops.
-The process stops at this number of communities even if modularity
-is not maximized. The goal is to let the user stop the process early.
-The process stops before the cutoff if it finds a maximum of modularity.</p>
-</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -725,9 +716,7 @@ Sorted by length with largest communities first.</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>ValueError</strong><span class="classifier">If the <code class="xref py py-obj docutils literal notranslate"><span class="pre">cutoff</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">best_n</span></code>  value is not in the range</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">G.number_of_nodes()]</span></code>, or if <code class="xref py py-obj docutils literal notranslate"><span class="pre">best_n</span></code> &lt; <code class="xref py py-obj docutils literal notranslate"><span class="pre">cutoff</span></code>.
-Also raised if <code class="xref py py-obj docutils literal notranslate"><span class="pre">cutoff</span></code> is used with the deprecated <code class="xref py py-obj docutils literal notranslate"><span class="pre">n_communities</span></code>
-parameter.</p>
+<dt><strong>ValueError</strong><span class="classifier">If the <code class="xref py py-obj docutils literal notranslate"><span class="pre">cutoff</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">best_n</span></code>  value is not in the range</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">G.number_of_nodes()]</span></code>, or if <code class="xref py py-obj docutils literal notranslate"><span class="pre">best_n</span></code> &lt; <code class="xref py py-obj docutils literal notranslate"><span class="pre">cutoff</span></code>.</p>
 </dd>
 </dl>
 </dd>

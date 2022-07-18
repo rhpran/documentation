@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.minors.contraction &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.minors.contraction &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/minors/contraction.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -494,13 +494,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    [(0, 1), (1, 2)]</span>
 
 <span class="sd">    Partitions can be represented in various ways:</span>
-<span class="sd">    ::</span>
 
-<span class="sd">        (0) a list/tuple/set of block lists/tuples/sets</span>
-<span class="sd">        (1) a dict with block labels as keys and blocks lists/tuples/sets as values</span>
-<span class="sd">        (2) a dict with block lists/tuples/sets as keys and block labels as values</span>
-<span class="sd">        (3) a function from nodes in the original iterable to block labels</span>
-<span class="sd">        (4) an equivalence relation function on the target iterable</span>
+<span class="sd">    0. a list/tuple/set of block lists/tuples/sets</span>
+<span class="sd">    1. a dict with block labels as keys and blocks lists/tuples/sets as values</span>
+<span class="sd">    2. a dict with block lists/tuples/sets as keys and block labels as values</span>
+<span class="sd">    3. a function from nodes in the original iterable to block labels</span>
+<span class="sd">    4. an equivalence relation function on the target iterable</span>
 
 <span class="sd">    As `quotient_graph` is designed to accept partitions represented as (0), (1) or</span>
 <span class="sd">    (4) only, the `equivalence_classes` function can be used to get the partitions</span>

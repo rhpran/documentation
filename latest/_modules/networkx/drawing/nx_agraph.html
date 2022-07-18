@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.drawing.nx_agraph &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.drawing.nx_agraph &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/drawing/nx_agraph.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -407,6 +407,12 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">       A networkx graph</span>
 <span class="sd">    path : filename</span>
 <span class="sd">       Filename or file handle to write</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    To use a specific graph layout, call ``A.layout`` prior to `write_dot`.</span>
+<span class="sd">    Note that some graphviz layouts are not guaranteed to be deterministic,</span>
+<span class="sd">    see https://gitlab.com/graphviz/graphviz/-/issues/1767 for more info.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">A</span> <span class="o">=</span> <span class="n">to_agraph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="n">A</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
@@ -450,7 +456,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">      Dictionary of x, y, positions keyed by node.</span>
+<span class="sd">    Dictionary of x, y, positions keyed by node.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -461,6 +467,9 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    This is a wrapper for pygraphviz_layout.</span>
+
+<span class="sd">    Note that some graphviz layouts are not guaranteed to be deterministic,</span>
+<span class="sd">    see https://gitlab.com/graphviz/graphviz/-/issues/1767 for more info.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">pygraphviz_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="n">prog</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span></div>
 
@@ -502,6 +511,8 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">        &gt;&gt;&gt; H_layout = nx.nx_agraph.pygraphviz_layout(G, prog=&quot;dot&quot;)</span>
 <span class="sd">        &gt;&gt;&gt; G_layout = {H.nodes[n][&quot;node_label&quot;]: p for n, p in H_layout.items()}</span>
 
+<span class="sd">    Note that some graphviz layouts are not guaranteed to be deterministic,</span>
+<span class="sd">    see https://gitlab.com/graphviz/graphviz/-/issues/1767 for more info.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">pygraphviz</span>
@@ -568,6 +579,9 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    If this function is called in succession too quickly, sometimes the</span>
 <span class="sd">    image is not displayed. So you might consider time.sleep(.5) between</span>
 <span class="sd">    calls if you experience problems.</span>
+
+<span class="sd">    Note that some graphviz layouts are not guaranteed to be deterministic,</span>
+<span class="sd">    see https://gitlab.com/graphviz/graphviz/-/issues/1767 for more info.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
@@ -667,55 +681,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">A</span>
-
-
-<span class="k">def</span> <span class="nf">display_pygraphviz</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Internal function to display a graph in OS dependent manner.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    graph : PyGraphviz graph</span>
-<span class="sd">        A PyGraphviz AGraph instance.</span>
-<span class="sd">    path :  file object</span>
-<span class="sd">        An already opened file object that will be closed.</span>
-<span class="sd">    format : str, None</span>
-<span class="sd">        An attempt is made to guess the output format based on the extension</span>
-<span class="sd">        of the filename. If that fails, the value of `format` is used.</span>
-<span class="sd">    prog : string</span>
-<span class="sd">        Name of Graphviz layout program.</span>
-<span class="sd">    args : str</span>
-<span class="sd">        Additional arguments to pass to the Graphviz layout program.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    If this function is called in succession too quickly, sometimes the</span>
-<span class="sd">    image is not displayed. So you might consider time.sleep(.5) between</span>
-<span class="sd">    calls if you experience problems.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="s2">&quot;display_pygraphviz is deprecated and will be removed in NetworkX 3.0. &quot;</span>
-        <span class="s2">&quot;To view a graph G using pygraphviz, use nx.nx_agraph.view_pygraphviz(G). &quot;</span>
-        <span class="s2">&quot;To view a graph from file, consider an image processing libary like &quot;</span>
-        <span class="s2">&quot;`Pillow`, e.g. ``PIL.Image.open(path.name).show()``&quot;</span><span class="p">,</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">filename</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">name</span>
-        <span class="nb">format</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">format</span><span class="p">:</span>
-        <span class="c1"># Let the draw() function use its default</span>
-        <span class="nb">format</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="c1"># Save to a file and display in the default viewer.</span>
-    <span class="c1"># We must close the file before viewing it.</span>
-    <span class="n">graph</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">format</span><span class="p">,</span> <span class="n">prog</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
-    <span class="n">path</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
               </article>

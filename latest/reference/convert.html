@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Converting to and from other data formats &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>Converting to and from other data formats &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/convert.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -277,23 +277,8 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_matrix.html">
-     to_numpy_matrix
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_array.html">
      to_numpy_array
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_recarray.html">
-     to_numpy_recarray
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_matrix.html">
-     from_numpy_matrix
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,16 +289,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
    <li class="toctree-l2">
     <a class="reference internal" href="generated/networkx.convert_matrix.to_scipy_sparse_array.html">
      to_scipy_sparse_array
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.convert_matrix.to_scipy_sparse_matrix.html">
-     to_scipy_sparse_matrix
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="generated/networkx.convert_matrix.from_scipy_sparse_matrix.html">
-     from_scipy_sparse_matrix
     </a>
    </li>
    <li class="toctree-l2">
@@ -570,19 +545,10 @@ function which attempts to guess the input type and convert it automatically.</p
 </section>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_matrix.html#networkx.convert_matrix.to_numpy_matrix" title="networkx.convert_matrix.to_numpy_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_matrix</span></code></a>(G[, nodelist, dtype, order, ...])</p></td>
-<td><p>Returns the graph adjacency matrix as a NumPy matrix.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_array.html#networkx.convert_matrix.to_numpy_array" title="networkx.convert_matrix.to_numpy_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_array</span></code></a>(G[, nodelist, dtype, order, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_array.html#networkx.convert_matrix.to_numpy_array" title="networkx.convert_matrix.to_numpy_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_array</span></code></a>(G[, nodelist, dtype, order, ...])</p></td>
 <td><p>Returns the graph adjacency matrix as a NumPy array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.to_numpy_recarray.html#networkx.convert_matrix.to_numpy_recarray" title="networkx.convert_matrix.to_numpy_recarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy_recarray</span></code></a>(G[, nodelist, dtype, order])</p></td>
-<td><p>Returns the graph adjacency matrix as a NumPy recarray.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_matrix.html#networkx.convert_matrix.from_numpy_matrix" title="networkx.convert_matrix.from_numpy_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_numpy_matrix</span></code></a>(A[, parallel_edges, ...])</p></td>
-<td><p>Returns a graph from numpy matrix.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_array.html#networkx.convert_matrix.from_numpy_array" title="networkx.convert_matrix.from_numpy_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_numpy_array</span></code></a>(A[, parallel_edges, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.from_numpy_array.html#networkx.convert_matrix.from_numpy_array" title="networkx.convert_matrix.from_numpy_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_numpy_array</span></code></a>(A[, parallel_edges, ...])</p></td>
 <td><p>Returns a graph from a 2D NumPy array.</p></td>
 </tr>
 </tbody>
@@ -594,12 +560,6 @@ function which attempts to guess the input type and convert it automatically.</p
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.to_scipy_sparse_array.html#networkx.convert_matrix.to_scipy_sparse_array" title="networkx.convert_matrix.to_scipy_sparse_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_scipy_sparse_array</span></code></a>(G[, nodelist, dtype, ...])</p></td>
 <td><p>Returns the graph adjacency matrix as a SciPy sparse array.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.to_scipy_sparse_matrix.html#networkx.convert_matrix.to_scipy_sparse_matrix" title="networkx.convert_matrix.to_scipy_sparse_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_scipy_sparse_matrix</span></code></a>(G[, nodelist, dtype, ...])</p></td>
-<td><p>Returns the graph adjacency matrix as a SciPy sparse matrix.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.from_scipy_sparse_matrix.html#networkx.convert_matrix.from_scipy_sparse_matrix" title="networkx.convert_matrix.from_scipy_sparse_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_scipy_sparse_matrix</span></code></a>(A[, ...])</p></td>
-<td><p>Creates a new graph from an adjacency matrix given as a SciPy sparse matrix.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/networkx.convert_matrix.from_scipy_sparse_array.html#networkx.convert_matrix.from_scipy_sparse_array" title="networkx.convert_matrix.from_scipy_sparse_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_scipy_sparse_array</span></code></a>(A[, parallel_edges, ...])</p></td>
 <td><p>Creates a new graph from an adjacency matrix given as a SciPy sparse array.</p></td>

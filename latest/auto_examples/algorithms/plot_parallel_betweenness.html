@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Parallel Betweenness &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>Parallel Betweenness &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/auto_examples/algorithms/plot_parallel_betweenness.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -454,6 +454,13 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../graph/plot_dag_layout.html">
+   DAG - Topological Layout
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
   <a class="reference internal" href="../graph/plot_degree_sequence.html">
    Degree Sequence
   </a>
@@ -505,6 +512,13 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
  <li class="toctree-l1">
   <a class="reference internal" href="../graph/plot_roget.html">
    Roget
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../graph/plot_triad_types.html">
+   Triads
   </a>
  </li>
 </ul>
@@ -615,15 +629,29 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../geospatial/plot_delaunay.html">
+  <a class="reference internal" href="../geospatial/fix_plot_delaunay.html">
    Delaunay graphs from geographic points
   </a>
  </li>
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../geospatial/plot_lines.html">
+  <a class="reference internal" href="../geospatial/fix_plot_lines.html">
    Graphs from a set of lines
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geospatial/fix_plot_points.html">
+   Graphs from geographic points
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../geospatial/fix_plot_polygons.html">
+   Graphs from Polygons
   </a>
  </li>
 </ul>
@@ -631,20 +659,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
  <li class="toctree-l1">
   <a class="reference internal" href="../geospatial/plot_osmnx.html">
    OpenStreetMap with OSMnx
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../geospatial/plot_points.html">
-   Graphs from geographic points
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../geospatial/plot_polygons.html">
-   Graphs from Polygons
   </a>
  </li>
 </ul>
@@ -726,29 +740,29 @@ faster. This is a limitation of our CI/CD pipeline running on a single core.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computing betweenness centrality for:
 Graph with 1000 nodes and 2991 edges
         Parallel version
-                Time: 1.7574 seconds
-                Betweenness centrality for node 0: 0.22725
+                Time: 1.7409 seconds
+                Betweenness centrality for node 0: 0.11292
         Non-Parallel version
-                Time: 3.0185 seconds
-                Betweenness centrality for node 0: 0.22725
+                Time: 3.0277 seconds
+                Betweenness centrality for node 0: 0.11292
 
 Computing betweenness centrality for:
-Graph with 1000 nodes and 5070 edges
+Graph with 1000 nodes and 5019 edges
         Parallel version
-                Time: 2.1913 seconds
-                Betweenness centrality for node 0: 0.00304
+                Time: 2.1738 seconds
+                Betweenness centrality for node 0: 0.00046
         Non-Parallel version
-                Time: 3.9026 seconds
-                Betweenness centrality for node 0: 0.00304
+                Time: 3.9188 seconds
+                Betweenness centrality for node 0: 0.00046
 
 Computing betweenness centrality for:
 Graph with 1000 nodes and 2000 edges
         Parallel version
-                Time: 1.5399 seconds
-                Betweenness centrality for node 0: 0.01435
+                Time: 1.5400 seconds
+                Betweenness centrality for node 0: 0.00270
         Non-Parallel version
-                Time: 2.6775 seconds
-                Betweenness centrality for node 0: 0.01435
+                Time: 2.6728 seconds
+                Betweenness centrality for node 0: 0.00270
 </pre></div>
 </div>
 <div class="line-block">
@@ -803,7 +817,7 @@ Graph with 1000 nodes and 2000 edges
 <span class="k">for</span> <span class="n">G</span> <span class="ow">in</span> <span class="p">[</span><span class="n">G_ba</span><span class="p">,</span> <span class="n">G_er</span><span class="p">,</span> <span class="n">G_ws</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computing betweenness centrality for:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Parallel version&quot;</span><span class="p">)</span>
     <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">start</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span>
     <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bt</span></a> <span class="o">=</span> <span class="n">betweenness_centrality_parallel</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -820,7 +834,7 @@ Graph with 1000 nodes and 2000 edges
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  20.531 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  20.694 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-algorithms-plot-parallel-betweenness-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8a9ce246f32a6cf6abd470292c7ffa6a/plot_parallel_betweenness.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_parallel_betweenness.py</span></code></a></p>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.utils.decorators &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.utils.decorators &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/utils/decorators.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -239,8 +239,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="s2">&quot;not_implemented_for&quot;</span><span class="p">,</span>
     <span class="s2">&quot;open_file&quot;</span><span class="p">,</span>
     <span class="s2">&quot;nodes_or_number&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;preserve_random_state&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;random_state&quot;</span><span class="p">,</span>
     <span class="s2">&quot;np_random_state&quot;</span><span class="p">,</span>
     <span class="s2">&quot;py_random_state&quot;</span><span class="p">,</span>
     <span class="s2">&quot;argmap&quot;</span><span class="p">,</span>
@@ -481,62 +479,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">return</span> <span class="n">argmap</span><span class="p">(</span><span class="n">_nodes_or_number</span><span class="p">,</span> <span class="o">*</span><span class="n">iter_wa</span><span class="p">)</span></div>
 
 
-<span class="k">def</span> <span class="nf">preserve_random_state</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Decorator to preserve the numpy.random state during a function.</span>
-
-<span class="sd">    .. deprecated:: 2.6</span>
-<span class="sd">        This is deprecated and will be removed in NetworkX v3.0.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    func : function</span>
-<span class="sd">        function around which to preserve the random state.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    wrapper : function</span>
-<span class="sd">        Function which wraps the input function by saving the state before</span>
-<span class="sd">        calling the function and restoring the function afterward.</span>
-
-<span class="sd">    Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    Decorate functions like this::</span>
-
-<span class="sd">        @preserve_random_state</span>
-<span class="sd">        def do_random_stuff(x, y):</span>
-<span class="sd">            return x + y * numpy.random.random()</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    If numpy.random is not importable, the state is not saved or restored.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;preserve_random_state is deprecated and will be removed in 3.0.&quot;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-        <span class="nd">@contextmanager</span>
-        <span class="k">def</span> <span class="nf">save_random_state</span><span class="p">():</span>
-            <span class="n">state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="k">yield</span>
-            <span class="k">finally</span><span class="p">:</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-
-        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-            <span class="k">with</span> <span class="n">save_random_state</span><span class="p">():</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
-                <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-        <span class="n">wrapper</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
-        <span class="k">return</span> <span class="n">wrapper</span>
-    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">func</span>
-
-
 <div class="viewcode-block" id="np_random_state"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.decorators.np_random_state.html#networkx.utils.decorators.np_random_state">[docs]</a><span class="k">def</span> <span class="nf">np_random_state</span><span class="p">(</span><span class="n">random_state_argument</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Decorator to generate a `numpy.random.RandomState` instance.</span>
 
@@ -579,27 +521,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    py_random_state</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">argmap</span><span class="p">(</span><span class="n">create_random_state</span><span class="p">,</span> <span class="n">random_state_argument</span><span class="p">)</span></div>
-
-
-<span class="k">def</span> <span class="nf">random_state</span><span class="p">(</span><span class="n">random_state_argument</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Decorator to generate a `numpy.random.RandomState` instance.</span>
-
-<span class="sd">    .. deprecated:: 2.7</span>
-
-<span class="sd">       This function is a deprecated alias for `np_random_state` and will be</span>
-<span class="sd">       removed in version 3.0. Use np_random_state instead.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;`random_state` is a deprecated alias for `np_random_state`</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;and will be removed in version 3.0. Use `np_random_state` instead.&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">np_random_state</span><span class="p">(</span><span class="n">random_state_argument</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="py_random_state"><a class="viewcode-back" href="../../../reference/generated/networkx.utils.decorators.py_random_state.html#networkx.utils.decorators.py_random_state">[docs]</a><span class="k">def</span> <span class="nf">py_random_state</span><span class="p">(</span><span class="n">random_state_argument</span><span class="p">):</span>

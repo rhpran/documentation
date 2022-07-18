@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.distance_measures &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.distance_measures &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/distance_measures.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -227,7 +227,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="kn">from</span> <span class="nn">networkx.utils</span> <span class="kn">import</span> <span class="n">not_implemented_for</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;extrema_bounding&quot;</span><span class="p">,</span>
     <span class="s2">&quot;eccentricity&quot;</span><span class="p">,</span>
     <span class="s2">&quot;diameter&quot;</span><span class="p">,</span>
     <span class="s2">&quot;radius&quot;</span><span class="p">,</span>
@@ -236,77 +235,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="s2">&quot;barycenter&quot;</span><span class="p">,</span>
     <span class="s2">&quot;resistance_distance&quot;</span><span class="p">,</span>
 <span class="p">]</span>
-
-
-<div class="viewcode-block" id="extrema_bounding"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.distance_measures.extrema_bounding.html#networkx.algorithms.distance_measures.extrema_bounding">[docs]</a><span class="k">def</span> <span class="nf">extrema_bounding</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;diameter&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute requested extreme distance metric of undirected graph G</span>
-
-<span class="sd">    .. deprecated:: 2.8</span>
-
-<span class="sd">       extrema_bounding is deprecated and will be removed in NetworkX 3.0.</span>
-<span class="sd">       Use the corresponding distance measure with the `usebounds=True` option</span>
-<span class="sd">       instead.</span>
-
-<span class="sd">    Computation is based on smart lower and upper bounds, and in practice</span>
-<span class="sd">    linear in the number of nodes, rather than quadratic (except for some</span>
-<span class="sd">    border cases such as complete graphs or circle shaped graphs).</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    G : NetworkX graph</span>
-<span class="sd">       An undirected graph</span>
-
-<span class="sd">    compute : string denoting the requesting metric</span>
-<span class="sd">       &quot;diameter&quot; for the maximal eccentricity value,</span>
-<span class="sd">       &quot;radius&quot; for the minimal eccentricity value,</span>
-<span class="sd">       &quot;periphery&quot; for the set of nodes with eccentricity equal to the diameter,</span>
-<span class="sd">       &quot;center&quot; for the set of nodes with eccentricity equal to the radius,</span>
-<span class="sd">       &quot;eccentricities&quot; for the maximum distance from each node to all other nodes in G</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    value : value of the requested metric</span>
-<span class="sd">       int for &quot;diameter&quot; and &quot;radius&quot; or</span>
-<span class="sd">       list of nodes for &quot;center&quot; and &quot;periphery&quot; or</span>
-<span class="sd">       dictionary of eccentricity values keyed by node for &quot;eccentricities&quot;</span>
-
-<span class="sd">    Raises</span>
-<span class="sd">    ------</span>
-<span class="sd">    NetworkXError</span>
-<span class="sd">        If the graph consists of multiple components</span>
-<span class="sd">    ValueError</span>
-<span class="sd">        If `compute` is not one of &quot;diameter&quot;, &quot;radius&quot;, &quot;periphery&quot;, &quot;center&quot;,</span>
-<span class="sd">        or &quot;eccentricities&quot;.</span>
-
-<span class="sd">    Notes</span>
-<span class="sd">    -----</span>
-<span class="sd">    This algorithm was proposed in the following papers:</span>
-
-<span class="sd">    F.W. Takes and W.A. Kosters, Determining the Diameter of Small World</span>
-<span class="sd">    Networks, in Proceedings of the 20th ACM International Conference on</span>
-<span class="sd">    Information and Knowledge Management (CIKM 2011), pp. 1191-1196, 2011.</span>
-<span class="sd">    doi: https://doi.org/10.1145/2063576.2063748</span>
-
-<span class="sd">    F.W. Takes and W.A. Kosters, Computing the Eccentricity Distribution of</span>
-<span class="sd">    Large Graphs, Algorithms 6(1): 100-118, 2013.</span>
-<span class="sd">    doi: https://doi.org/10.3390/a6010100</span>
-
-<span class="sd">    M. Borassi, P. Crescenzi, M. Habib, W.A. Kosters, A. Marino and F.W. Takes,</span>
-<span class="sd">    Fast Graph Diameter and Radius BFS-Based Computation in (Weakly Connected)</span>
-<span class="sd">    Real-World Graphs, Theoretical Computer Science 586: 59-80, 2015.</span>
-<span class="sd">    doi: https://doi.org/10.1016/j.tcs.2015.02.033</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">warnings</span>
-
-    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;extrema_bounding is deprecated and will be removed in networkx 3.0</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="c1"># NOTE: _extrema_bounding does input checking, so it is skipped here</span>
-    <span class="k">if</span> <span class="n">compute</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;diameter&quot;</span><span class="p">,</span> <span class="s2">&quot;radius&quot;</span><span class="p">,</span> <span class="s2">&quot;periphery&quot;</span><span class="p">,</span> <span class="s2">&quot;center&quot;</span><span class="p">}:</span>
-        <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Use nx.</span><span class="si">{</span><span class="n">compute</span><span class="si">}</span><span class="s2">(G, usebounds=True) instead.&quot;</span>
-    <span class="k">if</span> <span class="n">compute</span> <span class="o">==</span> <span class="s2">&quot;eccentricities&quot;</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Use nx.eccentricity(G) instead.&quot;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">_extrema_bounding</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="n">compute</span><span class="p">)</span></div>
 
 
 <span class="k">def</span> <span class="nf">_extrema_bounding</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">&quot;diameter&quot;</span><span class="p">):</span>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Contributor Guide &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>Contributor Guide &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/developer/contribute.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -407,7 +407,7 @@ Here are instructions for two popular environment managers:</p>
 <span class="c1"># Install main development and runtime dependencies of networkx</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">/</span><span class="n">developer</span><span class="o">.</span><span class="n">txt</span>
 <span class="c1">#</span>
-<span class="c1"># (Optional) Install pygraphviz, pydot, and gdal packages</span>
+<span class="c1"># (Optional) Install pygraphviz and pydot packages</span>
 <span class="c1"># These packages require that you have your system properly configured</span>
 <span class="c1"># and what that involves differs on various systems.</span>
 <span class="c1"># pip install -r requirements/extra.txt</span>
@@ -427,7 +427,7 @@ Here are instructions for two popular environment managers:</p>
 <span class="c1"># Install main development and runtime dependencies of networkx</span>
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">file</span> <span class="n">requirements</span><span class="o">/</span><span class="n">default</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">file</span> <span class="n">requirements</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">file</span> <span class="n">requirements</span><span class="o">/</span><span class="n">developer</span><span class="o">.</span><span class="n">txt</span>
 <span class="c1">#</span>
-<span class="c1"># (Optional) Install pygraphviz, pydot, and gdal packages</span>
+<span class="c1"># (Optional) Install pygraphviz and pydot packages</span>
 <span class="c1"># These packages require that you have your system properly configured</span>
 <span class="c1"># and what that involves differs on various systems.</span>
 <span class="c1"># conda install -c conda-forge --file requirements/extra.txt</span>
@@ -689,11 +689,11 @@ testing framework, with tests located in the various
 </pre></div>
 </div>
 <p>Or tests from a specific file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PYTHONPATH=. pytest networkx/readwrite/tests/test_yaml.py
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PYTHONPATH=. pytest networkx/readwrite/tests/test_edgelist.py
 </pre></div>
 </div>
 <p>Or a single test within that file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PYTHONPATH=. pytest networkx/readwrite/tests/test_yaml.py::TestYaml::testUndirected
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PYTHONPATH=. pytest networkx/readwrite/tests/test_edgelist.py::test_parse_edgelist_with_data_list
 </pre></div>
 </div>
 <p>Use <code class="docutils literal notranslate"><span class="pre">--doctest-modules</span></code> to run doctests.

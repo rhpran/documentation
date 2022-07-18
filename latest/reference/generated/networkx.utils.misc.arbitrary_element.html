@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>arbitrary_element &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>arbitrary_element &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,11 +42,11 @@
     <script src="../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/generated/networkx.utils.misc.arbitrary_element.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="is_string_like" href="networkx.utils.misc.is_string_like.html" />
+    <link rel="next" title="flatten" href="networkx.utils.misc.flatten.html" />
     <link rel="prev" title="Utilities" href="../utils.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -277,18 +277,8 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="networkx.utils.misc.is_string_like.html">
-     is_string_like
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="networkx.utils.misc.flatten.html">
      flatten
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="networkx.utils.misc.iterable.html">
-     iterable
     </a>
    </li>
    <li class="toctree-l2">
@@ -297,18 +287,8 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="networkx.utils.misc.make_str.html">
-     make_str
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="networkx.utils.misc.generate_unique_node.html">
-     generate_unique_node
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="networkx.utils.misc.default_opener.html">
-     default_opener
+    <a class="reference internal" href="networkx.utils.misc.dict_to_numpy_array.html">
+     dict_to_numpy_array
     </a>
    </li>
    <li class="toctree-l2">
@@ -324,6 +304,11 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
    <li class="toctree-l2">
     <a class="reference internal" href="networkx.utils.misc.create_random_state.html">
      create_random_state
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="networkx.utils.misc.create_py_random_state.html">
+     create_py_random_state
     </a>
    </li>
    <li class="toctree-l2">
@@ -473,7 +458,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <dl class="py function">
 <dt class="sig sig-object py" id="networkx.utils.misc.arbitrary_element">
 <span class="sig-name descname"><span class="pre">arbitrary_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/networkx/utils/misc.html#arbitrary_element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.utils.misc.arbitrary_element" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns an arbitrary element of <a class="reference internal" href="networkx.utils.misc.iterable.html#networkx.utils.misc.iterable" title="networkx.utils.misc.iterable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code></a> without removing it.</p>
+<dd><p>Returns an arbitrary element of <code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code> without removing it.</p>
 <p>This is most useful for “peeking” at an arbitrary element of a set,
 but can be used for any list, dictionary, etc., as well.</p>
 <dl class="field-list">
@@ -491,14 +476,14 @@ etc.</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <a class="reference internal" href="networkx.utils.misc.iterable.html#networkx.utils.misc.iterable" title="networkx.utils.misc.iterable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code></a> is an iterator (because the current implementation of
+<dt>ValueError</dt><dd><p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code> is an iterator (because the current implementation of
 this function would consume an element from the iterator).</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>This function does not return a <em>random</em> element. If <a class="reference internal" href="networkx.utils.misc.iterable.html#networkx.utils.misc.iterable" title="networkx.utils.misc.iterable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code></a> is
+<p>This function does not return a <em>random</em> element. If <code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code> is
 ordered, sequential calls will return the same value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">arbitrary_element</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
@@ -527,7 +512,7 @@ ordered, sequential calls will return the same value:</p>
 <span class="go">&#39;h&#39;</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised if <a class="reference internal" href="networkx.utils.misc.iterable.html#networkx.utils.misc.iterable" title="networkx.utils.misc.iterable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code></a> is an iterator:</p>
+<p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a> is raised if <code class="xref py py-obj docutils literal notranslate"><span class="pre">iterable</span></code> is an iterator:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># Iterator, *not* Iterable</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nx</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">arbitrary_element</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
 <span class="gt">Traceback (most recent call last):</span>

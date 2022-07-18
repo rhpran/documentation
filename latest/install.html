@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Install &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>Install &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -42,7 +42,7 @@
     <script src="_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/install.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="_static/opensearch.xml"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -175,7 +175,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -342,7 +342,7 @@ line scripts to the appropriate locations.</p>
 <h2>Extra packages<a class="headerlink" href="#extra-packages" title="Permalink to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Some optional packages (e.g., <code class="xref py py-obj docutils literal notranslate"><span class="pre">gdal</span></code>) may require compiling
+<p>Some optional packages may require compiling
 C or C++ code.  If you have difficulty installing these packages
 with <code class="xref py py-obj docutils literal notranslate"><span class="pre">pip</span></code>, please consult the homepages of those packages.</p>
 </div>
@@ -353,8 +353,6 @@ version requirements.</p>
 <li><p><a class="reference external" href="http://pygraphviz.github.io/">PyGraphviz</a> and
 <a class="reference external" href="https://github.com/erocarrera/pydot">pydot</a> provide graph drawing
 and graph layout algorithms via <a class="reference external" href="http://graphviz.org/">GraphViz</a>.</p></li>
-<li><p><a class="reference external" href="http://pyyaml.org/">PyYAML</a> provides YAML format reading and writing.</p></li>
-<li><p><a class="reference external" href="http://www.gdal.org/">gdal</a> provides shapefile format reading and writing.</p></li>
 <li><p><a class="reference external" href="http://lxml.de/">lxml</a> used for GraphML XML format.</p></li>
 </ul>
 <p>To install <code class="docutils literal notranslate"><span class="pre">networkx</span></code> and extra packages, do:</p>
@@ -362,7 +360,7 @@ and graph layout algorithms via <a class="reference external" href="http://graph
 </pre></div>
 </div>
 <p>To explicitly install all optional packages, do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pygraphviz pydot pyyaml gdal lxml
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pygraphviz pydot lxml
 </pre></div>
 </div>
 <p>Or, install any optional package (e.g., <code class="docutils literal notranslate"><span class="pre">pygraphviz</span></code>) individually:</p>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.similarity &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.similarity &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/similarity.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -251,7 +251,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="s2">&quot;optimize_graph_edit_distance&quot;</span><span class="p">,</span>
     <span class="s2">&quot;optimize_edit_paths&quot;</span><span class="p">,</span>
     <span class="s2">&quot;simrank_similarity&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;simrank_similarity_numpy&quot;</span><span class="p">,</span>
     <span class="s2">&quot;panther_similarity&quot;</span><span class="p">,</span>
     <span class="s2">&quot;generate_random_paths&quot;</span><span class="p">,</span>
 <span class="p">]</span>
@@ -1721,34 +1720,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">newsim</span><span class="p">[</span><span class="n">source</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">newsim</span>
-
-
-<div class="viewcode-block" id="simrank_similarity_numpy"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.similarity.simrank_similarity_numpy.html#networkx.algorithms.similarity.simrank_similarity_numpy">[docs]</a><span class="k">def</span> <span class="nf">simrank_similarity_numpy</span><span class="p">(</span>
-    <span class="n">G</span><span class="p">,</span>
-    <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">importance_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
-    <span class="n">max_iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-    <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
-<span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Calculate SimRank of nodes in ``G`` using matrices with ``numpy``.</span>
-
-<span class="sd">    .. deprecated:: 2.6</span>
-<span class="sd">        simrank_similarity_numpy is deprecated and will be removed in networkx 3.0.</span>
-<span class="sd">        Use simrank_similarity</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-        <span class="p">(</span>
-            <span class="s2">&quot;networkx.simrank_similarity_numpy is deprecated and will be removed&quot;</span>
-            <span class="s2">&quot;in NetworkX 3.0, use networkx.simrank_similarity instead.&quot;</span>
-        <span class="p">),</span>
-        <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">_simrank_similarity_numpy</span><span class="p">(</span>
-        <span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">importance_factor</span><span class="p">,</span> <span class="n">max_iterations</span><span class="p">,</span> <span class="n">tolerance</span>
-    <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="panther_similarity"><a class="viewcode-back" href="../../../reference/algorithms/generated/networkx.algorithms.similarity.panther_similarity.html#networkx.algorithms.similarity.panther_similarity">[docs]</a><span class="k">def</span> <span class="nf">panther_similarity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">path_length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>

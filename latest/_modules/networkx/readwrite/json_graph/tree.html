@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.readwrite.json_graph.tree &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.readwrite.json_graph.tree &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/readwrite/json_graph/tree.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -228,8 +228,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;tree_data&quot;</span><span class="p">,</span> <span class="s2">&quot;tree_graph&quot;</span><span class="p">]</span>
 
 
-<span class="c1"># NOTE: Remove attrs from signature in 3.0</span>
-<div class="viewcode-block" id="tree_data"><a class="viewcode-back" href="../../../../reference/readwrite/generated/networkx.readwrite.json_graph.tree_data.html#networkx.readwrite.json_graph.tree_data">[docs]</a><span class="k">def</span> <span class="nf">tree_data</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ident</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="s2">&quot;children&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="tree_data"><a class="viewcode-back" href="../../../../reference/readwrite/generated/networkx.readwrite.json_graph.tree_data.html#networkx.readwrite.json_graph.tree_data">[docs]</a><span class="k">def</span> <span class="nf">tree_data</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">ident</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="s2">&quot;children&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns data in tree format that is suitable for JSON serialization</span>
 <span class="sd">    and use in Javascript documents.</span>
 
@@ -240,20 +239,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    root : node</span>
 <span class="sd">       The root of the tree</span>
-
-<span class="sd">    attrs : dict</span>
-<span class="sd">        A dictionary that contains two keys &#39;id&#39; and &#39;children&#39;. The</span>
-<span class="sd">        corresponding values provide the attribute names for storing</span>
-<span class="sd">        NetworkX-internal graph data. The values should be unique. Default</span>
-<span class="sd">        value: :samp:`dict(id=&#39;id&#39;, children=&#39;children&#39;)`.</span>
-
-<span class="sd">        If some user-defined graph data use these attribute names as data keys,</span>
-<span class="sd">        they may be silently dropped.</span>
-
-<span class="sd">        .. deprecated:: 2.6</span>
-
-<span class="sd">           The `attrs` keyword argument is replaced by `ident` and `children`</span>
-<span class="sd">           and will be removed in networkx 3.0</span>
 
 <span class="sd">    ident : string</span>
 <span class="sd">        Attribute name for storing NetworkX-internal graph data. `ident` must</span>
@@ -302,28 +287,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_weakly_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;G is not weakly connected.&quot;</span><span class="p">)</span>
 
-    <span class="c1"># NOTE: to be removed in 3.0</span>
-    <span class="k">if</span> <span class="n">attrs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="kn">import</span> <span class="nn">warnings</span>
-
-        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The `attrs` keyword argument of tree_data is deprecated</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;and will be removed in networkx 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;It is replaced with explicit `ident` and `children` &quot;</span>
-            <span class="s2">&quot;keyword arguments.</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;To make this warning go away and ensure usage is forward</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;compatible, replace `attrs` with `ident` and `children,</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;for example:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;    &gt;&gt;&gt; tree_data(G, root, attrs={&#39;id&#39;: &#39;foo&#39;, &#39;children&#39;: &#39;bar&#39;})</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;should instead be written as</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;    &gt;&gt;&gt; tree_data(G, root, ident=&#39;foo&#39;, children=&#39;bar&#39;)</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;The default values of &#39;id&#39; and &#39;children&#39; will not change.&quot;</span>
-        <span class="p">)</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-        <span class="n">ident</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-        <span class="n">children</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;children&quot;</span><span class="p">]</span>
-
     <span class="k">if</span> <span class="n">ident</span> <span class="o">==</span> <span class="n">children</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;The values for `id` and `children` must be different.&quot;</span><span class="p">)</span>
 
@@ -345,23 +308,13 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
     <span class="k">return</span> <span class="n">data</span></div>
 
 
-<div class="viewcode-block" id="tree_graph"><a class="viewcode-back" href="../../../../reference/readwrite/generated/networkx.readwrite.json_graph.tree_graph.html#networkx.readwrite.json_graph.tree_graph">[docs]</a><span class="k">def</span> <span class="nf">tree_graph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ident</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="s2">&quot;children&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="tree_graph"><a class="viewcode-back" href="../../../../reference/readwrite/generated/networkx.readwrite.json_graph.tree_graph.html#networkx.readwrite.json_graph.tree_graph">[docs]</a><span class="k">def</span> <span class="nf">tree_graph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ident</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="s2">&quot;children&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns graph from tree data format.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    data : dict</span>
 <span class="sd">        Tree formatted graph data</span>
-<span class="sd">    attrs : dict</span>
-<span class="sd">        A dictionary that contains two keys &#39;id&#39; and &#39;children&#39;. The</span>
-<span class="sd">        corresponding values provide the attribute names for storing</span>
-<span class="sd">        NetworkX-internal graph data. The values should be unique. Default</span>
-<span class="sd">        value: :samp:`dict(id=&#39;id&#39;, children=&#39;children&#39;)`.</span>
-
-<span class="sd">        .. deprecated:: 2.6</span>
-
-<span class="sd">           The `attrs` keyword argument is replaced by `ident` and `children`</span>
-<span class="sd">           and will be removed in networkx 3.0</span>
 
 <span class="sd">    ident : string</span>
 <span class="sd">        Attribute name for storing NetworkX-internal graph data. `ident` must</span>
@@ -387,26 +340,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">    tree_data, node_link_data, adjacency_data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">attrs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="kn">import</span> <span class="nn">warnings</span>
-
-        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The `attrs` keyword argument of tree_graph is deprecated</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;and will be removed in networkx 3.0.</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;It is replaced with explicit `ident` and `children` &quot;</span>
-            <span class="s2">&quot;keyword arguments.</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;To make this warning go away and ensure usage is</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;forward compatible, replace `attrs` with `ident` and `children,</span><span class="se">\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;for example:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;    &gt;&gt;&gt; tree_graph(data, attrs={&#39;id&#39;: &#39;foo&#39;, &#39;children&#39;: &#39;bar&#39;})</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;should instead be written as</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;    &gt;&gt;&gt; tree_graph(data, ident=&#39;foo&#39;, children=&#39;bar&#39;)</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-            <span class="s2">&quot;The default values of &#39;id&#39; and &#39;children&#39; will not change.&quot;</span>
-        <span class="p">)</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-        <span class="n">ident</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-        <span class="n">children</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;children&quot;</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">add_children</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">children_</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">children_</span><span class="p">:</span>

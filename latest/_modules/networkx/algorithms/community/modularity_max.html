@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.algorithms.community.modularity_max &#8212; NetworkX 2.8.6.dev0 documentation</title>
+    <title>networkx.algorithms.community.modularity_max &#8212; NetworkX 3.0b1.dev0 documentation</title>
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
   document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
@@ -41,7 +41,7 @@
     <script src="../../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/algorithms/community/modularity_max.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.8.6.dev0 documentation"
+          title="Search within NetworkX 3.0b1.dev0 documentation"
           href="../../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -172,7 +172,7 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.8.6.dev0
+            v3.0b1.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -233,7 +233,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;greedy_modularity_communities&quot;</span><span class="p">,</span>
     <span class="s2">&quot;naive_greedy_modularity_communities&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_naive_greedy_modularity_communities&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 
@@ -448,7 +447,11 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 
 <div class="viewcode-block" id="greedy_modularity_communities"><a class="viewcode-back" href="../../../../reference/algorithms/generated/networkx.algorithms.community.modularity_max.greedy_modularity_communities.html#networkx.algorithms.community.modularity_max.greedy_modularity_communities">[docs]</a><span class="k">def</span> <span class="nf">greedy_modularity_communities</span><span class="p">(</span>
-    <span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">best_n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_communities</span><span class="o">=</span><span class="kc">None</span>
+    <span class="n">G</span><span class="p">,</span>
+    <span class="n">weight</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">resolution</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">cutoff</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">best_n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Find communities in G using greedy modularity maximization.</span>
 
@@ -494,23 +497,10 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">        starts to decrease until `best_n` communities remain.</span>
 <span class="sd">        If ``None``, don&#39;t force it to continue beyond a maximum.</span>
 
-<span class="sd">    n_communities : int or None, optional (default=None)</span>
-
-<span class="sd">        .. deprecated:: 3.0</span>
-<span class="sd">           The `n_communities` parameter is deprecated - use `cutoff` and/or</span>
-<span class="sd">           `best_n` to set bounds on the desired number of communities instead.</span>
-
-<span class="sd">        A minimum number of communities below which the merging process stops.</span>
-<span class="sd">        The process stops at this number of communities even if modularity</span>
-<span class="sd">        is not maximized. The goal is to let the user stop the process early.</span>
-<span class="sd">        The process stops before the cutoff if it finds a maximum of modularity.</span>
-
 <span class="sd">    Raises</span>
 <span class="sd">    ------</span>
 <span class="sd">    ValueError : If the `cutoff` or `best_n`  value is not in the range</span>
 <span class="sd">        ``[1, G.number_of_nodes()]``, or if `best_n` &lt; `cutoff`.</span>
-<span class="sd">        Also raised if `cutoff` is used with the deprecated `n_communities`</span>
-<span class="sd">        parameter.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -553,18 +543,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
             <span class="k">return</span> <span class="p">[</span><span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">)]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">best_n</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">n_communities</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="kn">import</span> <span class="nn">warnings</span>
-
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;kwarg ``n_communities`` in greedy_modularity_communities is deprecated&quot;</span>
-            <span class="s2">&quot;and will be removed in version 3.0.   Use ``cutoff`` instead.&quot;</span><span class="p">,</span>
-            <span class="ne">DeprecationWarning</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">if</span> <span class="n">cutoff</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">cutoff</span> <span class="o">=</span> <span class="n">n_communities</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Can not set both n_communities and cutoff.&quot;</span><span class="p">)</span>
 
     <span class="c1"># retrieve generator object to construct output</span>
     <span class="n">community_gen</span> <span class="o">=</span> <span class="n">_greedy_modularity_communities_generator</span><span class="p">(</span>
@@ -691,10 +669,6 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
             <span class="n">communities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([])</span>
     <span class="c1"># Remove empty communities and sort</span>
     <span class="k">return</span> <span class="nb">sorted</span><span class="p">((</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">communities</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
-
-
-<span class="c1"># old name</span>
-<span class="n">_naive_greedy_modularity_communities</span> <span class="o">=</span> <span class="n">naive_greedy_modularity_communities</span>
 </pre></div>
 
               </article>
