@@ -1,80 +1,100 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>weisfeiler_lehman_subgraph_hashes &#8212; NetworkX 2.7.1 documentation</title>
-    
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
-    
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+    <title>weisfeiler_lehman_subgraph_hashes &#8212; NetworkX 2.8.6.dev0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css" />
-    
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.graph_hashing.weisfeiler_lehman_subgraph_hashes.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.7.1 documentation"
+          title="Search within NetworkX 2.8.6.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Graphical degree sequence" href="../graphical.html" />
     <link rel="prev" title="weisfeiler_lehman_graph_hash" href="networkx.algorithms.graph_hashing.weisfeiler_lehman_graph_hash.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  
+<div class="container-fluid version-alert devbar">
+<div class="row no-gutters">
+<div class="col-12 text-center">
+This page is documentation for a DEVELOPMENT / PRE-RELEASE version.
+<a class="btn version-stable font-weight-bold ml-3 my-3 align-baseline"
+href="https://networkx.org/documentation/stable/">Switch to stable version</a>
+</div>
+</div>
+</div>
+  
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../../index.html">
-  <img src="../../../_static/networkx_banner.svg" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+    <img src="../../../_static/networkx_banner.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../../../_static/networkx_banner.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -132,6 +152,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://networkx.org" rel="noopener" target="_blank" title="Home Page"><span><i class="fas fa-home"></i></span>
@@ -148,7 +176,7 @@
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.7.1
+            v2.8.6.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -165,13 +193,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -430,6 +458,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../polynomials.html">
+     Graph Polynomials
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../reciprocity.html">
      Reciprocity
     </a>
@@ -590,53 +623,52 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                <form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      <form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-              </div>
-              
-              <div class="toc-item">
-                
+    </div>
+    
+    <div class="toc-item">
+      
 
 <nav id="bd-toc-nav">
     
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="weisfeiler-lehman-subgraph-hashes">
-<h1>weisfeiler_lehman_subgraph_hashes<a class="headerlink" href="#weisfeiler-lehman-subgraph-hashes" title="Permalink to this headline">¶</a></h1>
+<h1>weisfeiler_lehman_subgraph_hashes<a class="headerlink" href="#weisfeiler-lehman-subgraph-hashes" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="networkx.algorithms.graph_hashing.weisfeiler_lehman_subgraph_hashes">
-<span class="sig-name descname"><span class="pre">weisfeiler_lehman_subgraph_hashes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digest_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/graph_hashing.html#weisfeiler_lehman_subgraph_hashes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.algorithms.graph_hashing.weisfeiler_lehman_subgraph_hashes" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">weisfeiler_lehman_subgraph_hashes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">G</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_attr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digest_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/networkx/algorithms/graph_hashing.html#weisfeiler_lehman_subgraph_hashes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#networkx.algorithms.graph_hashing.weisfeiler_lehman_subgraph_hashes" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a dictionary of subgraph hashes by node.</p>
 <p>The dictionary is keyed by node to a list of hashes in increasingly
 sized induced subgraphs containing the nodes within 2*k edges
@@ -651,7 +683,7 @@ nodes adjacent to <span class="math notranslate nohighlight">\(n\)</span> are co
 labels for each neighboring node are prefixed with the value of this attribute
 along the connecting edge from this neighbor to node <span class="math notranslate nohighlight">\(n\)</span>. The resulting string
 is then hashed to compress this information into a fixed digest size.</p>
-<p>Thus, at the <span class="math notranslate nohighlight">\(i\)</span> distance influence any given
+<p>Thus, at the <span class="math notranslate nohighlight">\(i`th iteration nodes within :math:`2i\)</span> distance influence any given
 hashed node label. We can therefore say that at depth <span class="math notranslate nohighlight">\(i\)</span> for node <span class="math notranslate nohighlight">\(n\)</span>
 we have a hash for a subgraph induced by the <span class="math notranslate nohighlight">\(2i\)</span>-hop neighborhood of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>Can be used to to create general Weisfeiler-Lehman graph kernels, or
@@ -665,7 +697,7 @@ See <a class="reference internal" href="#re2cfd42bf28b-1" id="id3">[1]</a> for d
 is used as its initial label.
 Otherwise, node and/or edge labels are used to compute the hash.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>G: graph</strong></dt><dd><p>The graph to be hashed.
 Can have node and/or edge attributes. Can also have no attributes.</p>
@@ -684,7 +716,7 @@ The default size is 16 bits</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>node_subgraph_hashes</strong><span class="classifier">dict</span></dt><dd><p>A dictionary with each key given by a node in G, and each value given
 by the subgraph hashes in order of depth from the key node.</p>
@@ -703,32 +735,37 @@ by the subgraph hashes in order of depth from the key node.</p>
 <a class="reference internal" href="networkx.algorithms.graph_hashing.weisfeiler_lehman_graph_hash.html#networkx.algorithms.graph_hashing.weisfeiler_lehman_graph_hash" title="networkx.algorithms.graph_hashing.weisfeiler_lehman_graph_hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">weisfeiler_lehman_graph_hash</span></code></a> for efficiency.</p>
 <p>Similarity between hashes does not imply similarity between graphs.</p>
 <p class="rubric">References</p>
-<dl class="citation">
-<dt class="label" id="re2cfd42bf28b-1"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
-<dd><p>Shervashidze, Nino, Pascal Schweitzer, Erik Jan Van Leeuwen,
+<div role="list" class="citation-list">
+<div class="citation" id="re2cfd42bf28b-1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id3">2</a>)</span>
+<p>Shervashidze, Nino, Pascal Schweitzer, Erik Jan Van Leeuwen,
 Kurt Mehlhorn, and Karsten M. Borgwardt. Weisfeiler Lehman
 Graph Kernels. Journal of Machine Learning Research. 2011.
 <a class="reference external" href="http://www.jmlr.org/papers/volume12/shervashidze11a/shervashidze11a.pdf">http://www.jmlr.org/papers/volume12/shervashidze11a/shervashidze11a.pdf</a></p>
-</dd>
-<dt class="label" id="re2cfd42bf28b-2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Annamalai Narayanan, Mahinthan Chandramohan, Rajasekar Venkatesan,
+</div>
+<div class="citation" id="re2cfd42bf28b-2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Annamalai Narayanan, Mahinthan Chandramohan, Rajasekar Venkatesan,
 Lihui Chen, Yang Liu and Shantanu Jaiswa. graph2vec: Learning
 Distributed Representations of Graphs. arXiv. 2017
 <a class="reference external" href="https://arxiv.org/pdf/1707.05005.pdf">https://arxiv.org/pdf/1707.05005.pdf</a></p>
-</dd>
-</dl>
+</div>
+</div>
 <p class="rubric">Examples</p>
-<p>Finding similar nodes in different graphs:
-&gt;&gt;&gt; G1 = nx.Graph()
-&gt;&gt;&gt; G1.add_edges_from([
-…     (1, 2), (2, 3), (2, 4), (3, 5), (4, 6), (5, 7), (6, 7)
-… ])
-&gt;&gt;&gt; G2 = nx.Graph()
-&gt;&gt;&gt; G2.add_edges_from([
-…     (1, 3), (2, 3), (1, 6), (1, 5), (4, 6)
-… ])
-&gt;&gt;&gt; g1_hashes = nx.weisfeiler_lehman_subgraph_hashes(G1, iterations=3, digest_size=8)
-&gt;&gt;&gt; g2_hashes = nx.weisfeiler_lehman_subgraph_hashes(G2, iterations=3, digest_size=8)</p>
+<p>Finding similar nodes in different graphs:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G1</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G2</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G2</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1_hashes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">weisfeiler_lehman_subgraph_hashes</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">digest_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2_hashes</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">weisfeiler_lehman_subgraph_hashes</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">digest_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Even though G1 and G2 are not isomorphic (they have different numbers of edges),
 the hash sequence of depth 3 for node 1 in G1 and node 5 in G2 are similar:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g1_hashes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -750,32 +787,36 @@ is similar.</p>
 </section>
 
 
-              </div>
+              </article>
               
-              
-          </main>
-          
 
+              
+          </div>
+          
       </div>
     </div>
+
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2004-2022, NetworkX Developers.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

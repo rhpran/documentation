@@ -1,76 +1,96 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>networkx.classes.digraph &#8212; NetworkX 2.7.1 documentation</title>
-    
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
-    
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+    <title>networkx.classes.digraph &#8212; NetworkX 2.8.6.dev0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css" />
-    
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/_modules/networkx/classes/digraph.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.7.1 documentation"
+          title="Search within NetworkX 2.8.6.dev0 documentation"
           href="../../../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  
+<div class="container-fluid version-alert devbar">
+<div class="row no-gutters">
+<div class="col-12 text-center">
+This page is documentation for a DEVELOPMENT / PRE-RELEASE version.
+<a class="btn version-stable font-weight-bold ml-3 my-3 align-baseline"
+href="https://networkx.org/documentation/stable/">Switch to stable version</a>
+</div>
+</div>
+</div>
+  
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../../../index.html">
-  <img src="../../../_static/networkx_banner.svg" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+    <img src="../../../_static/networkx_banner.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../../../_static/networkx_banner.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -128,6 +148,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://networkx.org" rel="noopener" target="_blank" title="Home Page"><span><i class="fas fa-home"></i></span>
@@ -144,7 +172,7 @@
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.7.1
+            v2.8.6.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -161,56 +189,105 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-          </div>
-          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <h1>Source code for networkx.classes.digraph</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Base class for directed graphs.&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span>
 
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="kn">from</span> <span class="nn">networkx.classes.graph</span> <span class="kn">import</span> <span class="n">Graph</span>
+<span class="kn">import</span> <span class="nn">networkx.convert</span> <span class="k">as</span> <span class="nn">convert</span>
 <span class="kn">from</span> <span class="nn">networkx.classes.coreviews</span> <span class="kn">import</span> <span class="n">AdjacencyView</span>
+<span class="kn">from</span> <span class="nn">networkx.classes.graph</span> <span class="kn">import</span> <span class="n">Graph</span>
 <span class="kn">from</span> <span class="nn">networkx.classes.reportviews</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">OutEdgeView</span><span class="p">,</span>
-    <span class="n">InEdgeView</span><span class="p">,</span>
     <span class="n">DiDegreeView</span><span class="p">,</span>
     <span class="n">InDegreeView</span><span class="p">,</span>
+    <span class="n">InEdgeView</span><span class="p">,</span>
     <span class="n">OutDegreeView</span><span class="p">,</span>
+    <span class="n">OutEdgeView</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">networkx.exception</span> <span class="kn">import</span> <span class="n">NetworkXError</span>
-<span class="kn">import</span> <span class="nn">networkx.convert</span> <span class="k">as</span> <span class="nn">convert</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DiGraph&quot;</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">_CachedPropertyResetterAdjAndSucc</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Data Descriptor class that syncs and resets cached properties adj and succ</span>
+
+<span class="sd">    The cached properties `adj` and `succ` are reset whenever `_adj` or `_succ`</span>
+<span class="sd">    are set to new objects. In addition, the attributes `_succ` and `_adj`</span>
+<span class="sd">    are synced so these two names point to the same object.</span>
+
+<span class="sd">    This object sits on a class and ensures that any instance of that</span>
+<span class="sd">    class clears its cached properties &quot;succ&quot; and &quot;adj&quot; whenever the</span>
+<span class="sd">    underlying instance attributes &quot;_succ&quot; or &quot;_adj&quot; are set to a new object.</span>
+<span class="sd">    It only affects the set process of the obj._adj and obj._succ attribute.</span>
+<span class="sd">    All get/del operations act as they normally would.</span>
+
+<span class="sd">    For info on Data Descriptors see: https://docs.python.org/3/howto/descriptor.html</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">od</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span>
+        <span class="n">od</span><span class="p">[</span><span class="s2">&quot;_adj&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">od</span><span class="p">[</span><span class="s2">&quot;_succ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="c1"># reset cached properties</span>
+        <span class="k">if</span> <span class="s2">&quot;adj&quot;</span> <span class="ow">in</span> <span class="n">od</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">od</span><span class="p">[</span><span class="s2">&quot;adj&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;succ&quot;</span> <span class="ow">in</span> <span class="n">od</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">od</span><span class="p">[</span><span class="s2">&quot;succ&quot;</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">_CachedPropertyResetterPred</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Data Descriptor class for _pred that resets ``pred`` cached_property when needed</span>
+
+<span class="sd">    This assumes that the ``cached_property`` ``G.pred`` should be reset whenever</span>
+<span class="sd">    ``G._pred`` is set to a new value.</span>
+
+<span class="sd">    This object sits on a class and ensures that any instance of that</span>
+<span class="sd">    class clears its cached property &quot;pred&quot; whenever the underlying</span>
+<span class="sd">    instance attribute &quot;_pred&quot; is set to a new object. It only affects</span>
+<span class="sd">    the set process of the obj._pred attribute. All get/del operations</span>
+<span class="sd">    act as they normally would.</span>
+
+<span class="sd">    For info on Data Descriptors see: https://docs.python.org/3/howto/descriptor.html</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">od</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="vm">__dict__</span>
+        <span class="n">od</span><span class="p">[</span><span class="s2">&quot;_pred&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">if</span> <span class="s2">&quot;pred&quot;</span> <span class="ow">in</span> <span class="n">od</span><span class="p">:</span>
+            <span class="k">del</span> <span class="n">od</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="DiGraph"><a class="viewcode-back" href="../../../reference/classes/digraph.html#networkx.DiGraph">[docs]</a><span class="k">class</span> <span class="nc">DiGraph</span><span class="p">(</span><span class="n">Graph</span><span class="p">):</span>
@@ -366,8 +443,8 @@
 <span class="sd">    Simple graph information is obtained using object-attributes and methods.</span>
 <span class="sd">    Reporting usually provides views instead of containers to reduce memory</span>
 <span class="sd">    usage. The views update as the graph is updated similarly to dict-views.</span>
-<span class="sd">    The objects `nodes, `edges` and `adj` provide access to data attributes</span>
-<span class="sd">    via lookup (e.g. `nodes[n], `edges[u, v]`, `adj[u][v]`) and iteration</span>
+<span class="sd">    The objects `nodes`, `edges` and `adj` provide access to data attributes</span>
+<span class="sd">    via lookup (e.g. `nodes[n]`, `edges[u, v]`, `adj[u][v]`) and iteration</span>
 <span class="sd">    (e.g. `nodes.items()`, `nodes.data(&#39;color&#39;)`,</span>
 <span class="sd">    `nodes.data(&#39;color&#39;, default=&#39;blue&#39;)` and similarly for `edges`)</span>
 <span class="sd">    Views exist for `nodes`, `edges`, `neighbors()`/`adj` and `degree`.</span>
@@ -461,6 +538,10 @@
 <span class="sd">    a dictionary-like object.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">_adj</span> <span class="o">=</span> <span class="n">_CachedPropertyResetterAdjAndSucc</span><span class="p">()</span>  <span class="c1"># type: ignore</span>
+    <span class="n">_succ</span> <span class="o">=</span> <span class="n">_adj</span>  <span class="c1"># type: ignore</span>
+    <span class="n">_pred</span> <span class="o">=</span> <span class="n">_CachedPropertyResetterPred</span><span class="p">()</span>
+
 <div class="viewcode-block" id="DiGraph.__init__"><a class="viewcode-back" href="../../../reference/classes/generated/networkx.DiGraph.__init__.html#networkx.DiGraph.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">incoming_graph_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">attr</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialize a graph with edges, name, or graph attributes.</span>
 
@@ -494,21 +575,14 @@
 <span class="sd">        {&#39;day&#39;: &#39;Friday&#39;}</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">graph_attr_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph_attr_dict_factory</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">node_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_dict_factory</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_attr_dict_factory</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_outer_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_outer_dict_factory</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_inner_dict_factory</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">edge_attr_dict_factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_attr_dict_factory</span>
-
         <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph_attr_dict_factory</span><span class="p">()</span>  <span class="c1"># dictionary for graph attributes</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_dict_factory</span><span class="p">()</span>  <span class="c1"># dictionary for node attr</span>
         <span class="c1"># We store two adjacency lists:</span>
         <span class="c1"># the predecessors of node n are stored in the dict self._pred</span>
         <span class="c1"># the successors of node n are stored in the dict self._succ=self._adj</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_outer_dict_factory</span><span class="p">()</span>  <span class="c1"># empty adjacency dict</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_outer_dict_factory</span><span class="p">()</span>  <span class="c1"># empty adjacency dict successor</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjlist_outer_dict_factory</span><span class="p">()</span>  <span class="c1"># predecessor</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_succ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_adj</span>  <span class="c1"># successor</span>
+        <span class="c1"># Note: self._succ = self._adj  # successor</span>
 
         <span class="c1"># attempt to load graph with data</span>
         <span class="k">if</span> <span class="n">incoming_graph_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -516,7 +590,7 @@
         <span class="c1"># load graph attributes (must be after convert)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span></div>
 
-    <span class="nd">@property</span>
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">adj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Graph adjacency object holding the neighbors of each node.</span>
 
@@ -535,7 +609,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">AdjacencyView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_succ</span><span class="p">)</span>
 
-    <span class="nd">@property</span>
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">succ</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Graph adjacency object holding the successors of each node.</span>
 
@@ -556,7 +630,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">AdjacencyView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_succ</span><span class="p">)</span>
 
-    <span class="nd">@property</span>
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">pred</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Graph adjacency object holding the predecessors of each node.</span>
 
@@ -1032,7 +1106,7 @@
         <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">NetworkXError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The node </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> is not in the digraph.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span></div>
 
-    <span class="nd">@property</span>
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;An OutEdgeView of the DiGraph as G.edges or G.edges().</span>
 
@@ -1096,9 +1170,13 @@
         <span class="k">return</span> <span class="n">OutEdgeView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="c1"># alias out_edges to edges</span>
-    <span class="n">out_edges</span> <span class="o">=</span> <span class="n">edges</span>
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">out_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">OutEdgeView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-    <span class="nd">@property</span>
+    <span class="n">out_edges</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="vm">__doc__</span>
+
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">in_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;An InEdgeView of the Graph as G.in_edges or G.in_edges().</span>
 
@@ -1129,7 +1207,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">InEdgeView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-    <span class="nd">@property</span>
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">degree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;A DegreeView for the Graph as G.degree or G.degree().</span>
 
@@ -1152,13 +1230,10 @@
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
-<span class="sd">        If a single node is requested</span>
-<span class="sd">        deg : int</span>
-<span class="sd">            Degree of the node</span>
-
-<span class="sd">        OR if multiple nodes are requested</span>
-<span class="sd">        nd_iter : iterator</span>
-<span class="sd">            The iterator returns two-tuples of (node, degree).</span>
+<span class="sd">        DiDegreeView or int</span>
+<span class="sd">            If multiple nodes are requested (the default), returns a `DiDegreeView`</span>
+<span class="sd">            mapping nodes to their degree.</span>
+<span class="sd">            If a single node is requested, returns the degree of the node as an integer.</span>
 
 <span class="sd">        See Also</span>
 <span class="sd">        --------</span>
@@ -1176,7 +1251,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">DiDegreeView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-    <span class="nd">@property</span>
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">in_degree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;An InDegreeView for (node, in_degree) or in_degree for single node.</span>
 
@@ -1223,7 +1298,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">InDegreeView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-    <span class="nd">@property</span>
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">out_degree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;An OutDegreeView for (node, out_degree)</span>
 
@@ -1417,32 +1492,36 @@
         <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">graphviews</span><span class="o">.</span><span class="n">reverse_view</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 </pre></div>
 
-              </div>
+              </article>
               
-              
-          </main>
-          
 
+              
+          </div>
+          
       </div>
     </div>
+
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2004-2022, NetworkX Developers.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

@@ -1,79 +1,99 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Contributor Guide &#8212; NetworkX 2.7.1 documentation</title>
-    
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
-    
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+    <title>Contributor Guide &#8212; NetworkX 2.8.6.dev0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/developer/contribute.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.7.1 documentation"
+          title="Search within NetworkX 2.8.6.dev0 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Mentored Projects" href="projects.html" />
     <link rel="prev" title="Mission and Values" href="values.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  
+<div class="container-fluid version-alert devbar">
+<div class="row no-gutters">
+<div class="col-12 text-center">
+This page is documentation for a DEVELOPMENT / PRE-RELEASE version.
+<a class="btn version-stable font-weight-bold ml-3 my-3 align-baseline"
+href="https://networkx.org/documentation/stable/">Switch to stable version</a>
+</div>
+</div>
+</div>
+  
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/networkx_banner.svg" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/networkx_banner.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/networkx_banner.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -131,6 +151,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://networkx.org" rel="noopener" target="_blank" title="Home Page"><span><i class="fas fa-home"></i></span>
@@ -147,7 +175,7 @@
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.7.1
+            v2.8.6.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -164,13 +192,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -232,27 +260,28 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-              </div>
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
+    </div>
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -297,6 +326,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-references">
+   Adding References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#image-comparison">
    Image comparison
   </a>
@@ -314,26 +348,24 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="contributor-guide">
-<span id="id1"></span><h1>Contributor Guide<a class="headerlink" href="#contributor-guide" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Contributor Guide<a class="headerlink" href="#contributor-guide" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This document assumes some familiarity with contributing to open source
@@ -341,7 +373,7 @@ scientific Python projects using GitHub pull requests. If this does not
 describe you, you may first want to see the <a class="reference internal" href="new_contributor_faq.html#contributing-faq"><span class="std std-ref">New Contributor FAQ</span></a>.</p>
 </div>
 <section id="development-workflow">
-<span id="dev-workflow"></span><h2>Development Workflow<a class="headerlink" href="#development-workflow" title="Permalink to this headline">¶</a></h2>
+<span id="dev-workflow"></span><h2>Development Workflow<a class="headerlink" href="#development-workflow" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>If you are a first-time contributor:</p>
 <ul>
@@ -529,7 +561,7 @@ where 123 is the issue number.</p>
 </ol>
 </section>
 <section id="divergence-from-upstream-main">
-<h2>Divergence from <code class="docutils literal notranslate"><span class="pre">upstream</span> <span class="pre">main</span></code><a class="headerlink" href="#divergence-from-upstream-main" title="Permalink to this headline">¶</a></h2>
+<h2>Divergence from <code class="docutils literal notranslate"><span class="pre">upstream</span> <span class="pre">main</span></code><a class="headerlink" href="#divergence-from-upstream-main" title="Permalink to this heading">#</a></h2>
 <p>If GitHub indicates that the branch of your Pull Request can no longer
 be merged automatically, merge the main branch into yours:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span> <span class="n">main</span>
@@ -576,7 +608,7 @@ but we squash and merge PRs either way.</p>
 </div>
 </section>
 <section id="guidelines">
-<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this headline">¶</a></h2>
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>All code should have tests.</p></li>
 <li><p>All code should be documented, to the same
@@ -623,13 +655,14 @@ pattern makes the origin of any particular instance of <code class="docutils lit
 to designate that a function doesn’t accept ‘directed’, ‘undirected’,
 ‘multigraph’ or ‘graph’.  The first argument of the decorated function should
 be the graph object to be checked.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@nx</span><span class="o">.</span><span class="n">not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">,</span> <span class="s1">&#39;multigraph&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@nx</span><span class="o">.</span><span class="n">not_implemented_for</span><span class="p">(</span><span class="s2">&quot;directed&quot;</span><span class="p">,</span> <span class="s2">&quot;multigraph&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">function_not_for_MultiDiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">others</span><span class="p">):</span>
     <span class="c1"># function not for graphs that are directed *and* multigraph</span>
     <span class="k">pass</span>
 
-<span class="nd">@nx</span><span class="o">.</span><span class="n">not_implemented_for</span><span class="p">(</span><span class="s1">&#39;directed&#39;</span><span class="p">)</span>
-<span class="nd">@nx</span><span class="o">.</span><span class="n">not_implemented_for</span><span class="p">(</span><span class="s1">&#39;multigraph&#39;</span><span class="p">)</span>
+
+<span class="nd">@nx</span><span class="o">.</span><span class="n">not_implemented_for</span><span class="p">(</span><span class="s2">&quot;directed&quot;</span><span class="p">)</span>
+<span class="nd">@nx</span><span class="o">.</span><span class="n">not_implemented_for</span><span class="p">(</span><span class="s2">&quot;multigraph&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">function_only_for_Graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">others</span><span class="p">):</span>
     <span class="c1"># function not for directed graphs *or* for multigraphs</span>
     <span class="k">pass</span>
@@ -639,7 +672,7 @@ be the graph object to be checked.</p>
 </ul>
 </section>
 <section id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">networkx</span></code> has an extensive test suite that ensures correct
 execution on your system.  The test suite has to pass before a pull
 request can be merged, and tests should be added to cover any
@@ -687,7 +720,7 @@ detailing the test coverage:</p>
 </div>
 </section>
 <section id="adding-tests">
-<h2>Adding tests<a class="headerlink" href="#adding-tests" title="Permalink to this headline">¶</a></h2>
+<h2>Adding tests<a class="headerlink" href="#adding-tests" title="Permalink to this heading">#</a></h2>
 <p>If you’re <strong>new to testing</strong>, see existing test files for examples of things to do.
 <strong>Don’t let the tests keep you from submitting your contribution!</strong>
 If you’re not sure how to do this or are having trouble, submit your pull request
@@ -695,7 +728,7 @@ anyway.
 We will help you create the tests and sort out any kind of problem during code review.</p>
 </section>
 <section id="adding-examples">
-<h2>Adding examples<a class="headerlink" href="#adding-examples" title="Permalink to this headline">¶</a></h2>
+<h2>Adding examples<a class="headerlink" href="#adding-examples" title="Permalink to this heading">#</a></h2>
 <p>The gallery examples are managed by
 <a class="reference external" href="https://sphinx-gallery.readthedocs.io/">sphinx-gallery</a>.
 The source files for the example gallery are <code class="docutils literal notranslate"><span class="pre">.py</span></code> scripts in <code class="docutils literal notranslate"><span class="pre">examples/</span></code> that
@@ -718,8 +751,32 @@ format.</p>
 documentation.</p></li>
 </ul>
 </section>
+<section id="adding-references">
+<h2>Adding References<a class="headerlink" href="#adding-references" title="Permalink to this heading">#</a></h2>
+<p>If you are contributing a new algorithm (or an improvement to a current algorithm),
+a reference paper or resource should also be provided in the function docstring.
+For references to published papers, we try to follow the
+<a class="reference external" href="https://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style">Chicago Citation Style</a>.
+The quickest way of generating citation in this style is
+by searching for the paper on <a class="reference external" href="https://scholar.google.com/">Google Scholar</a> and clicking on
+the <code class="docutils literal notranslate"><span class="pre">cite</span></code> button. It will pop up the citation of the paper in multiple formats, and copy the
+<code class="docutils literal notranslate"><span class="pre">Chicago</span></code> style.</p>
+<p>We prefer adding DOI links for URLs. If the DOI link resolves to a paywalled version of
+the article, we prefer adding a link to the arXiv version (if available) or any other
+publicly accessible copy of the paper.</p>
+<p>An example of a reference:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Cheong</span><span class="p">,</span> <span class="n">Se</span><span class="o">-</span><span class="n">Hang</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Yain</span><span class="o">-</span><span class="n">Whar</span> <span class="n">Si</span><span class="o">.</span> <span class="s2">&quot;Force-directed algorithms for schematic drawings and</span>
+<span class="n">placement</span><span class="p">:</span> <span class="n">A</span> <span class="n">survey</span><span class="o">.</span><span class="s2">&quot; Information Visualization 19, no. 1 (2020): 65-91.</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1177</span><span class="o">%</span><span class="mi">2</span><span class="n">F1473871618821740</span>
+</pre></div>
+</div>
+<p>If the resource is uploaded as a PDF/DOCX/PPT on the web (lecture notes, presentations) it is better
+to use the <a class="reference external" href="https://web.archive.org/">wayback machine</a> to create a snapshot of the resource
+and link the internet archive link. The URL of the resource can change, and it creates unreachable
+links from the documentation.</p>
+</section>
 <section id="image-comparison">
-<h2>Image comparison<a class="headerlink" href="#image-comparison" title="Permalink to this headline">¶</a></h2>
+<h2>Image comparison<a class="headerlink" href="#image-comparison" title="Permalink to this heading">#</a></h2>
 <p>To run image comparisons:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ PYTHONPATH=. pytest --mpl --pyargs networkx.drawing
 </pre></div>
@@ -749,48 +806,52 @@ and decorate it as follows:</p>
 </div>
 </section>
 <section id="bugs">
-<h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this headline">¶</a></h2>
+<h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this heading">#</a></h2>
 <p>Please <a class="reference external" href="https://github.com/networkx/networkx/issues">report bugs on GitHub</a>.</p>
 </section>
 <section id="policies">
-<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">¶</a></h2>
+<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this heading">#</a></h2>
 <p>All interactions with the project are subject to the
 <a class="reference internal" href="code_of_conduct.html"><span class="doc">NetworkX code of conduct</span></a>.</p>
 <p>We also follow these policies:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="deprecations.html"><span class="doc">NetworkX deprecation policy</span></a></p></li>
-<li><p><a class="reference external" href="https://numpy.org/neps/nep-0029-deprecation_policy.html" title="(in NumPy Enhancement Proposals)"><span class="xref std std-doc">Python version support</span></a></p></li>
+<li><p><span class="xref std std-doc">Python version support</span></p></li>
 </ul>
 </section>
 </section>
 
 
-              </div>
+              </article>
               
-              
-          </main>
-          
 
+              
+          </div>
+          
       </div>
     </div>
+
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2004-2022, NetworkX Developers.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

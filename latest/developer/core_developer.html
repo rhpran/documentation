@@ -1,79 +1,99 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Core Developer Guide &#8212; NetworkX 2.7.1 documentation</title>
-    
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
-    
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+    <title>Core Developer Guide &#8212; NetworkX 2.8.6.dev0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/developer/core_developer.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.7.1 documentation"
+          title="Search within NetworkX 2.8.6.dev0 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Release Process" href="release.html" />
     <link rel="prev" title="New Contributor FAQ" href="new_contributor_faq.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  
+<div class="container-fluid version-alert devbar">
+<div class="row no-gutters">
+<div class="col-12 text-center">
+This page is documentation for a DEVELOPMENT / PRE-RELEASE version.
+<a class="btn version-stable font-weight-bold ml-3 my-3 align-baseline"
+href="https://networkx.org/documentation/stable/">Switch to stable version</a>
+</div>
+</div>
+</div>
+  
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/networkx_banner.svg" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/networkx_banner.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/networkx_banner.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -131,6 +151,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://networkx.org" rel="noopener" target="_blank" title="Home Page"><span><i class="fas fa-home"></i></span>
@@ -147,7 +175,7 @@
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.7.1
+            v2.8.6.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -164,13 +192,13 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
@@ -232,27 +260,28 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-              </div>
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
+    </div>
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -288,26 +317,24 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="core-developer-guide">
-<span id="core-dev"></span><h1>Core Developer Guide<a class="headerlink" href="#core-developer-guide" title="Permalink to this headline">¶</a></h1>
+<span id="core-dev"></span><h1>Core Developer Guide<a class="headerlink" href="#core-developer-guide" title="Permalink to this heading">#</a></h1>
 <p>As a core developer, you should continue making pull requests
 in accordance with the <a class="reference internal" href="contribute.html#contributor-guide"><span class="std std-ref">Contributor Guide</span></a>.
 You are responsible for shepherding other contributors through the review process.
@@ -320,9 +347,9 @@ Understand</a> below.) To ensure a clean git history, use GitHub’s
 <a class="reference external" href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/merging-a-pull-request#merging-a-pull-request-on-github">Squash and Merge</a>
 feature to merge, unless you have a good reason not to do so.</p>
 <section id="reviewing">
-<h2>Reviewing<a class="headerlink" href="#reviewing" title="Permalink to this headline">¶</a></h2>
+<h2>Reviewing<a class="headerlink" href="#reviewing" title="Permalink to this heading">#</a></h2>
 <section id="how-to-conduct-a-good-review">
-<h3>How to Conduct A Good Review<a class="headerlink" href="#how-to-conduct-a-good-review" title="Permalink to this headline">¶</a></h3>
+<h3>How to Conduct A Good Review<a class="headerlink" href="#how-to-conduct-a-good-review" title="Permalink to this heading">#</a></h3>
 <p><em>Always</em> be kind to contributors. Nearly all of NetworkX is
 volunteer work, for which we are tremendously grateful. Provide
 constructive criticism on ideas and implementations, and remind
@@ -379,7 +406,7 @@ original contributor.</p>
 may not send out notifications for these.</p>
 </section>
 <section id="merge-only-changes-you-understand">
-<h3>Merge Only Changes You Understand<a class="headerlink" href="#merge-only-changes-you-understand" title="Permalink to this headline">¶</a></h3>
+<h3>Merge Only Changes You Understand<a class="headerlink" href="#merge-only-changes-you-understand" title="Permalink to this heading">#</a></h3>
 <p><em>Long-term maintainability</em> is an important concern.  Code doesn’t
 merely have to <em>work</em>, but should be <em>understood</em> by multiple core
 developers.  Changes will have to be made in the future, and the
@@ -394,7 +421,7 @@ that responsibility seriously.</p>
 </section>
 </section>
 <section id="closing-issues-and-pull-requests">
-<h2>Closing issues and pull requests<a class="headerlink" href="#closing-issues-and-pull-requests" title="Permalink to this headline">¶</a></h2>
+<h2>Closing issues and pull requests<a class="headerlink" href="#closing-issues-and-pull-requests" title="Permalink to this heading">#</a></h2>
 <p>Sometimes, an issue must be closed that was not fully resolved. This can be
 for a number of reasons:</p>
 <ul class="simple">
@@ -435,7 +462,7 @@ decision.</p></li>
 keep contributing, regardless of the outcome of past contributions.</p>
 </section>
 <section id="further-resources">
-<h2>Further resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h2>
+<h2>Further resources<a class="headerlink" href="#further-resources" title="Permalink to this heading">#</a></h2>
 <p>As a core member, you should be familiar with community and developer
 resources such as:</p>
 <ul class="simple">
@@ -457,32 +484,36 @@ list</a></p></li>
 </section>
 
 
-              </div>
+              </article>
               
-              
-          </main>
-          
 
+              
+          </div>
+          
       </div>
     </div>
+
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2004-2022, NetworkX Developers.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

@@ -1,79 +1,99 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>NetworkX 1.0 &#8212; NetworkX 2.7.1 documentation</title>
-    
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
-    
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+    <title>NetworkX 1.0 &#8212; NetworkX 2.8.6.dev0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/release/api_1.0.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.7.1 documentation"
+          title="Search within NetworkX 2.8.6.dev0 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="NetworkX 0.99" href="api_0.99.html" />
     <link rel="prev" title="NetworkX 1.4" href="api_1.4.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  
+<div class="container-fluid version-alert devbar">
+<div class="row no-gutters">
+<div class="col-12 text-center">
+This page is documentation for a DEVELOPMENT / PRE-RELEASE version.
+<a class="btn version-stable font-weight-bold ml-3 my-3 align-baseline"
+href="https://networkx.org/documentation/stable/">Switch to stable version</a>
+</div>
+</div>
+</div>
+  
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/networkx_banner.svg" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/networkx_banner.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/networkx_banner.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -131,6 +151,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://networkx.org" rel="noopener" target="_blank" title="Home Page"><span><i class="fas fa-home"></i></span>
@@ -147,7 +175,7 @@
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.7.1
+            v2.8.6.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -164,18 +192,48 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="release_dev.html">
    Next Release
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.5.html">
+   NetworkX 2.8.5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.4.html">
+   NetworkX 2.8.4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.3.html">
+   NetworkX 2.8.3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.2.html">
+   NetworkX 2.8.2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.1.html">
+   NetworkX 2.8.1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.html">
+   NetworkX 2.8
   </a>
  </li>
  <li class="toctree-l1">
@@ -282,27 +340,28 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-              </div>
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
+    </div>
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -510,30 +569,28 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="networkx-1-0">
-<h1>NetworkX 1.0<a class="headerlink" href="#networkx-1-0" title="Permalink to this headline">¶</a></h1>
+<h1>NetworkX 1.0<a class="headerlink" href="#networkx-1-0" title="Permalink to this heading">#</a></h1>
 <p>Release date:  8 Jan 2010</p>
 <p>Version 1.0 requires Python 2.4 or greater.</p>
 <section id="new-features">
-<h2>New features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h2>
+<h2>New features<a class="headerlink" href="#new-features" title="Permalink to this heading">#</a></h2>
 <p>This release has significant changes to parts of the graph API
 to allow graph, node, and edge attributes.
 See <a class="reference external" href="http://networkx.lanl.gov/reference/api_changes.html">http://networkx.lanl.gov/reference/api_changes.html</a></p>
@@ -558,7 +615,7 @@ See <a class="reference external" href="http://networkx.lanl.gov/reference/api_c
 </div></blockquote>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><p>Update to work with networkx-1.0 API</p></li>
@@ -567,7 +624,7 @@ See <a class="reference external" href="http://networkx.lanl.gov/reference/api_c
 </div></blockquote>
 </section>
 <section id="version-numbering">
-<h2>Version numbering<a class="headerlink" href="#version-numbering" title="Permalink to this headline">¶</a></h2>
+<h2>Version numbering<a class="headerlink" href="#version-numbering" title="Permalink to this heading">#</a></h2>
 <p>In the future we will use a more standard release numbering system
 with major.minor[build] labels where major and minor are numbers and
 [build] is a label such as “dev1379” to indicate a development version
@@ -579,13 +636,13 @@ bugs or other defects in the existing classes, until networkx-2.0 is
 released at some time in the future.</p>
 </section>
 <section id="changes-in-base-classes">
-<h2>Changes in base classes<a class="headerlink" href="#changes-in-base-classes" title="Permalink to this headline">¶</a></h2>
+<h2>Changes in base classes<a class="headerlink" href="#changes-in-base-classes" title="Permalink to this heading">#</a></h2>
 <p>The most significant changes in are in the graph classes.  All of the
 graph classes now allow optional graph, node, and edge attributes.  Those
 attributes are stored internally in the graph classes as dictionaries
 and can be accessed simply like Python dictionaries in most cases.</p>
 <section id="graph-attributes">
-<h3>Graph attributes<a class="headerlink" href="#graph-attributes" title="Permalink to this headline">¶</a></h3>
+<h3>Graph attributes<a class="headerlink" href="#graph-attributes" title="Permalink to this heading">#</a></h3>
 <p>Each graph keeps a dictionary of key=value attributes
 in the member G.graph.  These attributes can be accessed
 directly using G.graph or added at instantiation using
@@ -598,7 +655,7 @@ keyword arguments.</p>
 </div>
 </section>
 <section id="node-attributes">
-<h3>Node attributes<a class="headerlink" href="#node-attributes" title="Permalink to this headline">¶</a></h3>
+<h3>Node attributes<a class="headerlink" href="#node-attributes" title="Permalink to this heading">#</a></h3>
 <p>Each node has a corresponding dictionary of attributes.
 Adding attributes to nodes is optional.</p>
 <p>Add node attributes using add_node(), add_nodes_from() or G.node</p>
@@ -613,7 +670,7 @@ Adding attributes to nodes is optional.</p>
 </div>
 </section>
 <section id="edge-attributes">
-<h3>Edge attributes<a class="headerlink" href="#edge-attributes" title="Permalink to this headline">¶</a></h3>
+<h3>Edge attributes<a class="headerlink" href="#edge-attributes" title="Permalink to this heading">#</a></h3>
 <p>Each edge has a corresponding dictionary of attributes.
 The default edge data is now an empty dictionary of attributes
 and adding attributes to edges is optional.</p>
@@ -633,9 +690,9 @@ notation, or G.edge.</p>
 </section>
 </section>
 <section id="methods-changed">
-<h2>Methods changed<a class="headerlink" href="#methods-changed" title="Permalink to this headline">¶</a></h2>
+<h2>Methods changed<a class="headerlink" href="#methods-changed" title="Permalink to this heading">#</a></h2>
 <section id="graph-digraph-multigraph-multidigraph">
-<h3>Graph(), DiGraph(), MultiGraph(), MultiDiGraph()<a class="headerlink" href="#graph-digraph-multigraph-multidigraph" title="Permalink to this headline">¶</a></h3>
+<h3>Graph(), DiGraph(), MultiGraph(), MultiDiGraph()<a class="headerlink" href="#graph-digraph-multigraph-multidigraph" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Now takes optional keyword=value attributes on initialization.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="s1">&#39;2009&#39;</span><span class="p">,</span><span class="n">city</span><span class="o">=</span><span class="s1">&#39;New York&#39;</span><span class="p">)</span>
@@ -644,7 +701,7 @@ notation, or G.edge.</p>
 </div></blockquote>
 </section>
 <section id="add-node">
-<h3>add_node()<a class="headerlink" href="#add-node" title="Permalink to this headline">¶</a></h3>
+<h3>add_node()<a class="headerlink" href="#add-node" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Now takes optional keyword=value attributes or a dictionary of attributes.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">room</span><span class="o">=</span><span class="mi">714</span><span class="p">)</span>
@@ -653,7 +710,7 @@ notation, or G.edge.</p>
 </div></blockquote>
 </section>
 <section id="add-nodes-from">
-<h3>add_nodes_from()<a class="headerlink" href="#add-nodes-from" title="Permalink to this headline">¶</a></h3>
+<h3>add_nodes_from()<a class="headerlink" href="#add-nodes-from" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Now takes optional keyword=value attributes or a dictionary of
 attributes applied to all affected nodes.</p>
@@ -663,7 +720,7 @@ attributes applied to all affected nodes.</p>
 </div></blockquote>
 </section>
 <section id="add-edge">
-<h3>add_edge()<a class="headerlink" href="#add-edge" title="Permalink to this headline">¶</a></h3>
+<h3>add_edge()<a class="headerlink" href="#add-edge" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Now takes optional keyword=value attributes or a dictionary of attributes.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">4.7</span> <span class="p">)</span>
@@ -672,7 +729,7 @@ attributes applied to all affected nodes.</p>
 </div></blockquote>
 </section>
 <section id="add-edges-from">
-<h3>add_edges_from()<a class="headerlink" href="#add-edges-from" title="Permalink to this headline">¶</a></h3>
+<h3>add_edges_from()<a class="headerlink" href="#add-edges-from" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Now takes optional keyword=value attributes or a dictionary of
 attributes applied to all affected edges.</p>
@@ -683,7 +740,7 @@ attributes applied to all affected edges.</p>
 </div></blockquote>
 </section>
 <section id="nodes-and-nodes-iter">
-<h3>nodes() and nodes_iter()<a class="headerlink" href="#nodes-and-nodes-iter" title="Permalink to this headline">¶</a></h3>
+<h3>nodes() and nodes_iter()<a class="headerlink" href="#nodes-and-nodes-iter" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>New keyword data=True|False keyword determines whether to return
 two-tuples (n,dict) (True) with node attribution dictionary</p>
@@ -695,7 +752,7 @@ two-tuples (n,dict) (True) with node attribution dictionary</p>
 </div></blockquote>
 </section>
 <section id="copy">
-<h3>copy()<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
+<h3>copy()<a class="headerlink" href="#copy" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Now returns a deep copy of the graph (copies all underlying
 data and attributes for nodes and edges).  Use the class
@@ -708,7 +765,7 @@ initializer to make a shallow copy:</p>
 </div></blockquote>
 </section>
 <section id="to-directed-to-undirected">
-<h3>to_directed(), to_undirected()<a class="headerlink" href="#to-directed-to-undirected" title="Permalink to this headline">¶</a></h3>
+<h3>to_directed(), to_undirected()<a class="headerlink" href="#to-directed-to-undirected" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Now returns a deep copy of the graph (copies all underlying
 data and attributes for nodes and edges).  Use the class
@@ -721,7 +778,7 @@ initializer to make a shallow copy:</p>
 </div></blockquote>
 </section>
 <section id="subgraph">
-<h3>subgraph()<a class="headerlink" href="#subgraph" title="Permalink to this headline">¶</a></h3>
+<h3>subgraph()<a class="headerlink" href="#subgraph" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>With copy=True now returns a deep copy of the graph
 (copies all underlying data and attributes for nodes and edges).</p>
@@ -733,7 +790,7 @@ initializer to make a shallow copy:</p>
 </div></blockquote>
 </section>
 <section id="add-cycle-add-path-add-star">
-<h3>add_cycle(), add_path(), add_star()<a class="headerlink" href="#add-cycle-add-path-add-star" title="Permalink to this headline">¶</a></h3>
+<h3>add_cycle(), add_path(), add_star()<a class="headerlink" href="#add-cycle-add-path-add-star" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Now take optional keyword=value attributes or a dictionary of
 attributes which are applied to all edges affected by the method.</p>
@@ -745,29 +802,29 @@ attributes which are applied to all edges affected by the method.</p>
 </section>
 </section>
 <section id="methods-removed">
-<h2>Methods removed<a class="headerlink" href="#methods-removed" title="Permalink to this headline">¶</a></h2>
+<h2>Methods removed<a class="headerlink" href="#methods-removed" title="Permalink to this heading">#</a></h2>
 <section id="delete-node">
-<h3>delete_node()<a class="headerlink" href="#delete-node" title="Permalink to this headline">¶</a></h3>
+<h3>delete_node()<a class="headerlink" href="#delete-node" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>The preferred name is now remove_node().</p>
 </div></blockquote>
 </section>
 <section id="delete-nodes-from">
-<h3>delete_nodes_from()<a class="headerlink" href="#delete-nodes-from" title="Permalink to this headline">¶</a></h3>
+<h3>delete_nodes_from()<a class="headerlink" href="#delete-nodes-from" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>No longer raises an exception on an attempt to delete a node not in
 the graph.  The preferred name is now remove_nodes_from().</p>
 </div></blockquote>
 </section>
 <section id="delete-edge">
-<h3>delete_edge()<a class="headerlink" href="#delete-edge" title="Permalink to this headline">¶</a></h3>
+<h3>delete_edge()<a class="headerlink" href="#delete-edge" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Now raises an exception on an attempt to delete an edge not in the graph.
 The preferred name is now remove_edge().</p>
 </div></blockquote>
 </section>
 <section id="delete-edges-from">
-<h3>delete_edges_from()<a class="headerlink" href="#delete-edges-from" title="Permalink to this headline">¶</a></h3>
+<h3>delete_edges_from()<a class="headerlink" href="#delete-edges-from" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>The preferred name is now remove_edges_from().</p>
 </div></blockquote>
@@ -777,7 +834,7 @@ The preferred name is now remove_edge().</p>
 </div></blockquote>
 </section>
 <section id="get-edge">
-<h3>get_edge()<a class="headerlink" href="#get-edge" title="Permalink to this headline">¶</a></h3>
+<h3>get_edge()<a class="headerlink" href="#get-edge" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Renamed to get_edge_data().  Returns the edge attribute dictionary.</p>
 <p>The fastest way to get edge data for edge (u,v) is to use G[u][v]
@@ -786,9 +843,9 @@ instead of G.get_edge_data(u,v)</p>
 </section>
 </section>
 <section id="members-removed">
-<h2>Members removed<a class="headerlink" href="#members-removed" title="Permalink to this headline">¶</a></h2>
+<h2>Members removed<a class="headerlink" href="#members-removed" title="Permalink to this heading">#</a></h2>
 <section id="directed-multigraph-weighted">
-<h3>directed, multigraph, weighted<a class="headerlink" href="#directed-multigraph-weighted" title="Permalink to this headline">¶</a></h3>
+<h3>directed, multigraph, weighted<a class="headerlink" href="#directed-multigraph-weighted" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Use methods G.is_directed() and G.is_multigraph().
 All graphs are weighted graphs now if they have numeric
@@ -797,16 +854,16 @@ values in the ‘weight’ edge attribute.</p>
 </section>
 </section>
 <section id="methods-added">
-<h2>Methods added<a class="headerlink" href="#methods-added" title="Permalink to this headline">¶</a></h2>
+<h2>Methods added<a class="headerlink" href="#methods-added" title="Permalink to this heading">#</a></h2>
 <section id="add-weighted-edges-from">
-<h3>add_weighted edges_from()<a class="headerlink" href="#add-weighted-edges-from" title="Permalink to this headline">¶</a></h3>
+<h3>add_weighted edges_from()<a class="headerlink" href="#add-weighted-edges-from" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Convenience method to add weighted edges to graph using a list of
 3-tuples (u,v,weight).</p>
 </div></blockquote>
 </section>
 <section id="get-edge-data">
-<h3>get_edge_data()<a class="headerlink" href="#get-edge-data" title="Permalink to this headline">¶</a></h3>
+<h3>get_edge_data()<a class="headerlink" href="#get-edge-data" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Renamed from get_edge().</p>
 <p>The fastest way to get edge data for edge (u,v) is to use G[u][v]
@@ -814,43 +871,43 @@ instead of G.get_edge_data(u,v)</p>
 </div></blockquote>
 </section>
 <section id="is-directed">
-<h3>is_directed()<a class="headerlink" href="#is-directed" title="Permalink to this headline">¶</a></h3>
+<h3>is_directed()<a class="headerlink" href="#is-directed" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>replaces member G.directed</p>
 </div></blockquote>
 </section>
 <section id="is-multigraph">
-<h3>is_multigraph()<a class="headerlink" href="#is-multigraph" title="Permalink to this headline">¶</a></h3>
+<h3>is_multigraph()<a class="headerlink" href="#is-multigraph" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>replaces member G.multigraph</p>
 </div></blockquote>
 </section>
 </section>
 <section id="classes-removed">
-<h2>Classes Removed<a class="headerlink" href="#classes-removed" title="Permalink to this headline">¶</a></h2>
+<h2>Classes Removed<a class="headerlink" href="#classes-removed" title="Permalink to this heading">#</a></h2>
 <section id="labeledgraph-labeleddigraph">
-<h3>LabeledGraph, LabeledDiGraph<a class="headerlink" href="#labeledgraph-labeleddigraph" title="Permalink to this headline">¶</a></h3>
+<h3>LabeledGraph, LabeledDiGraph<a class="headerlink" href="#labeledgraph-labeleddigraph" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>These classes have been folded into the regular classes.</p>
 </div></blockquote>
 </section>
 <section id="ubigraph">
-<h3>UbiGraph<a class="headerlink" href="#ubigraph" title="Permalink to this headline">¶</a></h3>
+<h3>UbiGraph<a class="headerlink" href="#ubigraph" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p>Removed as the ubigraph platform is no longer being supported.</p>
 </div></blockquote>
 </section>
 </section>
 <section id="additional-functions-generators">
-<h2>Additional functions/generators<a class="headerlink" href="#additional-functions-generators" title="Permalink to this headline">¶</a></h2>
+<h2>Additional functions/generators<a class="headerlink" href="#additional-functions-generators" title="Permalink to this heading">#</a></h2>
 <p>ego_graph, stochastic_graph, PageRank algorithm, HITS algorithm,
 GraphML writer, freeze, is_frozen, A* algorithm,
 directed scale-free generator, random clustered graph.</p>
 </section>
 <section id="converting-your-existing-code-to-networkx-1-0">
-<h2>Converting your existing code to networkx-1.0<a class="headerlink" href="#converting-your-existing-code-to-networkx-1-0" title="Permalink to this headline">¶</a></h2>
+<h2>Converting your existing code to networkx-1.0<a class="headerlink" href="#converting-your-existing-code-to-networkx-1-0" title="Permalink to this heading">#</a></h2>
 <section id="weighted-edges">
-<h3>Weighted edges<a class="headerlink" href="#weighted-edges" title="Permalink to this headline">¶</a></h3>
+<h3>Weighted edges<a class="headerlink" href="#weighted-edges" title="Permalink to this heading">#</a></h3>
 <p>Edge information is now stored in an attribution dictionary
 so all edge data must be given a key to identify it.</p>
 <p>There is currently only one standard/reserved key, ‘weight’, which is
@@ -881,32 +938,36 @@ weight key is</p>
 </section>
 
 
-              </div>
+              </article>
               
-              
-          </main>
-          
 
+              
+          </div>
+          
       </div>
     </div>
+
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2004-2022, NetworkX Developers.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

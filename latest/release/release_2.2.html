@@ -1,79 +1,99 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>NetworkX 2.2 &#8212; NetworkX 2.7.1 documentation</title>
-    
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
-    
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+    <title>NetworkX 2.2 &#8212; NetworkX 2.8.6.dev0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
-    
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/copybutton.js"></script>
     <link rel="canonical" href="https://networkx.org/documentation/stable/release/release_2.2.html" />
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within NetworkX 2.7.1 documentation"
+          title="Search within NetworkX 2.8.6.dev0 documentation"
           href="../_static/opensearch.xml"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="NetworkX 2.1" href="release_2.1.html" />
     <link rel="prev" title="NetworkX 2.3" href="release_2.3.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+  
+<div class="container-fluid version-alert devbar">
+<div class="row no-gutters">
+<div class="col-12 text-center">
+This page is documentation for a DEVELOPMENT / PRE-RELEASE version.
+<a class="btn version-stable font-weight-bold ml-3 my-3 align-baseline"
+href="https://networkx.org/documentation/stable/">Switch to stable version</a>
+</div>
+</div>
+</div>
+  
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
 
     
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
 
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/networkx_banner.svg" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/networkx_banner.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/networkx_banner.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="fas fa-bars"></span>
   </button>
 
   
@@ -131,6 +151,14 @@
     <div id="navbar-end">
       
       <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
           <a class="nav-link" href="https://networkx.org" rel="noopener" target="_blank" title="Home Page"><span><i class="fas fa-home"></i></span>
@@ -147,7 +175,7 @@
         <ul class="navbar-nav">
     <li class="mr-2 dropdown">
         <button type="button" class="btn btn-version btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-            v2.7.1
+            v2.8.6.dev0
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -164,18 +192,48 @@
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="release_dev.html">
    Next Release
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.5.html">
+   NetworkX 2.8.5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.4.html">
+   NetworkX 2.8.4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.3.html">
+   NetworkX 2.8.3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.2.html">
+   NetworkX 2.8.2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.1.html">
+   NetworkX 2.8.1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="release_2.8.html">
+   NetworkX 2.8
   </a>
  </li>
  <li class="toctree-l1">
@@ -282,27 +340,28 @@
 
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
-            </div>
-            
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-            
-              
-              <div class="toc-item">
-                <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-              </div>
-              
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
+    </div>
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -336,26 +395,24 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
-            
-          </div>
-          
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
 
           
           
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
   <section id="networkx-2-2">
-<h1>NetworkX 2.2<a class="headerlink" href="#networkx-2-2" title="Permalink to this headline">¶</a></h1>
+<h1>NetworkX 2.2<a class="headerlink" href="#networkx-2-2" title="Permalink to this heading">#</a></h1>
 <p>Release date: 19 September 2018</p>
 <p>Supports Python 2.7, 3.5, 3.6 and 3.7.
 This is the last release to support Python 2.</p>
@@ -365,7 +422,7 @@ structure, dynamics, and functions of complex networks.</p>
 and our <a class="reference external" href="https://networkx.org/documentation/latest/auto_examples/index.html">gallery of examples</a>.
 Please send comments and questions to the <a class="reference external" href="http://groups.google.com/group/networkx-discuss">networkx-discuss mailing list</a>.</p>
 <section id="highlights">
-<h2>Highlights<a class="headerlink" href="#highlights" title="Permalink to this headline">¶</a></h2>
+<h2>Highlights<a class="headerlink" href="#highlights" title="Permalink to this heading">#</a></h2>
 <p>This release is the result of 8 months of work with over 149 commits by
 58 contributors. Highlights include:</p>
 <ul class="simple">
@@ -378,15 +435,15 @@ which caused trouble with deepcopy and pickle.</p></li>
 </ul>
 </section>
 <section id="improvements">
-<h2>Improvements<a class="headerlink" href="#improvements" title="Permalink to this headline">¶</a></h2>
+<h2>Improvements<a class="headerlink" href="#improvements" title="Permalink to this heading">#</a></h2>
 <p>Each function that uses random numbers now uses a <code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code> argument to control
 the random number generation (RNG). By default the global default RNG is
 used. More precisely, the <a class="reference external" href="https://docs.python.org/3/library/random.html#module-random" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a> package’s default RNG or the numpy.random
 default RNG. You can also create your own RNG and pass it into the <code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code>
 argument. Finally, you can use an integer to indicate the state to set for
 the RNG. In this case a local RNG is created leaving the global RNG untouched.
-Some functions use <a class="reference external" href="https://docs.python.org/3/library/random.html#module-random" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a> and some use <a class="reference external" href="https://numpy.org/doc/stable/reference/random/index.html#module-numpy.random" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random</span></code></a>, but we have written
-a translater so that all functions CAN take a <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code></a>
+Some functions use <a class="reference external" href="https://docs.python.org/3/library/random.html#module-random" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random</span></code></a> and some use <a class="reference external" href="https://numpy.org/doc/stable/reference/random/index.html#module-numpy.random" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random</span></code></a>, but we have written
+a translater so that all functions CAN take a <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code></a>
 object. So a single RNG can be used for the entire package.</p>
 <p>Cyclic references between graph classes and views have been removed to ease
 subclassing without memory leaks. Graphs no longer hold references to views.</p>
@@ -413,7 +470,7 @@ parameter to choose between dijkstra and bellmon-ford in the weighted case.
 Default is dijkstra (which was the only option before).</p>
 </section>
 <section id="api-changes">
-<h2>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h2>
+<h2>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this heading">#</a></h2>
 <p>empty_graph has taken over the functionality from
 nx.convert._prep_create_using which was removed.</p>
 <p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">create_using</span></code> argument (used in many functions) should now be a
@@ -430,7 +487,7 @@ Otherwise the first argument is treated as a list of edges.</p>
 source nodes. That has been changed so source nodes have pred value ‘[]’</p>
 </section>
 <section id="deprecations">
-<h2>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h2>
+<h2>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this heading">#</a></h2>
 <p>Graph class method <code class="xref py py-obj docutils literal notranslate"><span class="pre">fresh_copy</span></code> - simply use <code class="xref py py-obj docutils literal notranslate"><span class="pre">__class__</span></code>.
 The GraphView classes are deprecated in preference to the function
 interface. Specifically, <code class="xref py py-obj docutils literal notranslate"><span class="pre">ReverseView</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">ReverseMultiView</span></code> are
@@ -440,7 +497,7 @@ And <code class="xref py py-obj docutils literal notranslate"><span class="pre">
 are derecated in favor of <code class="xref py py-obj docutils literal notranslate"><span class="pre">generic_graph_view(graph,</span> <span class="pre">create_using)</span></code>.</p>
 </section>
 <section id="contributors">
-<h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
+<h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Luca Baldesi</p></li>
 <li><p>William Bernoudy</p></li>
@@ -505,32 +562,36 @@ are derecated in favor of <code class="xref py py-obj docutils literal notransla
 </section>
 
 
-              </div>
+              </article>
               
-              
-          </main>
-          
 
+              
+          </div>
+          
       </div>
     </div>
+
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
     &copy; Copyright 2004-2022, NetworkX Developers.<br>
 </p>
-    </div>
-    
-    <div class="footer-item">
-      <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
-</p>
-    </div>
-    
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>
