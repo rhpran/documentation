@@ -251,12 +251,34 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">        The pairs of nodes of interest.</span>
 <span class="sd">        If None, will find the LCA of all pairs of nodes.</span>
 
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    An iterator over ((node1, node2), lca) where (node1, node2) are</span>
-<span class="sd">    the pairs specified and lca is a lowest common ancestor of the pair.</span>
-<span class="sd">    Note that for the default of all pairs in G, we consider</span>
-<span class="sd">    unordered pairs, e.g. you will not get both (b, a) and (a, b).</span>
+<span class="sd">    Yields</span>
+<span class="sd">    ------</span>
+<span class="sd">    ((node1, node2), lca) : 2-tuple</span>
+<span class="sd">        Where lca is least common ancestor of node1 and node2.</span>
+<span class="sd">        Note that for the default case, the order of the node pair is not considered,</span>
+<span class="sd">        e.g. you will not get both ``(a, b)`` and ``(b, a)``</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NetworkXPointlessConcept</span>
+<span class="sd">        If `G` is null.</span>
+<span class="sd">    NetworkXError</span>
+<span class="sd">        If `G` is not a DAG.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    The default behavior is to yield the lowest common ancestor for all</span>
+<span class="sd">    possible combinations of nodes in `G`, including self-pairings:</span>
+
+<span class="sd">    &gt;&gt;&gt; G = nx.DiGraph([(0, 1), (0, 3), (1, 2)])</span>
+<span class="sd">    &gt;&gt;&gt; dict(nx.naive_all_pairs_lowest_common_ancestor(G))</span>
+<span class="sd">    {(0, 0): 0, (0, 1): 0, (0, 3): 0, (0, 2): 0, (1, 1): 1, (1, 3): 0, (1, 2): 1, (3, 3): 3, (3, 2): 0, (2, 2): 2}</span>
+
+<span class="sd">    The pairs argument can be used to limit the output to only the</span>
+<span class="sd">    specified node pairings:</span>
+
+<span class="sd">    &gt;&gt;&gt; dict(nx.naive_all_pairs_lowest_common_ancestor(G, pairs=[(1, 2), (2, 3)]))</span>
+<span class="sd">    {(1, 2): 1, (2, 3): 0}</span>
 
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
@@ -525,16 +547,32 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 <span class="sd">        The pairs of nodes of interest.</span>
 <span class="sd">        If None, will find the LCA of all pairs of nodes.</span>
 
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    An iterator over ((node1, node2), lca) where (node1, node2) are</span>
-<span class="sd">    the pairs specified and lca is a lowest common ancestor of the pair.</span>
-<span class="sd">    Note that for the default of all pairs in G, we consider</span>
-<span class="sd">    unordered pairs, e.g. you will not get both (b, a) and (a, b).</span>
+<span class="sd">    Yields</span>
+<span class="sd">    ------</span>
+<span class="sd">    ((node1, node2), lca) : 2-tuple</span>
+<span class="sd">        Where lca is least common ancestor of node1 and node2.</span>
+<span class="sd">        Note that for the default case, the order of the node pair is not considered,</span>
+<span class="sd">        e.g. you will not get both ``(a, b)`` and ``(b, a)``</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NetworkXPointlessConcept</span>
+<span class="sd">        If `G` is null.</span>
+<span class="sd">    NetworkXError</span>
+<span class="sd">        If `G` is not a DAG.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
+<span class="sd">    The default behavior is to yield the lowest common ancestor for all</span>
+<span class="sd">    possible combinations of nodes in `G`, including self-pairings:</span>
+
 <span class="sd">    &gt;&gt;&gt; G = nx.DiGraph([(0, 1), (0, 3), (1, 2)])</span>
+<span class="sd">    &gt;&gt;&gt; dict(nx.all_pairs_lowest_common_ancestor(G))</span>
+<span class="sd">    {(2, 2): 2, (1, 1): 1, (2, 1): 1, (1, 3): 0, (2, 3): 0, (3, 3): 3, (0, 0): 0, (1, 0): 0, (2, 0): 0, (3, 0): 0}</span>
+
+<span class="sd">    The `pairs` argument can be used to limit the output to only the</span>
+<span class="sd">    specified node pairings:</span>
+
 <span class="sd">    &gt;&gt;&gt; dict(nx.all_pairs_lowest_common_ancestor(G, pairs=[(1, 2), (2, 3)]))</span>
 <span class="sd">    {(2, 3): 0, (1, 2): 1}</span>
 

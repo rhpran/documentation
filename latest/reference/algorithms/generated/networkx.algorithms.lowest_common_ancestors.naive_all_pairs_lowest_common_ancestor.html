@@ -678,12 +678,20 @@ If None, will find the LCA of all pairs of nodes.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt>An iterator over ((node1, node2), lca) where (node1, node2) are</dt><dd></dd>
-<dt>the pairs specified and lca is a lowest common ancestor of the pair.</dt><dd></dd>
-<dt>Note that for the default of all pairs in G, we consider</dt><dd></dd>
-<dt>unordered pairs, e.g. you will not get both (b, a) and (a, b).</dt><dd></dd>
+<dt><strong>((node1, node2), lca)</strong><span class="classifier">2-tuple</span></dt><dd><p>Where lca is least common ancestor of node1 and node2.
+Note that for the default case, the order of the node pair is not considered,
+e.g. you will not get both <code class="docutils literal notranslate"><span class="pre">(a,</span> <span class="pre">b)</span></code> and <code class="docutils literal notranslate"><span class="pre">(b,</span> <span class="pre">a)</span></code></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>NetworkXPointlessConcept</dt><dd><p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is null.</p>
+</dd>
+<dt>NetworkXError</dt><dd><p>If <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code> is not a DAG.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -695,6 +703,20 @@ If None, will find the LCA of all pairs of nodes.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>Only defined on non-null directed acyclic graphs.</p>
+<p class="rubric">Examples</p>
+<p>The default behavior is to yield the lowest common ancestor for all
+possible combinations of nodes in <code class="xref py py-obj docutils literal notranslate"><span class="pre">G</span></code>, including self-pairings:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">naive_all_pairs_lowest_common_ancestor</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+<span class="go">{(0, 0): 0, (0, 1): 0, (0, 3): 0, (0, 2): 0, (1, 1): 1, (1, 3): 0, (1, 2): 1, (3, 3): 3, (3, 2): 0, (2, 2): 2}</span>
+</pre></div>
+</div>
+<p>The pairs argument can be used to limit the output to only the
+specified node pairings:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">naive_all_pairs_lowest_common_ancestor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pairs</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]))</span>
+<span class="go">{(1, 2): 1, (2, 3): 0}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
