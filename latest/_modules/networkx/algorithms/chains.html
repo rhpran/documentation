@@ -364,6 +364,10 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
             <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s2">&quot;parent&quot;</span><span class="p">]</span>
         <span class="k">yield</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
 
+    <span class="c1"># Check if the root is in the graph G. If not, raise NodeNotFound</span>
+    <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">root</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NodeNotFound</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Root node </span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2"> is not in graph&quot;</span><span class="p">)</span>
+
     <span class="c1"># Create a directed version of H that has the DFS edges directed</span>
     <span class="c1"># toward the root and the nontree edges directed away from the root</span>
     <span class="c1"># (in each connected component).</span>
