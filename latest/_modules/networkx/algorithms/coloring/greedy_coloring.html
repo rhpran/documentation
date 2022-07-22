@@ -432,29 +432,44 @@ href="https://networkx.org/documentation/stable/">Switch to stable version</a>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">distinct_colors</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="nb">set</span><span class="p">()</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">}</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)):</span>
-        <span class="c1"># On the first time through, simply choose the node of highest degree.</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">node</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
-            <span class="k">yield</span> <span class="n">node</span>
-            <span class="c1"># Add the color 0 to the distinct colors set for each</span>
-            <span class="c1"># neighbors of that node.</span>
-            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
-                <span class="n">distinct_colors</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Compute the maximum saturation and the set of nodes that</span>
-            <span class="c1"># achieve that saturation.</span>
-            <span class="n">saturation</span> <span class="o">=</span> <span class="p">{</span>
-                <span class="n">v</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">distinct_colors</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">colors</span>
-            <span class="p">}</span>
-            <span class="c1"># Yield the node with the highest saturation, and break ties by</span>
-            <span class="c1"># degree.</span>
-            <span class="n">node</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">saturation</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">saturation</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">v</span><span class="p">)))</span>
-            <span class="k">yield</span> <span class="n">node</span>
-            <span class="c1"># Update the distinct color sets for the neighbors.</span>
-            <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
-            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
-                <span class="n">distinct_colors</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">color</span><span class="p">)</span></div>
+
+    <span class="c1"># Add the node color assignments given in colors to the</span>
+    <span class="c1"># distinct colors set for each neighbor of that node</span>
+    <span class="k">for</span> <span class="n">vertex</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">vertex</span><span class="p">]:</span>
+            <span class="n">distinct_colors</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+
+    <span class="c1"># Check that the color assignments in colors are valid</span>
+    <span class="c1"># i.e. no neighboring nodes have the same color</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">vertex</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">distinct_colors</span><span class="p">[</span><span class="n">vertex</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span>
+                    <span class="s2">&quot;Neighboring vertices must have different colors&quot;</span>
+                <span class="p">)</span>
+
+    <span class="c1"># If 0 nodes have been colored, simply choose the node of highest degree.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">colors</span><span class="p">:</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">node</span>
+        <span class="c1"># Add the color 0 to the distinct colors set for each</span>
+        <span class="c1"># neighbor of that node.</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+            <span class="n">distinct_colors</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)):</span>
+        <span class="c1"># Compute the maximum saturation and the set of nodes that</span>
+        <span class="c1"># achieve that saturation.</span>
+        <span class="n">saturation</span> <span class="o">=</span> <span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">distinct_colors</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">}</span>
+        <span class="c1"># Yield the node with the highest saturation, and break ties by</span>
+        <span class="c1"># degree.</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">saturation</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">saturation</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">v</span><span class="p">)))</span>
+        <span class="k">yield</span> <span class="n">node</span>
+
+        <span class="c1"># Update the distinct color sets for the neighbors.</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+            <span class="n">distinct_colors</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">color</span><span class="p">)</span></div>
 
 
 <span class="c1">#: Dictionary mapping name of a strategy as a string to the strategy function.</span>
